@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language type="english">
+    
+    <expresion>
+        <name>title</name>
+        <value>The title of the form</value>
+    </expresion>
+    
+    <expresion>
+        <name>title2</name>
+        <value>The title of the form2</value>
+    </expresion>
+    
+    <expresion>
+        <name>title3</name>
+        <value>The title of the form32</value>
+    </expresion>
+    
+</language>

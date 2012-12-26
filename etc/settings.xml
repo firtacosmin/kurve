@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
     <default>
-        <lang>English_lang</lang>
-        <lang1>English_lang1</lang1>
-        <lang2>English_lang2</lang2>
-        <lang3>English_lang3</lang3>
-        <lang4>English_lang4</lang4>
+        <language>Doich</language>
     </default>
     <current>
         <language>English</language>
-        <language1>English</language1>
-        <language2>English</language2>
-        <language3>English</language3>
     </current>
 </settings>

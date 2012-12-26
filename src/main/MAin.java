@@ -18,7 +18,8 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Text;
 import org.xml.sax.SAXException;
 
-import com.syntese.settings.Settings;
+import com.syntese.graphics.MainFrame;
+import com.syntese.language.Language;
 
 public class MAin {
 
@@ -70,10 +71,18 @@ public class MAin {
 		}
 		
 		
-		Settings s = new Settings();
-		String val = s.getDefaultSetting("lang");
-		String val2 = s.getDefaultSetting("lang2");
-		String val3 = s.getDefaultSetting("langazsd");
+//		Settings s = new Settings();
+//		String val = s.getDefaultSetting("lang");
+//		String val2 = s.getDefaultSetting("lang2");
+//		String val3 = s.getDefaultSetting("langazsd");
+		
+		//ILanguage lang = LanguageFactory.getInstance();
+		Language lang = new Language();
+		lang.getExpresion("title");
+		
+		
+		MainFrame f = new MainFrame();
+		f.show();
 		
 	}
 

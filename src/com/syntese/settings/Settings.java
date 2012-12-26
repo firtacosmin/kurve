@@ -64,6 +64,27 @@ public class Settings implements ISettings {
 		return _defaultSettings.get(settingName);
 	}
 	
+	
+	/**
+	 * Name: setCurrentSetting
+	 * Args: @param settingName
+	 * Args: @param settingValue
+	 * Args: @return
+	 * Return: boolean
+	 * Desc: the method will see if the passed setting name exists into the setting map, 
+	 *       if not it will return false. If the setting exists then it's value will be 
+	 *       modified with the passed value
+	 */
+	public boolean setCurrentSetting(String settingName, String settingValue){
+		if ( _currentSettings.containsKey(settingName) ){
+			_currentSettings.remove(settingName);
+			_currentSettings.put(settingName, settingValue);
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
 	/*PRIVATE*/
 
 
@@ -71,7 +92,7 @@ public class Settings implements ISettings {
 	 * Name: parseSettingsFile
 	 * Args: 
 	 * Return: void
-	 * Desc: Parsses the settings file to extract the settings and saves them
+	 * Desc: Parsses the settings file to extract the setti.ngs and saves them
 	 */
 	private void parseSettingsFile() {
 

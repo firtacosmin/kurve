@@ -8,6 +8,7 @@ public class SettingsFactory {
 	public static ISettings getInstance(){
 		if ( !instance ){
 			_theSettings = new Settings();
+			instance = true;
 		}
 		
 		return _theSettings;

@@ -1,19 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language type="english">
-    
+
     <expresion>
-        <name>title</name>
-        <value>The title of the form</value>
+        <name>MainFremeTitle</name>
+        <value>Syntese</value>
     </expresion>
     
-    <expresion>
-        <name>title2</name>
-        <value>The title of the form2</value>
-    </expresion>
     
     <expresion>
-        <name>title3</name>
-        <value>The title of the form32</value>
+        <name>FileMenu</name>
+        <value>File</value>
+    </expresion>
+    <expresion>
+        <name>NewMenu</name>
+        <value>New</value>
+    </expresion>
+    <expresion>
+        <name>OpenMenu</name>
+        <value>Open</value>
+    </expresion>
+    <expresion>
+        <name>CloseMenu</name>
+        <value>Close</value>
+    </expresion>
+    <expresion>
+        <name>CloseAllMenu</name>
+        <value>Close All</value>
+    </expresion>
+    <expresion>
+        <name>SaveMenu</name>
+        <value>Save</value>
+    </expresion>
+    <expresion>
+        <name>SaveAsMenu</name>
+        <value>Save As</value>
+    </expresion>
+    <expresion>
+        <name>SaveAllMenu</name>
+        <value>Save All</value>
+    </expresion>
+    <expresion>
+        <name>HelpMenu</name>
+        <value>Help</value>
+    </expresion>
+    <expresion>
+        <name>LanguageMenu</name>
+        <value>Language</value>
+    </expresion>
+    <expresion>
+        <name>AbouteMenu</name>
+        <value>About</value>
     </expresion>
     
 </language>

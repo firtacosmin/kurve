@@ -18,11 +18,13 @@ import org.xml.sax.SAXException;
 
 import com.syntese.settings.SettingsFactory;
 
-public class Language {
+public class Language implements ILanguage{
 	private static final String ROOT_NODE_NAME = "language";
 	private static final String LANGUAGE_FOLDER = "Language";
 	private static final String LANGUAGE_SETTING_NAME = "language";
 	private static final String EXPRESION = "expresion";
+	private static final String NAME_TAG = "name";
+	private static final String VALUE_TAG = "value";
 
 	
 	private HashMap<String, String> _expresions;
@@ -39,10 +41,32 @@ public class Language {
 		_expresions = new HashMap<String, String>();
 		_languages = new ArrayList<String>();
 		/*get the languages*/
-		getAvailableLanguages();
+		getLanguages();
 		/*get expresions from current language*/
 		getExpresions();
 	}
+	
+	
+	/**
+	 * Name: getExpresion
+	 * Args: @param name
+	 * Args: @return
+	 * Return: String
+	 * Desc: returns the value of the expression with the passed name
+	 */
+	public String getExpresion(String name){
+		return _expresions.get(name);
+	}
+	
+
+	/* (non-Javadoc)
+	 * @see com.syntese.language.ILanguage#getAvailableLanguages()
+	 */
+	@Override
+	public ArrayList<String> getAvailableLanguages() {
+		return _languages;
+	}
+	
 
 	/*PRIVATE*/
 	
@@ -52,12 +76,12 @@ public class Language {
 	 * Return: void
 	 * Desc: scans Language folder for xml files that have the root node called "language"
 	 */
-	private void getExpresions() {
+	private void getLanguages() {
 		File languageFolder = new File(LANGUAGE_FOLDER);
 		for (File f : languageFolder.listFiles()){
-			if ( f.getName().split(".")[1].equals("xml") ){
+			if ( f.getName().indexOf(".xml") != -1 ){
 				if ( isLanguageFile(f) ){
-					_languages.add(f.getName().split(".")[0]);
+					_languages.add(f.getName().split(".xml")[0]);
 				}
 			}
 		}
@@ -77,7 +101,7 @@ public class Language {
 			builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 			Document lang = builder.parse(f);
 			Element root = lang.getDocumentElement();
-			if( root.getNodeName() == ROOT_NODE_NAME )
+			if( root.getNodeName() == ROOT_NODE_NAME && !root.getAttribute("type").isEmpty() )
 			{
 				return true;
 			}else{
@@ -91,37 +115,50 @@ public class Language {
 	}
 
 	/**
-	 * Name: getAvailableLanguages
+	 * Name: getExpresions
 	 * Args: 
 	 * Return: void
 	 * Desc: gets the current or the default language file from the 
 	 *       settings and reads from it all the saved expressions 
 	 *       and saves them into the hash MAP
 	 */
-	private void getAvailableLanguages() {
+	private void getExpresions() {
 		String defaultLanguage = SettingsFactory.getInstance().getDefaultSetting(LANGUAGE_SETTING_NAME);
 		String currentLanguage = SettingsFactory.getInstance().getCurrentSetting(LANGUAGE_SETTING_NAME);
 		
 		if ( currentLanguage != null &&
 			 _languages.contains(currentLanguage)){
 			/*Use the current language*/
-			DocumentBuilder builder;
-			try {
-				builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-				Document lang = builder.parse(new File(LANGUAGE_FOLDER+"/"+currentLanguage+".xml"));
-				Element root = lang.getDocumentElement();
-				NodeList set = root.getChildNodes();
-				for( int i=0; i<set.getLength(); i++ ){
-					if (set.item(i).getNodeName() == EXPRESION){
-						getExpresion(set.item(i));
-					}
-				}
-			} catch (ParserConfigurationException | SAXException | IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			getLanguageExpresions(currentLanguage);
 		} else {
 			/*use the default language*/
+			getLanguageExpresions(defaultLanguage);
+		}
+	}
+	
+	
+	
+	/**
+	 * Name: getLanguageExpresions
+	 * Args: @param language
+	 * Return: void
+	 * Desc: method that gets the expressions from the passed language
+	 */
+	private void getLanguageExpresions(String language){
+		DocumentBuilder builder;
+		try {
+			builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+			Document lang = builder.parse(new File(LANGUAGE_FOLDER+"/"+language+".xml"));
+			Element root = lang.getDocumentElement();
+			NodeList set = root.getChildNodes();
+			for( int i=0; i<set.getLength(); i++ ){
+				if (set.item(i).getNodeName() == EXPRESION){
+					getExpresion(set.item(i));
+				}
+			}
+		} catch (ParserConfigurationException | SAXException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	
@@ -130,28 +167,25 @@ public class Language {
 	 * Name: getExpresion
 	 * Args: @param item
 	 * Return: void
-	 * Desc: gets the expresion name and value from the passed expresion node
+	 * Desc: gets the expression name and value from the passed expresion node
+	 * 		 The passed node will have 2 children name and value node.
 	 */
 	private void getExpresion(Node item) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	/**
-	 * Name: getExpresions
-	 * Args: @param item
-	 * Args: @param _currentSettings2
-	 * Return: void
-	 * Desc: gets the children from the passed node and saved them into the passed hashMap
-	 */
-	private void getExpresions(Node item, HashMap<String, String> hash ) {
-		NodeList children = item.getChildNodes();
-		for( int i=0; i<children.getLength(); i++ ){
-			if ( children.item(i).getNodeName() != "#text" ){
-				Node child = children.item(i);
-				Text value = (Text) children.item(i).getFirstChild();
-				hash.put(child.getNodeName(), value.getData());
+		NodeList thenodes = item.getChildNodes();
+		String value = "";
+		String name = "";
+		for ( int i=0; i< thenodes.getLength(); i++ ){
+			if ( thenodes.item(i).getNodeName() == NAME_TAG ){
+				Text val = (Text)(thenodes.item(i).getFirstChild());
+				name = val.getData();
+			}else if ( thenodes.item(i).getNodeName() == VALUE_TAG ){
+				Text val = (Text)(thenodes.item(i).getFirstChild());
+				value = val.getData();
 			}
 		}
+		_expresions.put(name, value);
 	}
+
+	
+	
 }

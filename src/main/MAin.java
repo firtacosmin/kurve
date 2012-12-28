@@ -19,6 +19,7 @@ import org.w3c.dom.Text;
 import org.xml.sax.SAXException;
 
 import com.syntese.graphics.MainFrame;
+import com.syntese.graphics.MainFrameMediator;
 import com.syntese.language.Language;
 
 public class MAin {
@@ -81,8 +82,9 @@ public class MAin {
 		lang.getExpresion("title");
 		
 		
-		MainFrame f = new MainFrame();
-		f.show();
+//		MainFrame f = new MainFrame();
+//		f.show();
+		MainFrameMediator m = new MainFrameMediator();
 		
 	}
 

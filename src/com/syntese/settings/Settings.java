@@ -85,6 +85,10 @@ public class Settings implements ISettings {
 		}
 	}
 	
+	public void save(){
+		
+	}
+	
 	/*PRIVATE*/
 
 

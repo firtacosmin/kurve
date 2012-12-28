@@ -66,6 +66,22 @@ public class Language implements ILanguage{
 	public ArrayList<String> getAvailableLanguages() {
 		return _languages;
 	}
+
+	/* (non-Javadoc)
+	 * @see com.syntese.language.ILanguage#ChangeLanguage(java.lang.String)
+	 */
+	@Override
+	public boolean changeLanguage(String newLanguage) {
+		if ( _languages.contains(newLanguage) ){
+			_expresions.clear();
+			SettingsFactory.getInstance().setCurrentSetting(LANGUAGE_SETTING_NAME, newLanguage);
+			getExpresions();
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
 	
 
 	/*PRIVATE*/
@@ -185,6 +201,7 @@ public class Language implements ILanguage{
 		}
 		_expresions.put(name, value);
 	}
+
 
 	
 	

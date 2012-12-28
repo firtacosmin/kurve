@@ -1,9 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language type="english">
+<language type="Romana">
 
     <expresion>
         <name>MainFremeTitle</name>
         <value>Syntese</value>
+    </expresion>
+    
+    
+    <expresion>
+        <name>FileMenu</name>
+        <value>Fisier</value>
+    </expresion>
+    <expresion>
+        <name>NewMenu</name>
+        <value>Nou</value>
+    </expresion>
+    <expresion>
+        <name>OpenMenu</name>
+        <value>Deschide</value>
+    </expresion>
+    <expresion>
+        <name>CloseMenu</name>
+        <value>Inchide</value>
+    </expresion>
+    <expresion>
+        <name>CloseAllMenu</name>
+        <value>Inchide tot</value>
+    </expresion>
+    <expresion>
+        <name>SaveMenu</name>
+        <value>Salveaza</value>
+    </expresion>
+    <expresion>
+        <name>SaveAsMenu</name>
+        <value>Salveaza ca</value>
+    </expresion>
+    <expresion>
+        <name>SaveAllMenu</name>
+        <value>Save All</value>
+    </expresion>
+    <expresion>
+        <name>HelpMenu</name>
+        <value>Help</value>
+    </expresion>
+    <expresion>
+        <name>LanguageMenu</name>
+        <value>Language</value>
+    </expresion>
+    <expresion>
+        <name>AboutMenu</name>
+        <value>About</value>
     </expresion>
     
 </language>

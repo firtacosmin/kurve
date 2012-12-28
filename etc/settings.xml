@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <settings>
-    <default>
-        <language>Doich</language>
-    </default>
-    <current>
-        <language>English</language>
-    </current>
+  <default>
+    <language>English</language>
+  </default>
+  <current>
+    <language>Romana</language>
+   </current>
 </settings>

@@ -1,12 +1,17 @@
 package com.syntese.settings;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -22,10 +27,16 @@ import org.xml.sax.SAXException;
 public class Settings implements ISettings {
 	
 	private static final String SETTINGS_FILE = "etc/settings.xml";
+	private static final String ROOT_TAG_NAME = "settings";
+	private static final String DEFAULT_TAG_NAME = "default";
+	private static final String CURRENT_TAG_NAME = "current";
 	
 	
 	private HashMap<String, String> _currentSettings;
 	private HashMap<String, String> _defaultSettings;
+	
+	
+	private boolean _modified = false;
 	
 	/*PUBLIC*/
 	
@@ -79,18 +90,69 @@ public class Settings implements ISettings {
 		if ( _currentSettings.containsKey(settingName) ){
 			_currentSettings.remove(settingName);
 			_currentSettings.put(settingName, settingValue);
+			_modified = true;
 			return true;
 		}else{
 			return false;
 		}
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.syntese.settings.ISettings#save()
+	 */
 	public void save(){
-		
+		if ( _modified ){
+			DocumentBuilder builder;
+			try {
+				builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+				/*create the new file*/
+				Document newDoc = builder.newDocument();
+				Element rootElement = newDoc.createElement(ROOT_TAG_NAME);
+				Element currentElement = newDoc.createElement(CURRENT_TAG_NAME);
+				Element defaultElement = newDoc.createElement(DEFAULT_TAG_NAME);
+				/*add values to the current element*/
+				for ( String key : _currentSettings.keySet() ){
+					Element el = newDoc.createElement(key);
+					Text elValue = newDoc.createTextNode(_currentSettings.get(key));
+					el.appendChild(elValue);
+					currentElement.appendChild(el);
+				}
+				/*add values to the default element*/
+				for ( String key : _defaultSettings.keySet() ){
+					Element el = newDoc.createElement(key);
+					Text elValue = newDoc.createTextNode(_defaultSettings.get(key));
+					el.appendChild(elValue);
+					defaultElement.appendChild(el);
+				}
+				/*add default and current elements to the root element*/
+				rootElement.appendChild(defaultElement);
+				rootElement.appendChild(currentElement);
+				/*add route element to the doc*/
+				newDoc.appendChild(rootElement);
+				/*save the document*/
+				Transformer t = TransformerFactory.newInstance().newTransformer();
+				t.transform(new DOMSource(newDoc), new StreamResult(new FileOutputStream(new File(SETTINGS_FILE))));
+				
+			}catch ( Exception e ){
+				
+			}
+		}
 	}
 	
 	/*PRIVATE*/
 
+
+	/**
+	 * Name: updateCurrentSettings
+	 * Args: @param item the current settings node
+	 * Return: void
+	 * Desc: updates the current settings with the new settings
+	 */
+	private void updateCurrentSettings(Node item) {
+		for(String key : _currentSettings.keySet()) {
+			 ((Element)item).getElementsByTagName(key).item(0).setNodeValue(_currentSettings.get(key));
+		}
+	}
 
 	/**
 	 * Name: parseSettingsFile

@@ -1,55 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language type="english">
 
-    <expresion>
+    <expression>
         <name>MainFremeTitle</name>
         <value>Syntese</value>
-    </expresion>
+    </expression>
     
     
-    <expresion>
+    <expression>
         <name>FileMenu</name>
         <value>File</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>NewMenu</name>
         <value>New</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>OpenMenu</name>
         <value>Open</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>CloseMenu</name>
         <value>Close</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>CloseAllMenu</name>
         <value>Close All</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>SaveMenu</name>
         <value>Save</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>SaveAsMenu</name>
         <value>Save As</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>SaveAllMenu</name>
         <value>Save All</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>HelpMenu</name>
         <value>Help</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>LanguageMenu</name>
         <value>Language</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>AboutMenu</name>
         <value>About</value>
-    </expresion>
+    </expression>
+    
+    <expression>
+      <name>Wizard_CamType_title</name>
+      <value>Selecting the desired type of the cam gear</value>
+    </expression>
+    <expression>
+      <name>Wizard_CamType_rollerLevel</name>
+      <value>Cam gear with roller lever</value>
+    </expression>
+    <expression>
+      <name>Wizard_CamType_rollerCams</name>
+      <value>Cam gear with roller cams</value>
+    </expression>
+    <expression>
+      <name>Wizard_CamType_name</name>
+      <value>Please enter name of project</value>
+    </expression>
     
 </language>

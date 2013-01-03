@@ -1,12 +1,16 @@
 package com.syntese.graphics;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.LayoutManager;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -15,6 +19,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 import com.syntese.language.LanguageFactory;
+import com.syntese.media.MediaPanel;
 
 public class MainFrame extends JFrame {
 	/**
@@ -76,6 +81,12 @@ public void addActionListener(MainFrameActionListener hdl){
 	_theEventHandler = hdl;
 }
 
+/**
+ * Name: updateTexts
+ * Args: 
+ * Return: void
+ * Desc: method for updating all the texts of the frame in case of language change!
+ */
 public void updateTexts(){
 	/*The File menu*/
 	 _fileMenu.setText(LanguageFactory.getInstance().getExpresion(FILE_MENU_EXPRESSION));
@@ -196,25 +207,21 @@ private void addComponents() {
 		
 		@Override
 		public void windowOpened(WindowEvent arg0) {
-			// TODO Auto-generated method stub
 			
 		}
 		
 		@Override
 		public void windowIconified(WindowEvent arg0) {
-			// TODO Auto-generated method stub
 			
 		}
 		
 		@Override
 		public void windowDeiconified(WindowEvent arg0) {
-			// TODO Auto-generated method stub
 			
 		}
 		
 		@Override
 		public void windowDeactivated(WindowEvent arg0) {
-			// TODO Auto-generated method stub
 			
 		}
 		
@@ -225,16 +232,25 @@ private void addComponents() {
 		
 		@Override
 		public void windowClosed(WindowEvent arg0) {
-			// TODO Auto-generated method stub
 			
 		}
 		
 		@Override
 		public void windowActivated(WindowEvent arg0) {
-			// TODO Auto-generated method stub
 			
 		}
 	});
+	
+	
+	URL movieUrl;
+	try {
+		movieUrl = new URL("file:Media\\oscil. pt. program1.avi");
+		MediaPanel fr = new MediaPanel(movieUrl);
+		add(fr, BorderLayout.CENTER);
+	} catch (MalformedURLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 }
 
 
@@ -255,7 +271,7 @@ private void setAtributes() {
 	setSize(WIDTH, HEIGHT);
 	setTitle(LanguageFactory.getInstance().getExpresion(TITLE_EXPRESSION));
 	setLocation((screenSize.width - WIDTH)/2, (screenSize.height - HEIGHT)/2);
-	Image img = kit.getImage("Images/copy_icon.gif");
+	Image img = kit.getImage("Media/copy_icon.gif");
 	setIconImage(img);
 
 	

@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language type="Romana">
 
-    <expresion>
+    <expression>
         <name>MainFremeTitle</name>
         <value>Syntese</value>
-    </expresion>
+    </expression>
     
     
-    <expresion>
+    <expression>
         <name>FileMenu</name>
         <value>Fisier</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>NewMenu</name>
         <value>Nou</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>OpenMenu</name>
         <value>Deschide</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>CloseMenu</name>
         <value>Inchide</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>CloseAllMenu</name>
         <value>Inchide tot</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>SaveMenu</name>
         <value>Salveaza</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>SaveAsMenu</name>
         <value>Salveaza ca</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>SaveAllMenu</name>
         <value>Save All</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>HelpMenu</name>
         <value>Help</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>LanguageMenu</name>
         <value>Language</value>
-    </expresion>
-    <expresion>
+    </expression>
+    <expression>
         <name>AboutMenu</name>
         <value>About</value>
-    </expresion>
+    </expression>
     
 </language>

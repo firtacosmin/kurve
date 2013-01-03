@@ -22,7 +22,7 @@ public class Language implements ILanguage{
 	private static final String ROOT_NODE_NAME = "language";
 	private static final String LANGUAGE_FOLDER = "Language";
 	private static final String LANGUAGE_SETTING_NAME = "language";
-	private static final String EXPRESION = "expresion";
+	private static final String EXPRESION = "expression";
 	private static final String NAME_TAG = "name";
 	private static final String VALUE_TAG = "value";
 

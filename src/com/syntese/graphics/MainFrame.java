@@ -241,16 +241,16 @@ private void addComponents() {
 		}
 	});
 	
-	
-	URL movieUrl;
-	try {
-		movieUrl = new URL("file:Media\\oscil. pt. program1.avi");
-		MediaPanel fr = new MediaPanel(movieUrl);
-		add(fr, BorderLayout.CENTER);
-	} catch (MalformedURLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+//	
+//	URL movieUrl;
+//	try {
+//		movieUrl = new URL("file:Media\\oscil. pt. program1.avi");
+//		MediaPanel fr = new MediaPanel(movieUrl);
+//		add(fr, BorderLayout.CENTER);
+//	} catch (MalformedURLException e) {
+//		// TODO Auto-generated catch block
+//		e.printStackTrace();
+//	}
 }
 
 

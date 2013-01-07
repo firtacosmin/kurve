@@ -69,4 +69,22 @@
       <value>Please enter name of project</value>
     </expression>
     
+    
+    <expression>
+        <name>WizardDlgTitle</name>
+        <value>New curve Wizard</value>
+    </expression>
+    <expression>
+        <name>WizardDlgNextBtnText</name>
+        <value>Next</value>
+    </expression>
+    <expression>
+        <name>WizardDlgPreviousBtnText</name>
+        <value>Back</value>
+    </expression>
+    <expression>
+        <name>WizardDlgCancelBtnText</name>
+        <value>Cancel</value>
+    </expression>
+    
 </language>

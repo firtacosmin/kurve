@@ -52,4 +52,24 @@
         <value>About</value>
     </expression>
     
+    
+    
+    <expression>
+        <name>WizardDlgTitle</name>
+        <value>Ajutor pentru curba noua</value>
+    </expression>
+    <expression>
+        <name>WizardDlgNextBtnText</name>
+        <value>Inainte</value>
+    </expression>
+    <expression>
+        <name>WizardDlgPreviousBtnText</name>
+        <value>Inapoi</value>
+    </expression>
+    <expression>
+        <name>WizardDlgCancelBtnText</name>
+        <value>Anulare</value>
+    </expression>
+    
+    
 </language>

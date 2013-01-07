@@ -1,8 +1,8 @@
 package com.syntese.media;
 
-import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Panel;
 import java.io.IOException;
 import java.net.URL;
 
@@ -16,7 +16,6 @@ import javax.media.Player;
 import javax.media.PrefetchCompleteEvent;
 import javax.media.RealizeCompleteEvent;
 import javax.media.Time;
-import javax.swing.JInternalFrame;
 import javax.swing.event.InternalFrameAdapter;
 import javax.swing.event.InternalFrameEvent;
 
@@ -101,7 +100,7 @@ import javax.swing.event.InternalFrameEvent;
 //		}
 //   	} // end class MediaPanel
 
-public class MediaPanel extends JInternalFrame implements ControllerListener {
+public class MediaPanel extends Panel implements ControllerListener {
 Player mplayer;
 Component visual = null;
 Component control = null;
@@ -114,11 +113,12 @@ boolean firstTime = true;
 
 
 public MediaPanel(URL file) {
-	super("Media", true, true, true, true);
-	getContentPane().setLayout( new BorderLayout() );
-	setSize(320, 10);
-	setLocation(50, 50);
-	setVisible(true);
+	//super("Media", true, true, true, true);
+	super();
+//	getContentPane().setLayout( new BorderLayout() );
+//	setSize(320, 10);
+//	setLocation(50, 50);
+//	setVisible(true);
 	Manager.setHint( Manager.LIGHTWEIGHT_RENDERER, true );
 	try {
 		mplayer = Manager.createRealizedPlayer( file );
@@ -134,11 +134,11 @@ public MediaPanel(URL file) {
 	}
 	mplayer.addControllerListener((ControllerListener) this);
 	mplayer.realize();
-	addInternalFrameListener( new InternalFrameAdapter() {
-	    public void internalFrameClosing(InternalFrameEvent ife) {
-	    mplayer.close();
-	    }
-	} );
+//	addInternalFrameListener( new InternalFrameAdapter() {
+//	    public void internalFrameClosing(InternalFrameEvent ife) {
+//	    mplayer.close();
+//	    }
+//	} );
 	        
 }
 
@@ -153,20 +153,30 @@ if (ce instanceof RealizeCompleteEvent) {
     Dimension size = visual.getPreferredSize();
     videoWidth = size.width;
     videoHeight = size.height;
-    getContentPane().add("Center", visual);
+    add("Center", visual);
     } else
     videoWidth = 351;
     if ((control = mplayer.getControlPanelComponent()) != null) {
     controlHeight = control.getPreferredSize().height;
-    getContentPane().add("South", control);
+    //add("South", control);
     }
     setSize(videoWidth + insetWidth,
         videoHeight + controlHeight + insetHeight);
     validate();
-    mplayer.start();
+    //mplayer.start();
+    mplayer.setMediaTime(new Time(20));
 } else if (ce instanceof EndOfMediaEvent) {
-    mplayer.setMediaTime(new Time(0));
-    mplayer.start();
+    mplayer.setMediaTime(new Time(20));
+    //mplayer.start();
+    
 }
+}
+
+public void stop(){
+	mplayer.stop();
+}
+
+public void start(){
+	mplayer.start();
 }
 }

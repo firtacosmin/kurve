@@ -1,11 +1,13 @@
 package com.syntese.graphics;
 
+import com.syntese.graphics.wizard.WizardMediator;
 import com.syntese.language.LanguageFactory;
 import com.syntese.settings.SettingsFactory;
 
 public class MainFrameMediator implements MainFrameActionListener {
 
 	private MainFrame _theFrame;
+	private WizardMediator _theWizard;
 	
 	/*
 	 * public
@@ -13,14 +15,15 @@ public class MainFrameMediator implements MainFrameActionListener {
 	
 	public MainFrameMediator(){
 		_theFrame = new MainFrame();
+		_theWizard = new WizardMediator(_theFrame);
+		
 		_theFrame.addActionListener(this);
 		_theFrame.setVisible(true);
 	}
 	
 	@Override
 	public void newMenuClick() {
-		// TODO Auto-generated method stub
-		
+		_theWizard.start();
 	}
 
 	@Override

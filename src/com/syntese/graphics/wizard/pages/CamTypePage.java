@@ -12,6 +12,7 @@ import java.awt.GridLayout;
 import java.awt.Label;
 import java.awt.Panel;
 import java.awt.TextField;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -20,6 +21,7 @@ import javax.swing.Box;
 import javax.swing.JPanel;
 
 import com.syntese.language.LanguageFactory;
+import com.syntese.media.ImagePanel;
 import com.syntese.media.MediaPanel;
 
 
@@ -81,6 +83,8 @@ public class CamTypePage extends JPanel {
 	 * Desc: CREATES THE UI COMPONENTS
 	 */
 	private void createUIComponents() {
+		
+		
 		_buttonGroup = new CheckboxGroup();
 		
 		_camsRadio = new Checkbox();
@@ -157,18 +161,28 @@ public class CamTypePage extends JPanel {
 		Box movieBox = Box.createHorizontalBox();
 		movieBox.setBorder(BorderFactory.createLineBorder(Color.black));
 		try {
-			MediaPanel p = new MediaPanel(new URL("file:Media\\oscil. pt. program1.avi"));
-			p.stop();
-			movieBox.add(p);
-//			movieBox.add(Box.createHorizontalGlue());
-			MediaPanel p2 = new MediaPanel(new URL("file:Media\\tran pt prog bun 2.avi"));
-			p2.stop();
-			movieBox.add(p2);
-		} catch (MalformedURLException e) {
+//			MediaPanel p = new MediaPanel(new URL("file:Media\\oscil. pt. program1.avi"));
+//			p.stop();
+//			movieBox.add(p);
+////			movieBox.add(Box.createHorizontalGlue());
+//			MediaPanel p2 = new MediaPanel(new URL("file:Media\\tran pt prog bun 2.avi"));
+//			p2.stop();
+//			movieBox.add(p2);
+			ImagePanel img1 = new ImagePanel(new URL("file:Media\\11osc. simpla.bmp"));
+			movieBox.add(img1);
+			movieBox.add(Box.createHorizontalGlue());
+			ImagePanel img2 = new ImagePanel(new URL("file:Media\\12osc. cama dubla.bmp"));	
+			movieBox.add(img2);
+			
+			int width = img1.getWidth() + 10 + img2.getWidth(); 
+			int height = (img1.getHeight() > img2.getHeight() ? img1.getHeight():img2.getHeight()) + 20 + 20 ;
+			setSize(width , height );
+			
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		movieBox.setBackground(new Color(109, 109, 109));
+		movieBox.setBackground(new Color(209, 209, 209));
 		
 		
 		Box centralBox = Box.createVerticalBox();

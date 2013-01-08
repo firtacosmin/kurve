@@ -80,6 +80,7 @@ public class WizardDialog extends JDialog {
 	 * Desc: Adds the passed panel to the panel in the center
 	 */
 	public void addMainPanel(Panel p){
+		setSize(new Dimension(p.getWidth() + 60, p.getHeight() + SOUTHERNBOX_HEIGHT));
 		_centerPanel.add(p);
 	}
 	
@@ -90,6 +91,7 @@ public class WizardDialog extends JDialog {
 	 * Desc: Adds the passed panel to the panel in the center
 	 */
 	public void addMainPanel(JPanel p){
+		setSize(new Dimension(p.getWidth() + 60, p.getHeight() + SOUTHERNBOX_HEIGHT));
 		_centerPanel.add(p);
 	}
 	

@@ -71,5 +71,38 @@
         <value>Anulare</value>
     </expression>
     
+    <expression>
+        <name>DownstreamDlgTitle</name>
+        <value>Downstream coupling gear</value>
+    </expression>
+    <expression>
+        <name>DownstreamDlgCat1</name>
+        <value>No downstream</value>
+    </expression>
+    <expression>
+        <name>DownstreamDlgCat2</name>
+        <value>Crank</value>
+    </expression>
+    <expression>
+        <name>DownstreamDlgCat3</name>
+        <value>Four joint</value>
+    </expression>
+    <expression>
+        <name>DownstreamDlgCat4</name>
+        <value>pusher tugs</value>
+    </expression>
+    <expression>
+        <name>Wizard_Downstream_Cams_Cat1</name>
+        <value>No downstream</value>
+    </expression>
+    <expression>
+        <name>Wizard_Downstream_Cams_Cat2</name>
+        <value>double slide</value>
+    </expression>
+    <expression>
+        <name>Wizard_Downstream_Cams_Cat3</name>
+        <value>Crank</value>
+    </expression>
+    
     
 </language>

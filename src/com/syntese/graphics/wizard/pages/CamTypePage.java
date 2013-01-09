@@ -158,8 +158,9 @@ public class CamTypePage extends JPanel {
 		radioBtnBox.add(Box.createHorizontalGlue());
 		radioBtnBox.add(_camsRadio);
 		
-		Box movieBox = Box.createHorizontalBox();
-		movieBox.setBorder(BorderFactory.createLineBorder(Color.black));
+//		Box movieBox = Box.createHorizontalBox();
+		JPanel movieBox = new JPanel();
+//		movieBox.setBorder(BorderFactory.createLineBorder(Color.black));
 		try {
 //			MediaPanel p = new MediaPanel(new URL("file:Media\\oscil. pt. program1.avi"));
 //			p.stop();
@@ -168,21 +169,32 @@ public class CamTypePage extends JPanel {
 //			MediaPanel p2 = new MediaPanel(new URL("file:Media\\tran pt prog bun 2.avi"));
 //			p2.stop();
 //			movieBox.add(p2);
+			GridLayout l = new GridLayout(1,2);
+			l.setVgap(10);
+			l.setHgap(5);
+			movieBox.setLayout(l);
 			ImagePanel img1 = new ImagePanel(new URL("file:Media\\11osc. simpla.bmp"));
 			movieBox.add(img1);
-			movieBox.add(Box.createHorizontalGlue());
 			ImagePanel img2 = new ImagePanel(new URL("file:Media\\12osc. cama dubla.bmp"));	
 			movieBox.add(img2);
 			
-			int width = img1.getWidth() + 10 + img2.getWidth(); 
-			int height = (img1.getHeight() > img2.getHeight() ? img1.getHeight():img2.getHeight()) + 20 + 20 ;
+			int width = img1.getWidth() + 40 + img2.getWidth(); 
+			int height = (img1.getHeight() > img2.getHeight() ? img1.getHeight():img2.getHeight()) + 100 ;
 			setSize(width , height );
+			setPreferredSize(getSize());
+			setMinimumSize(getSize());
+			setMaximumSize(getSize());
+			
+			
+			img1.setBackground(new Color(109,109,109));
+			img2.setBackground(new Color(109,109,109));
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			// TODO ERROR
 			e.printStackTrace();
 		}
-		movieBox.setBackground(new Color(209, 209, 209));
+		movieBox.setBackground(new Color(109, 109, 109));
+//		movieBox.setBackground(Color.BLUE);
 		
 		
 		Box centralBox = Box.createVerticalBox();

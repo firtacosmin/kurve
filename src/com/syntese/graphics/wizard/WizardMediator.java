@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 
 import com.syntese.graphics.wizard.dialog.WizardDialog;
 import com.syntese.graphics.wizard.pages.CamTypePage;
+import com.syntese.graphics.wizard.pages.DownstreamPage;
 
 /**
  * @author Cosmin
@@ -33,7 +34,8 @@ public class WizardMediator {
 	
 	
 	public void start(){
-		_theDialog.addMainPanel(new CamTypePage());
+//		_theDialog.addMainPanel(new CamTypePage());
+		_theDialog.addMainPanel(new DownstreamPage(DownstreamPage.ROLLER_CAMS));
 		_theDialog.setVisible(true);
 	}
 	

@@ -26,8 +26,8 @@ public class MainFrame extends JFrame {
  * 
  */
 private static final long serialVersionUID = -7500375602802826284L;
-private static final int WIDTH = 800;
-private static final int HEIGHT = 600;
+private static final int WIDTH = 1024;
+private static final int HEIGHT = 760;
 
 /*message expression names*/
 private static final String TITLE_EXPRESSION = "MainFremeTitle";

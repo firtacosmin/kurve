@@ -72,24 +72,42 @@
     </expression>
     
     <expression>
-        <name>DownstreamDlgTitle</name>
+      <name>Wizard_CamType_title</name>
+      <value>Selecting the desired type of the cam gear</value>
+    </expression>
+    <expression>
+      <name>Wizard_CamType_rollerLever</name>
+      <value>Cam gear with roller lever</value>
+    </expression>
+    <expression>
+      <name>Wizard_CamType_rollerCams</name>
+      <value>Cam gear with roller cams</value>
+    </expression>
+    <expression>
+      <name>Wizard_CamType_name</name>
+      <value>Please enter name of project</value>
+    </expression>
+    
+    
+    <expression>
+        <name>Wizard_Downstream_Title</name>
         <value>Downstream coupling gear</value>
     </expression>
     <expression>
-        <name>DownstreamDlgCat1</name>
+        <name>Wizard_Downstream_Lever_Cat1</name>
         <value>No downstream</value>
     </expression>
     <expression>
-        <name>DownstreamDlgCat2</name>
+        <name>Wizard_Downstream_Lever4_Cat2</name>
         <value>Crank</value>
     </expression>
     <expression>
-        <name>DownstreamDlgCat3</name>
+        <name>Wizard_Downstream_Lever4_Cat3</name>
         <value>Four joint</value>
     </expression>
     <expression>
-        <name>DownstreamDlgCat4</name>
-        <value>pusher tugs</value>
+        <name>Wizard_Downstream_Lever4_Cat4</name>
+        <value>Pusher tugs</value>
     </expression>
     <expression>
         <name>Wizard_Downstream_Cams_Cat1</name>
@@ -97,11 +115,53 @@
     </expression>
     <expression>
         <name>Wizard_Downstream_Cams_Cat2</name>
-        <value>double slide</value>
+        <value>Double slide</value>
     </expression>
     <expression>
         <name>Wizard_Downstream_Cams_Cat3</name>
         <value>Crank</value>
+    </expression>
+    
+
+	<expression>
+        <name>Wizard_CamProfile_Slide_Title</name>
+        <value>Type of cam profile for cam profile with roller slide</value>
+    </expression>
+    <expression>
+        <name>Wizard_CamProfile_Lever_Title</name>
+        <value>Type of cam profile for cam profile with roller lever</value>
+    </expression>
+    <expression>
+        <name>Wizard_CamProfile_Lever_Cat1</name>
+        <value>Outer cam profile</value>
+    </expression>
+    <expression>
+        <name>Wizard_CamProfile_Lever_Cat2</name>
+        <value>Double cam</value>
+    </expression>
+    <expression>
+        <name>Wizard_CamProfile_Lever_Cat3</name>
+        <value>Groove cam</value>
+    </expression>
+    <expression>
+        <name>Wizard_CamProfile_Lever_Cat4</name>
+        <value>Bead cam</value>
+    </expression>
+        <expression>
+        <name>Wizard_CamProfile_Slide_Cat1</name>
+        <value>Outer cam profile</value>
+    </expression>
+    <expression>
+        <name>Wizard_CamProfile_Slide_Cat2</name>
+        <value>Double cam</value>
+    </expression>
+    <expression>
+        <name>Wizard_CamProfile_Slide_Cat3</name>
+        <value>Groove cam</value>
+    </expression>
+    <expression>
+        <name>Wizard_CamProfile_Slide_Cat4</name>
+        <value>Bead cam</value>
     </expression>
     
     

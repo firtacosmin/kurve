@@ -15,6 +15,7 @@ import java.awt.TextField;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -29,16 +30,19 @@ import com.syntese.media.MediaPanel;
  * @author Cosmin
  * The page of the wizard where the cam type is selected
  */
-public class CamTypePage extends JPanel {
+public class CamTypePage extends JPanel implements WizardPage{
 	
 	/****************
 	 * PROPERTIES
 	 * *************/
 	
+	public static final int ROLLER_LEVER = 0;
+	public static final int ROLLER_SLIDE = 1;
+	
 	/*Texts*/
 	private static final String PANEL_TITLE_NAME = "Wizard_CamType_title";
 	private static final String NAME_TEXTFIELD_LABLE_TEXT_NAME = "Wizard_CamType_name";
-	private static final String ROLLER_LEVEL_CATEGORY_NAME = "Wizard_CamType_rollerLevel";
+	private static final String ROLLER_LEVER_CATEGORY_NAME = "Wizard_CamType_rollerLever";
 	private static final String ROLLER_CAMS_CATEGORY_NAME = "Wizard_CamType_rollerCams";
 	
 	
@@ -68,7 +72,25 @@ public class CamTypePage extends JPanel {
 		addUIComponents();
 		
 	}
+	
+	public int getSelectedType(){
+		return _camsRadio.getState()?ROLLER_SLIDE:ROLLER_LEVER;
+	}
+	
+	public String getImputName(){
+		return _nameTextField.getText();
+	}
 
+	@Override
+	public boolean areFieldsValid() {
+		return true;
+	}
+
+
+	@Override
+	public HashMap<String, String> getProperties() {
+		return null;
+	}
 
 	/*
 	 * PRIVATE
@@ -93,7 +115,7 @@ public class CamTypePage extends JPanel {
 		
 		_levelRadio = new Checkbox();
 		_levelRadio.setCheckboxGroup(_buttonGroup);
-		_levelRadio.setLabel(LanguageFactory.getInstance().getExpresion(ROLLER_LEVEL_CATEGORY_NAME));
+		_levelRadio.setLabel(LanguageFactory.getInstance().getExpresion(ROLLER_LEVER_CATEGORY_NAME));
 		
 		_nameTextField = new TextField();
 		
@@ -205,4 +227,6 @@ public class CamTypePage extends JPanel {
 		add(northernBox, BorderLayout.NORTH);
 		add(centralBox, BorderLayout.CENTER);
 	}
+
+
 }

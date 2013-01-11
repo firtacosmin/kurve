@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.Checkbox;
 import java.awt.CheckboxGroup;
 import java.awt.Dimension;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -16,8 +15,11 @@ import javax.swing.JPanel;
 import com.syntese.language.LanguageFactory;
 import com.syntese.media.ImagePanel;
 
-public class DownstreamPage extends JPanel{
+public class CamProfilePage extends JPanel{
 
+	/****************
+	 * PROPERTIES
+	 * *************/
 	private static int TOTAL_INSTANTES = 0;
 	
 	/****************
@@ -25,43 +27,35 @@ public class DownstreamPage extends JPanel{
 	 * *************/
 	
 	/*texts*/
-	private static final String PANEL_TITLE_NAME = "Wizard_Downstream_Title";
-	private static final String LEVER_CAT1_NAME = "Wizard_Downstream_Lever_Cat1";
-	private static final String LEVER_CAT2_NAME = "Wizard_Downstream_Lever_Cat2";
-	private static final String LEVER_CAT3_NAME = "Wizard_Downstream_Lever_Cat3";
-	private static final String LEVER_CAT4_NAME = "Wizard_Downstream_Lever_Cat4";
-
-	private static final String CAMS_CAT1_NAME = "Wizard_Downstream_Cams_Cat1";
-	private static final String CAMS_CAT2_NAME = "Wizard_Downstream_Cams_Cat2";
-	private static final String CAMS_CAT3_NAME = "Wizard_Downstream_Cams_Cat3";
+	private static final String SLIDE_PANEL_TITLE_NAME = "Wizard_CamProfile_Slide_Title";
+	private static final String LEVER_PANEL_TITLE_NAME = "Wizard_CamProfile_Lever_Title";
+	private static final String LEVER_CAT1_NAME = "Wizard_CamProfile_Lever_Cat1";
+	private static final String LEVER_CAT2_NAME = "Wizard_CamProfile_Lever_Cat2";
+	private static final String LEVER_CAT3_NAME = "Wizard_CamProfile_Lever_Cat3";
+	private static final String LEVER_CAT4_NAME = "Wizard_CamProfile_Lever_Cat4";
 	
-	
+	private static final String SLIDE_CAT1_NAME = "Wizard_CamProfile_Slide_Cat1";
+	private static final String SLIDE_CAT2_NAME = "Wizard_CamProfile_Slide_Cat2";
+	private static final String SLIDE_CAT3_NAME = "Wizard_CamProfile_Slide_Cat3";
+	private static final String SLIDE_CAT4_NAME = "Wizard_CamProfile_Slide_Cat4";
 	/*UI Components*/
-	private Checkbox _camCat1Chk;
-	private Checkbox _camCat2Chk;
-	private Checkbox _camCat3Chk;
-
 	private Checkbox _levelCat1Chk;
 	private Checkbox _levelCat2Chk;
 	private Checkbox _levelCat3Chk;
 	private Checkbox _levelCat4Chk;
+	
+	private Checkbox _slideCat1Chk;
+	private Checkbox _slideCat2Chk;
+	private Checkbox _slideCat3Chk;
+	private Checkbox _slideCat4Chk;
 	private CheckboxGroup _chkGroup;
 	
 	private ImagePanel _CatImg;
-//	private ImagePanel _levelCat2Img;
-//	private ImagePanel _levelCat3Img;
-//	private ImagePanel _levelCat4Img;
-
-//	private ImagePanel _camCatImg;
-//	private ImagePanel _camCat2Img;
-//	private ImagePanel _camCat3Img;
-		
 	/*selected cam type*/
 	private int _selectedCamType;
 	
 	
 	private int _instanceNo;
-	
 	/****************
 	 * METHODS
 	 * *************/
@@ -69,33 +63,23 @@ public class DownstreamPage extends JPanel{
 	/*
 	 * PUBLIC
 	 * */
-	
-	
-	/**
-	 * Name: DownstreamPage
-	 * Args: 
-	 */
-	public DownstreamPage(int selCamType) {
-		super();
+	public CamProfilePage(int selCamType){
+		super();		
 		TOTAL_INSTANTES++;
 		_instanceNo = TOTAL_INSTANTES;
 		_selectedCamType = selCamType;
 		createUIComponents();
 		addUIComponents();
+		
 	}
 	
 	public int getInstanceNo(){
 		return _instanceNo;
 	}
 	
-//	public boolean equals(Object p){
-//		return ((DownstreamPage)p).getInstanceNo() == _instanceNo;
-//	}
-
 	/*
 	 * PRIVATE
 	 * */
-
 	/**
 	 * Name: createUIComponents
 	 * Args: 
@@ -123,25 +107,29 @@ public class DownstreamPage extends JPanel{
 		_levelCat4Chk.setCheckboxGroup(_chkGroup);
 		_levelCat4Chk.setLabel(LanguageFactory.getInstance().getExpresion(LEVER_CAT4_NAME));
 		
-		_camCat1Chk = new Checkbox();
-		_camCat1Chk.setCheckboxGroup(_chkGroup);
-		_camCat1Chk.setLabel(LanguageFactory.getInstance().getExpresion(CAMS_CAT1_NAME));
+		_slideCat1Chk = new Checkbox();
+		_slideCat1Chk.setCheckboxGroup(_chkGroup);
+		_slideCat1Chk.setLabel(LanguageFactory.getInstance().getExpresion(SLIDE_CAT1_NAME));
 
-		_camCat2Chk = new Checkbox();
-		_camCat2Chk.setCheckboxGroup(_chkGroup);
-		_camCat2Chk.setLabel(LanguageFactory.getInstance().getExpresion(CAMS_CAT2_NAME));
+		_slideCat2Chk = new Checkbox();
+		_slideCat2Chk.setCheckboxGroup(_chkGroup);
+		_slideCat2Chk.setLabel(LanguageFactory.getInstance().getExpresion(SLIDE_CAT2_NAME));
 
-		_camCat3Chk = new Checkbox();
-		_camCat3Chk.setCheckboxGroup(_chkGroup);
-		_camCat3Chk.setLabel(LanguageFactory.getInstance().getExpresion(CAMS_CAT3_NAME));		
+		_slideCat3Chk = new Checkbox();
+		_slideCat3Chk.setCheckboxGroup(_chkGroup);
+		_slideCat3Chk.setLabel(LanguageFactory.getInstance().getExpresion(SLIDE_CAT3_NAME));
+		
+		_slideCat4Chk = new Checkbox();
+		_slideCat4Chk.setCheckboxGroup(_chkGroup);
+		_slideCat4Chk.setLabel(LanguageFactory.getInstance().getExpresion(SLIDE_CAT4_NAME));	
 
 		/*creating the images*/
 		URL imgUrl = null;
 		try {
 			if ( _selectedCamType == CamTypePage.ROLLER_SLIDE ){
-				imgUrl = new URL("file:Media\\CamsUpstreamImg.JPG");
+				imgUrl = new URL("file:Media\\camProfile_rollerSlide.JPG");
 			}else if( _selectedCamType == CamTypePage.ROLLER_LEVER ){
-				imgUrl = new URL("file:Media\\LeverUpstreamImg.JPG");
+				imgUrl = new URL("file:Media\\camProfile_rollerLever.JPG");
 			}
 		} catch (MalformedURLException e) {
 			// TODO ERROR
@@ -163,14 +151,17 @@ public class DownstreamPage extends JPanel{
 	 */
 	private void addUIComponents() {
 		
-		setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(),
-				  LanguageFactory.getInstance().getExpresion(PANEL_TITLE_NAME)));
+
 		setLayout(new BorderLayout());
 		
 		if ( _selectedCamType == CamTypePage.ROLLER_SLIDE ){
-			addCamsUI();
+			addCamsUI();		
+			setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(),
+					  LanguageFactory.getInstance().getExpresion(SLIDE_PANEL_TITLE_NAME)));
 		}else if( _selectedCamType == CamTypePage.ROLLER_LEVER ){
-			addLeverUI();
+			addLeverUI();		
+			setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(),
+					  LanguageFactory.getInstance().getExpresion(LEVER_PANEL_TITLE_NAME)));
 		}
 		
 		add(_CatImg, BorderLayout.SOUTH);
@@ -208,10 +199,11 @@ public class DownstreamPage extends JPanel{
 	 */
 	private void addCamsUI() {
 		JPanel p = new JPanel();
-		p.setLayout(new GridLayout(1,3));
-		p.add(_camCat1Chk);
-		p.add(_camCat2Chk);
-		p.add(_camCat3Chk);
+		p.setLayout(new GridLayout(1,4));
+		p.add(_slideCat1Chk);
+		p.add(_slideCat2Chk);
+		p.add(_slideCat3Chk);
+		p.add(_slideCat4Chk);
 		add(p, BorderLayout.NORTH);
 	}
 }

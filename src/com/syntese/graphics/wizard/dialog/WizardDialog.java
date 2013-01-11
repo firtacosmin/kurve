@@ -2,6 +2,7 @@ package com.syntese.graphics.wizard.dialog;
 
 import java.awt.BorderLayout;
 import java.awt.Button;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Panel;
 import java.awt.Toolkit;
@@ -46,6 +47,8 @@ public class WizardDialog extends JDialog {
 	private Panel _southernPanel;
 	private Box _southernBox;
 	
+	private Component _mainPanel;
+	
 	/*action listener*/
 	private WizardDialogActionListener _theActionListener = null;
 	
@@ -81,7 +84,15 @@ public class WizardDialog extends JDialog {
 	 */
 	public void addMainPanel(Panel p){
 		setSize(new Dimension(p.getWidth() + 60, p.getHeight() + SOUTHERNBOX_HEIGHT));
+		Dimension d = new Dimension(p.getWidth() + 60, p.getHeight() + SOUTHERNBOX_HEIGHT + 70);
+		setSize(d);
+		setPreferredSize(getSize());
+//		setMinimumSize(getSize());
+		setMaximumSize(getSize());
+		_centerPanel.remove(_mainPanel);
 		_centerPanel.add(p);
+		_mainPanel = p;
+		_centerPanel.repaint();
 	}
 	
 	/**
@@ -91,12 +102,15 @@ public class WizardDialog extends JDialog {
 	 * Desc: Adds the passed panel to the panel in the center
 	 */
 	public void addMainPanel(JPanel p){
-		Dimension d =new Dimension(p.getWidth() + 60, p.getHeight() + SOUTHERNBOX_HEIGHT + 70);
+		Dimension d = new Dimension(p.getWidth() + 60, p.getHeight() + SOUTHERNBOX_HEIGHT + 70);
 		setSize(d);
 		setPreferredSize(getSize());
-		setMinimumSize(getSize());
+//		setMinimumSize(getSize());
 		setMaximumSize(getSize());
+		_centerPanel.remove(_mainPanel);
 		_centerPanel.add(p);
+		_mainPanel = p;
+		_centerPanel.repaint();
 	}
 	
 	/**
@@ -172,6 +186,11 @@ public class WizardDialog extends JDialog {
 		_southernBox = Box.createHorizontalBox();
 		_southernBox.setPreferredSize(new Dimension(SOUTHERNBOX_WIDTH, SOUTHERNBOX_HEIGHT));
 		_southernBox.setMaximumSize(_southernBox.getPreferredSize());
+		
+		
+		
+		/*create a fake main panel*/
+		_mainPanel = new Panel();
 	}
 
 	/**

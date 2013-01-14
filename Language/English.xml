@@ -144,6 +144,29 @@
         <name>Wizard_CamProfile_Slide_Cat4</name>
         <value>Bead cam</value>
     </expression>
+	
+	
+    <expression>
+        <name>Wizard_GeomData_LengthTitle</name>
+        <value>Length details</value>
+    </expression>
+    <expression>
+        <name>Wizard_GeomData_AngleTitle</name>
+        <value>Angle details</value>
+    </expression>
+    <expression>
+        <name>Wizard_GeomData_WaveRad_Label</name>
+        <value>Wave radius</value>
+    </expression>
+    <expression>
+        <name>Wizard_GeomData_SeibenRad_Label</name>
+        <value>Seiben Radius</value>
+    </expression>
+    <expression>
+        <name>Wizard_GeomData_DrawingBtn</name>
+        <value>Drawing</value>
+    </expression>
+	
     
     <expression>
         <name>WizardDlgTitle</name>

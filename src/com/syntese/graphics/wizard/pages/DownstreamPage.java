@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.Checkbox;
 import java.awt.CheckboxGroup;
 import java.awt.Dimension;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -23,6 +22,16 @@ public class DownstreamPage extends JPanel{
 	/****************
 	 * PROPERTIES
 	 * *************/
+	
+	/*CONSTANT PROPARTIES VALUES*/
+	public static final int NO_SELECTIONS = 0;
+	public static final int LEVER_NO_DOWNSTREAM = 1;
+	public static final int LEVER_CRANK = 2;
+	public static final int LEVER_FOUR_JOIN = 3;
+	public static final int LEVER_PUSHER_TUGS = 4;
+	public static final int CAMS_NO_DOWNSTREAM = 5;
+	public static final int CAMS_DOUBLE_SLIDE = 6;
+	public static final int CAMS_CRANK = 7;
 	
 	/*texts*/
 	private static final String PANEL_TITLE_NAME = "Wizard_Downstream_Title";
@@ -86,6 +95,32 @@ public class DownstreamPage extends JPanel{
 	
 	public int getInstanceNo(){
 		return _instanceNo;
+	}
+	
+	/**
+	 * Name: getSelectedCategory
+	 * Args: @return
+	 * Return: int
+	 * Desc: returns the selected category code
+	 */
+	public int getSelectedCategory(){
+		if ( _camCat1Chk.getState() ){
+			return CAMS_NO_DOWNSTREAM;
+		}else if ( _camCat2Chk.getState() ){
+			return CAMS_DOUBLE_SLIDE;
+		}else if ( _camCat3Chk.getState() ){
+			return CAMS_CRANK;
+		}else if ( _levelCat1Chk.getState() ){
+			return LEVER_NO_DOWNSTREAM;
+		}else if ( _levelCat2Chk.getState() ){
+			return LEVER_CRANK;
+		}else if ( _levelCat3Chk.getState() ){
+			return LEVER_FOUR_JOIN;
+		}else if ( _levelCat4Chk.getState() ){
+			return LEVER_PUSHER_TUGS;
+		}else {
+			return NO_SELECTIONS;
+		}
 	}
 	
 //	public boolean equals(Object p){

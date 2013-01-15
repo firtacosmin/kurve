@@ -1,7 +1,12 @@
 package com.syntese.graphics.wizard.pages;
 
 import java.awt.Image;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -45,6 +50,44 @@ public class GeometryDataPage extends JPanel {
 	private JTextField _waveRad;
 	private Image _helpingImg;
 	
+//	private ArrayList<JTextField> _lever_noDownstream_outerProfile;
+//	private ArrayList<JTextField> _lever_noDownstream_double;
+//	private ArrayList<JTextField> _lever_noDownstream_groove;
+//	private ArrayList<JTextField> _lever_noDownstream_bead;
+//	private ArrayList<JTextField> _lever_crank_outerProfile;
+//	private ArrayList<JTextField> _lever_crank_double;
+//	private ArrayList<JTextField> _lever_crank_groove;
+//	private ArrayList<JTextField> _lever_crank_bead;
+//	private ArrayList<JTextField> _lever_fourJoint_outerProfile;
+//	private ArrayList<JTextField> _lever_fourJoint_double;
+//	private ArrayList<JTextField> _lever_fourJoint_groove;
+//	private ArrayList<JTextField> _lever_fourJoint_bead;
+//	private ArrayList<JTextField> _lever_pusher_outerProfile;
+//	private ArrayList<JTextField> _lever_pusher_double;
+//	private ArrayList<JTextField> _lever_pusher_groove;
+//	private ArrayList<JTextField> _lever_pusher_bead;
+//
+//	private ArrayList<JTextField> _slider_noDownstream_outerProfile;
+//	private ArrayList<JTextField> _slider_noDownstream_double;
+//	private ArrayList<JTextField> _slider_noDownstream_groove;
+//	private ArrayList<JTextField> _slider_noDownstream_bead;
+//	private ArrayList<JTextField> _slider_doubleSlide_outerProfile;
+//	private ArrayList<JTextField> _slider_doubleSlide_double;
+//	private ArrayList<JTextField> _slider_doubleSlide_groove;
+//	private ArrayList<JTextField> _slider_doubleSlide_bead;
+//	private ArrayList<JTextField> _slider_crank_outerProfile;
+//	private ArrayList<JTextField> _slider_crank_double;
+//	private ArrayList<JTextField> _slider_crank_groove;
+//	private ArrayList<JTextField> _slider_crank_bead;
+	
+	private ArrayList<JTextField> _theLengthUserFields;
+	private ArrayList<JTextField> _theAngleUserFields;
+	
+	/*prevously selected oprions*/
+	private int _camType;
+	private int _camProfile;
+	private int _downStream;
+	
 	/****************
 	 * METHODS
 	 * *************/
@@ -53,8 +96,13 @@ public class GeometryDataPage extends JPanel {
 	 * PUBLIC
 	 * */
 	
-	public GeometryDataPage(){
+	public GeometryDataPage(int camType, int camProfile, int downStream){
 		super();
+		
+		_camType = camType;
+		_camProfile = camProfile;
+		_downStream = downStream;
+		
 		initializeGUIComponents();
 		addGUIComponents();
 	}
@@ -90,9 +138,178 @@ public class GeometryDataPage extends JPanel {
 		_siebenRad = new JTextField("siebenRad (mm)");
 		_waveRad = new JTextField("waveRad (mm)");
 
+		_theAngleUserFields = new ArrayList<JTextField>();
+		_theLengthUserFields = new ArrayList<JTextField>();
+		
+		/*determine the used fields based on the previous selections*/
+		selectFieldsToDisplay();
 		
 	}
 	
+
+	/**
+	 * Name: selectFieldsToDisplay
+	 * Args: 
+	 * Return: void
+	 * Desc: determine the used fields based on the previous selections
+	 */
+	private void selectFieldsToDisplay() {
+		switch( _camType ){
+		case CamTypePage.ROLLER_LEVER:
+			switch(_downStream){
+			case DownstreamPage.LEVER_NO_DOWNSTREAM:
+				switch( _camProfile ){
+				case CamProfilePage.LEVER_OUTER_CAM :
+
+					try {
+						_helpingImg = ImageIO.read(new URL("file:Media\\11osc. simpla.bmp"));
+					} catch (IOException e) {
+						// TODO ERROR
+						e.printStackTrace();
+					}
+					break;
+					
+				case CamProfilePage.LEVER_GROOVE_CAM :
+					_theLengthUserFields.add(_X_A0);
+					_theLengthUserFields.add(_Y_A0);
+					_theLengthUserFields.add(_ro_min);
+					_theLengthUserFields.add(_L3);
+					_theLengthUserFields.add(_rR);
+					_theLengthUserFields.add(_rG);
+					
+					_theAngleUserFields.add(_miu_ab_min);
+					_theAngleUserFields.add(_miu_an_min);
+					_theAngleUserFields.add(_n);
+
+					try {
+						_helpingImg = ImageIO.read(new URL("file:Media\\13osc. cama cu canal.bmp"));
+					} catch (IOException e) {
+						// TODO ERROR
+						e.printStackTrace();
+					}
+
+				case CamProfilePage.LEVER_BEAD_CAM:
+					_theAngleUserFields.add(_gama);
+					try {
+						_helpingImg = ImageIO.read(new URL("file:Media\\14osc. cama cu nervuri.bmp"));
+					} catch (IOException e) {
+						// TODO ERROR
+						e.printStackTrace();
+					}
+					
+				case CamProfilePage.LEVER_DOUBLE_CAM:
+					_theLengthUserFields.add(_L31);
+					
+					try {
+						_helpingImg = ImageIO.read(new URL("file:Media\\12osc. cama dubla.bmp"));
+					} catch (IOException e) {
+						// TODO ERROR
+						e.printStackTrace();
+					}
+					break;
+				default:
+					/*TODO: Error*/
+				}
+				break;
+			case DownstreamPage.LEVER_CRANK:
+				switch( _camProfile ){
+				case CamProfilePage.LEVER_OUTER_CAM:
+					break;
+				case CamProfilePage.LEVER_DOUBLE_CAM:
+					break;
+				case CamProfilePage.LEVER_GROOVE_CAM:
+					break;
+				case CamProfilePage.LEVER_BEAD_CAM:
+					break;
+				default:
+					/*TODO: Error*/
+				}
+				break;
+			case DownstreamPage.LEVER_FOUR_JOIN:
+				switch( _camProfile ){
+				case CamProfilePage.LEVER_OUTER_CAM:
+					break;
+				case CamProfilePage.LEVER_DOUBLE_CAM:
+					break;
+				case CamProfilePage.LEVER_GROOVE_CAM:
+					break;
+				case CamProfilePage.LEVER_BEAD_CAM:
+					break;
+				default:
+					/*TODO: Error*/
+				}
+				break;
+			case DownstreamPage.LEVER_PUSHER_TUGS:
+				switch( _camProfile ){
+				case CamProfilePage.LEVER_OUTER_CAM:
+					break;
+				case CamProfilePage.LEVER_DOUBLE_CAM:
+					break;
+				case CamProfilePage.LEVER_GROOVE_CAM:
+					break;
+				case CamProfilePage.LEVER_BEAD_CAM:
+					break;
+				default:
+					/*TODO: Error*/
+				}
+				break;
+			default:
+				_theLengthUserFields = null;
+				/*TODO: Error*/
+			}
+			break;
+		case CamTypePage.ROLLER_SLIDE:
+			switch(_downStream){
+			case DownstreamPage.CAMS_NO_DOWNSTREAM:
+				switch( _camProfile ){
+				case CamProfilePage.SLIDER_OUTER_CAM:
+					break;
+				case CamProfilePage.SLIDER_DOUBLE_CAM:
+					break;
+				case CamProfilePage.SLIDER_GROOVE_CAM:
+					break;
+				case CamProfilePage.SLIDER_BEAD_CAM:
+					break;
+				default:
+					/*TODO: Error*/
+				}
+				break;
+			case DownstreamPage.CAMS_DOUBLE_SLIDE:
+				switch( _camProfile ){
+				case CamProfilePage.SLIDER_OUTER_CAM:
+					break;
+				case CamProfilePage.SLIDER_DOUBLE_CAM:
+					break;
+				case CamProfilePage.SLIDER_GROOVE_CAM:
+					break;
+				case CamProfilePage.SLIDER_BEAD_CAM:
+					break;
+				default:
+					/*TODO: Error*/
+				}
+				break;
+			case DownstreamPage.CAMS_CRANK:
+				switch( _camProfile ){
+				case CamProfilePage.SLIDER_OUTER_CAM:
+					break;
+				case CamProfilePage.SLIDER_DOUBLE_CAM:
+					break;
+				case CamProfilePage.SLIDER_GROOVE_CAM:
+					break;
+				case CamProfilePage.SLIDER_BEAD_CAM:
+					break;
+				default:
+					/*TODO: Error*/
+				}
+				break;
+			default:
+				/*TODO: Error*/
+			}
+			break;
+		default:
+			/*TODO: Error*/
+		}
+	}
 
 	private void addGUIComponents() {
 		

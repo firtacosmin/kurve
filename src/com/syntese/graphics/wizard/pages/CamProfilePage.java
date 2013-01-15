@@ -25,6 +25,17 @@ public class CamProfilePage extends JPanel{
 	/****************
 	 * PROPERTIES
 	 * *************/
+
+	/*CONSTANT PROPARTIES VALUES*/
+	public static final int NO_SELECTION = 0;
+	public static final int LEVER_OUTER_CAM = 1;
+	public static final int LEVER_DOUBLE_CAM = 2;
+	public static final int LEVER_GROOVE_CAM = 3;
+	public static final int LEVER_BEAD_CAM = 4;
+	public static final int SLIDER_OUTER_CAM = 5;
+	public static final int SLIDER_DOUBLE_CAM = 6;
+	public static final int SLIDER_GROOVE_CAM = 7;
+	public static final int SLIDER_BEAD_CAM= 8;
 	
 	/*texts*/
 	private static final String SLIDE_PANEL_TITLE_NAME = "Wizard_CamProfile_Slide_Title";
@@ -75,6 +86,35 @@ public class CamProfilePage extends JPanel{
 	
 	public int getInstanceNo(){
 		return _instanceNo;
+	}
+	
+	
+	/**
+	 * Name: getSelection
+	 * Args: @return
+	 * Return: int
+	 * Desc: returns the selected cam profile
+	 */
+	public int getSelection(){
+		if ( _levelCat1Chk.getState() ){
+			return LEVER_OUTER_CAM;
+		}else if ( _levelCat2Chk.getState() ){
+			return LEVER_DOUBLE_CAM;
+		}else  if ( _levelCat3Chk.getState() ){
+			return LEVER_GROOVE_CAM;
+		}else  if ( _levelCat4Chk.getState() ){
+			return LEVER_BEAD_CAM;
+		}else if ( _slideCat1Chk.getState() ){
+			return SLIDER_OUTER_CAM;
+		}else  if ( _slideCat1Chk.getState() ){
+			return SLIDER_DOUBLE_CAM;
+		}else  if ( _slideCat1Chk.getState() ){
+			return SLIDER_GROOVE_CAM;
+		}else  if ( _slideCat1Chk.getState() ){
+			return SLIDER_BEAD_CAM;
+		}else {
+			return NO_SELECTION;
+		}
 	}
 	
 	/*

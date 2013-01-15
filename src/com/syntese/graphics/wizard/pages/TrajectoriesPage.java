@@ -32,7 +32,7 @@ public class TrajectoriesPage extends JPanel {
 	private JTextField _sumPhi;
 	private JTextField _sumMmPsi;
 	
-	private int _maxMotionSegments;
+	private int _maxMotionSegments; 
 	
 	
 	/****************

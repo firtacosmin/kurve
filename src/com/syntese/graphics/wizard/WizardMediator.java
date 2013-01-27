@@ -1,5 +1,6 @@
 package com.syntese.graphics.wizard;
 
+import java.awt.BorderLayout;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -10,6 +11,7 @@ import com.syntese.graphics.wizard.dialog.WizardDialogActionListener;
 import com.syntese.graphics.wizard.pages.CamProfilePage;
 import com.syntese.graphics.wizard.pages.CamTypePage;
 import com.syntese.graphics.wizard.pages.DownstreamPage;
+import com.syntese.graphics.wizard.pages.LastPageTab;
 import com.syntese.graphics.wizard.pages.WizardPage;
 
 /**
@@ -33,6 +35,8 @@ public class WizardMediator implements WizardDialogActionListener{
 	private JPanel _currentPage;
 	/*teh configured type of cams*/
 	private int _camType;
+	private int _camProfile;
+	private int _camDownstream;
 	
 	private int _currentState;
 	/**************
@@ -113,12 +117,20 @@ public class WizardMediator implements WizardDialogActionListener{
 			_theDialog.repaint();
 			break;
 		case 1:
+			_camDownstream = ((DownstreamPage)_currentPage).getSelectedCategory();
 			_currentState++;
 			_currentPage = new CamProfilePage(_camType);
 			_theDialog.addMainPanel(_currentPage);
 			_theDialog.repaint();
 			break;
 
+		case 2:
+			_camProfile = ((CamProfilePage)_currentPage).getSelection();
+			_currentState++;
+			_currentPage = new LastPageTab(_camType, _camProfile, _camDownstream);
+			_theDialog.addMainPanel(_currentPage);
+			_theDialog.repaint();
+			break;
 		default:
 			break;
 		}		

@@ -1,14 +1,23 @@
 package com.syntese.graphics.wizard.pages;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.Image;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
+import javax.swing.Box;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import com.syntese.language.Language;
+import com.syntese.language.LanguageFactory;
 
 public class GeometryDataPage extends JPanel {
 
@@ -158,6 +167,7 @@ public class GeometryDataPage extends JPanel {
 	private void selectFieldsToDisplay() {
 		switch( _camType ){
 		case CamTypePage.ROLLER_LEVER:
+			printRollerLever_Options();
 			break;
 		case CamTypePage.ROLLER_SLIDE:
 			printRollerSlide_Options();
@@ -529,6 +539,54 @@ public class GeometryDataPage extends JPanel {
 	 */
 	private void addGUIComponents() {
 		
+		/*length panel*/
+		JPanel lengthPanel = new JPanel();
+		lengthPanel.setLayout(new GridLayout( _theLengthUserFields.size()/2, 2, 60,5) );
+		lengthPanel.setBackground(Color.red);
+		for ( int i=0; i < _theLengthUserFields.size(); i++ ){
+			JPanel innerPan = new JPanel();
+			innerPan.add(new JLabel(_theLengthUserFields.get(i).getText()));
+			_theLengthUserFields.get(i).setText("");
+			_theLengthUserFields.get(i).setPreferredSize(new Dimension(50,20));
+			innerPan.add(_theLengthUserFields.get(i));
+			lengthPanel.add(innerPan);
+		}
+		
+		/*angle panel*/
+		JPanel anglePanel = new JPanel();
+		anglePanel.setLayout(new GridLayout(_theAngleUserFields.size(), 1, 30,20));
+		anglePanel.setBackground(Color.blue);
+		for ( int i=0; i < _theAngleUserFields.size(); i++ ){
+			JPanel innerPan = new JPanel();
+			innerPan.add(new JLabel(_theAngleUserFields.get(i).getText()));
+			_theAngleUserFields.get(i).setText("");
+			_theAngleUserFields.get(i).setPreferredSize(new Dimension(50,20));
+			innerPan.add(_theAngleUserFields.get(i));
+			anglePanel.add(innerPan);
+		}
+		
+		/*Title label for the length panel*/
+		JLabel lengthPanelTitle = new JLabel(LanguageFactory.getInstance().getExpresion(LENGTH_TITLE_NAME));
+		/*Title label for the angle panel*/
+		JLabel anglePanelTitle = new JLabel(LanguageFactory.getInstance().getExpresion(ANGLE_TITLE_NAME));
+		
+		/*Wave radius textbox label*/
+		JLabel waveRadius = new JLabel(LanguageFactory.getInstance().getExpresion(WAVE_RADIUS_LABEL_NAME));
+		/*Seiben (???) radius textbox label*/
+		JLabel seibenRadius = new JLabel(LanguageFactory.getInstance().getExpresion(SEIBEN_RADIUS_LABEL_NAME));
+		
+		
+		
+		/*adding the two panels to the layout*/
+		JPanel mainPan = new JPanel();
+		mainPan.add(lengthPanel);
+		mainPan.add(anglePanel);
+		
+		setLayout(new BorderLayout());
+		add(mainPan, BorderLayout.CENTER);
+		setPreferredSize(new Dimension(800, 400));
+		setSize(getPreferredSize());
+
 	}
 	
 }

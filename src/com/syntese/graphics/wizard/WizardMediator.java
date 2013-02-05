@@ -110,9 +110,15 @@ public class WizardMediator implements WizardDialogActionListener{
 	private void goToNextPage() {
 		switch (_currentState) {
 		case 0:
-			_camType = ((CamTypePage)_currentPage).getSelectedType();
-			_currentState++;
-			_currentPage = new DownstreamPage(_camType);
+//			_camType = ((CamTypePage)_currentPage).getSelectedType();
+//			_currentState++;
+//			_currentPage = new DownstreamPage(_camType);
+//			_theDialog.addMainPanel(_currentPage);
+//			_theDialog.repaint();
+
+			//_camProfile = ((CamProfilePage)_currentPage).getSelection();
+			_currentState = 3;
+			_currentPage = new LastPageTab(0,1,1);
 			_theDialog.addMainPanel(_currentPage);
 			_theDialog.repaint();
 			break;

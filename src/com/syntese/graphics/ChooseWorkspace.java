@@ -8,7 +8,6 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -24,7 +23,9 @@ import javax.swing.JPanel;
 
 
 public class ChooseWorkspace {
-
+	
+  private static final String chooseWorkspaceLabelTextValue = "Please choose your workspace";
+	
   private JFrame frame;
   private JComboBox workspaceComboBox;
   private JLabel chooseWorkspaceLabel;
@@ -32,7 +33,7 @@ public class ChooseWorkspace {
   private JButton btnOk;
   private JButton clearWorkspaceHsitoryButton;
   ArrayList<String> workspaceSavedList;
-
+  
   public static void main(String[] args) {  
 
 	  EventQueue.invokeLater(
@@ -63,48 +64,6 @@ public class ChooseWorkspace {
     addActionListeners();
   }
   
-  private void readWorkspaceList(){
-	  
-	  String pathToWorkSpaceListFile= System.getProperty("user.dir");
-	  pathToWorkSpaceListFile = pathToWorkSpaceListFile.concat("WorkspaceList.txt");
-	  
-	  File workSpaceFile = new File(pathToWorkSpaceListFile);
-	
-	  if(!workSpaceFile.exists()) {
-		  try {
-			workSpaceFile.createNewFile();
-		} catch (IOException e) {
-		
-			e.printStackTrace();
-		}
-	  } 
-	  
-	  BufferedReader in = null;
-	  ArrayList<String> myList = new ArrayList<String>();
-	  try {   
-	      in = new BufferedReader(new FileReader(pathToWorkSpaceListFile));
-	      String str;
-	      
-	      while ((str = in.readLine()) != null) {
-	          myList.add(str);
-	      }
-	  } catch (FileNotFoundException e) {
-	      e.printStackTrace();
-	  } catch (IOException e) {
-	      e.printStackTrace();
-	  } finally {
-	      if (in != null) {
-	          try {
-				in.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-	      }
-	  }
-	  
-	  workspaceSavedList = myList;
-  }
-  
   private void makeFramesAndCustomize(){
 	  	frame = new JFrame();
 	    frame.setBounds(100, 100, 750, 250);
@@ -118,7 +77,7 @@ public class ChooseWorkspace {
 	    frame.getContentPane().add(whitePanel);
 	    
 	    //    
-	    chooseWorkspaceLabel = new JLabel("Please choose your workspace");
+	    chooseWorkspaceLabel = new JLabel(chooseWorkspaceLabelTextValue);
 	    chooseWorkspaceLabel.setBounds(10, 15, 600, 21);
 	    whitePanel.add(chooseWorkspaceLabel);
 	    
@@ -187,20 +146,55 @@ public class ChooseWorkspace {
 	    	public void actionPerformed(ActionEvent e) {
 	    		workspaceComboBox.removeAllItems();
 	    		
-	    		String pathToWorkSpaceListFile= System.getProperty("user.dir");
-	    		pathToWorkSpaceListFile = pathToWorkSpaceListFile.concat("WorkspaceList.txt");
-	    		File workSpaceFile = new File(pathToWorkSpaceListFile);
+	    		File workSpaceFile = new File(pathToWorkSpaceListFile());
 	    		workSpaceFile.delete();
 	      }
 	    });
 	    
   }
+
+  private void readWorkspaceList(){
+	  
+	  File workSpaceFile = new File(pathToWorkSpaceListFile());
+	
+	  if(!workSpaceFile.exists()) {
+		  try {
+			workSpaceFile.createNewFile();
+		} catch (IOException e) {
+		
+			e.printStackTrace();
+		}
+	  } 
+	  
+	  BufferedReader in = null;
+	  ArrayList<String> myList = new ArrayList<String>();
+	  try {   
+	      in = new BufferedReader(new FileReader(pathToWorkSpaceListFile()));
+	      String str;
+	      
+	      while ((str = in.readLine()) != null) {
+	          myList.add(str);
+	      }
+	  } catch (FileNotFoundException e) {
+	      e.printStackTrace();
+	  } catch (IOException e) {
+	      e.printStackTrace();
+	  } finally {
+	      if (in != null) {
+	          try {
+				in.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+	      }
+	  }
+	  
+	  workspaceSavedList = myList;
+  }
   
   private void addWorkspaceToWorkpsaceList(String pathSelected){
-	  String pathToWorkSpaceListFile= System.getProperty("user.dir");
-	  pathToWorkSpaceListFile = pathToWorkSpaceListFile.concat("WorkspaceList.txt");
 	
-	  File workSpaceFile = new File(pathToWorkSpaceListFile);
+	  File workSpaceFile = new File(pathToWorkSpaceListFile());
 	  if(!workSpaceFile.exists()) {
 		  try {
 			workSpaceFile.createNewFile();
@@ -211,7 +205,7 @@ public class ChooseWorkspace {
 	  } 
 	  
 	  try {
-		  	FileWriter fW = new FileWriter(pathToWorkSpaceListFile, true);
+		  	FileWriter fW = new FileWriter(pathToWorkSpaceListFile(), true);
 		  	BufferedWriter bW = new BufferedWriter(fW);
 		    PrintWriter out = new PrintWriter(bW);
 		    out.println(pathSelected);
@@ -219,7 +213,12 @@ public class ChooseWorkspace {
 		} catch (IOException e) {
 
 		}
-	  
   }
-	  
+  
+  private String pathToWorkSpaceListFile(){
+	  String pathToWorkSpaceListFile= System.getProperty("user.dir");
+	  pathToWorkSpaceListFile = pathToWorkSpaceListFile.concat("WorkspaceList.txt");
+	  return pathToWorkSpaceListFile;
+  }
+  
 }

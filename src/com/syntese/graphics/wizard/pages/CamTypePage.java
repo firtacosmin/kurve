@@ -36,8 +36,8 @@ public class CamTypePage extends JPanel implements WizardPage{
 	 * PROPERTIES
 	 * *************/
 	
-	public static final int ROLLER_LEVER = 0;
-	public static final int ROLLER_SLIDE = 1;
+	public static final int ROLLER_LEVER = 1;
+	public static final int ROLLER_SLIDE = 2;
 	
 	/*Texts*/
 	private static final String PANEL_TITLE_NAME = "Wizard_CamType_title";
@@ -195,9 +195,9 @@ public class CamTypePage extends JPanel implements WizardPage{
 			l.setVgap(10);
 			l.setHgap(5);
 			movieBox.setLayout(l);
-			ImagePanel img1 = new ImagePanel(new URL("file:Media\\11osc. simpla.bmp"));
+			ImagePanel img1 = new ImagePanel(new URL("file:Media\\111.bmp"));
 			movieBox.add(img1);
-			ImagePanel img2 = new ImagePanel(new URL("file:Media\\12osc. cama dubla.bmp"));	
+			ImagePanel img2 = new ImagePanel(new URL("file:Media\\211.bmp"));	
 			movieBox.add(img2);
 			
 			int width = img1.getWidth() + 40 + img2.getWidth(); 

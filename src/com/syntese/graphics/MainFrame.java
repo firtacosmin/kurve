@@ -1,16 +1,12 @@
 package com.syntese.graphics;
 
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Image;
-import java.awt.LayoutManager;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -19,7 +15,6 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 import com.syntese.language.LanguageFactory;
-import com.syntese.media.MediaPanel;
 
 public class MainFrame extends JFrame {
 	/**

@@ -1,4 +1,4 @@
-package com.syntese.graphics;
+package com.syntese.graphics.wizard.pages.lastPage;
 
 import java.awt.Graphics;
 import java.awt.Image;

@@ -1,4 +1,4 @@
-package com.syntese.graphics;
+package com.syntese.graphics.mainFrame;
 
 import java.awt.Dimension;
 import java.awt.Image;

@@ -18,8 +18,8 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Text;
 import org.xml.sax.SAXException;
 
-import com.syntese.graphics.MainFrame;
-import com.syntese.graphics.MainFrameMediator;
+import com.syntese.graphics.mainFrame.MainFrame;
+import com.syntese.graphics.mainFrame.MainFrameMediator;
 import com.syntese.language.Language;
 
 public class MAin {

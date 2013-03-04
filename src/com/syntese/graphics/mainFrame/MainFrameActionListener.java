@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.syntese.graphics;
+package com.syntese.graphics.mainFrame;
 
 /**
  * @author Cosmin

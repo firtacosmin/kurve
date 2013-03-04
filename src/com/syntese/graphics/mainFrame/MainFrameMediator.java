@@ -1,4 +1,4 @@
-package com.syntese.graphics;
+package com.syntese.graphics.mainFrame;
 
 import com.syntese.graphics.wizard.WizardMediator;
 import com.syntese.language.LanguageFactory;

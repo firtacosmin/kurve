@@ -16,7 +16,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import com.syntese.graphics.GBC;
-import com.syntese.graphics.ImageDialog;
 import com.syntese.graphics.wizard.pages.CamProfilePage;
 import com.syntese.graphics.wizard.pages.CamTypePage;
 import com.syntese.graphics.wizard.pages.DownstreamPage;

@@ -146,6 +146,10 @@
     </expression>
 	
 	
+	  <expression>
+        <name>Wizard_GeomData_TabTitle</name>
+        <value>Geometry data</value>
+    </expression>
     <expression>
         <name>Wizard_GeomData_LengthTitle</name>
         <value>Length details</value>
@@ -166,6 +170,29 @@
         <name>Wizard_GeomData_DrawingBtn</name>
         <value>Drawing</value>
     </expression>
+    <expression>
+        <name>Wizard_SignDef_tabTitle</name>
+        <value>Sign definition</value>
+    </expression>
+    <expression>
+        <name>Wizard_SignDef_rotationCamSign</name>
+        <value>The direction of rotation of the cam mathematically positive or negative?</value>
+    </expression>
+    <expression>
+        <name>Wizard_SignDef_rockingLeverSign</name>
+        <value>The movement of the rocking lever at the beginning of the movement mathematically positive or negative?</value>
+    </expression>
+    <expression>
+        <name>Wizard_SignDef_PositivOption</name>
+        <value>+1 : mathematically positive</value>
+    </expression>
+    <expression>
+        <name>Wizard_SignDef_NegativOption</name>
+        <value>-1 : mathematically negative</value>
+    </expression>
+    
+    
+    
 	
     
     <expression>

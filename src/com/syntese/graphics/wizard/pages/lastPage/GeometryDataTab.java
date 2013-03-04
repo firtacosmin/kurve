@@ -1,4 +1,4 @@
-package com.syntese.graphics.wizard.pages;
+package com.syntese.graphics.wizard.pages.lastPage;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -17,9 +17,12 @@ import javax.swing.JTextField;
 
 import com.syntese.graphics.GBC;
 import com.syntese.graphics.ImageDialog;
+import com.syntese.graphics.wizard.pages.CamProfilePage;
+import com.syntese.graphics.wizard.pages.CamTypePage;
+import com.syntese.graphics.wizard.pages.DownstreamPage;
 import com.syntese.language.LanguageFactory;
 
-public class GeometryDataPage extends JPanel {
+public class GeometryDataTab extends JPanel {
 
 	/**
 	 * 
@@ -103,7 +106,7 @@ public class GeometryDataPage extends JPanel {
 	 * PUBLIC
 	 * */
 	
-	public GeometryDataPage(int camType, int camProfile, int downStream){
+	public GeometryDataTab(int camType, int camProfile, int downStream){
 		super();
 		
 		_camType = camType;

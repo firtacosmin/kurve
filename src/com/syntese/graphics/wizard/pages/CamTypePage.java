@@ -7,13 +7,10 @@ import java.awt.BorderLayout;
 import java.awt.Checkbox;
 import java.awt.CheckboxGroup;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Label;
-import java.awt.Panel;
 import java.awt.TextField;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
@@ -23,14 +20,13 @@ import javax.swing.JPanel;
 
 import com.syntese.language.LanguageFactory;
 import com.syntese.media.ImagePanel;
-import com.syntese.media.MediaPanel;
 
 
 /**
  * @author Cosmin
  * The page of the wizard where the cam type is selected
  */
-public class CamTypePage extends JPanel implements WizardPage{
+public class CamTypePage extends WizardPage {
 	
 	/****************
 	 * PROPERTIES
@@ -83,7 +79,11 @@ public class CamTypePage extends JPanel implements WizardPage{
 
 	@Override
 	public boolean areFieldsValid() {
-		return true;
+		Boolean returnValue = true;
+		
+		/*Check the */
+		
+		return returnValue;
 	}
 
 
@@ -91,6 +91,10 @@ public class CamTypePage extends JPanel implements WizardPage{
 	public HashMap<String, String> getProperties() {
 		return null;
 	}
+	
+	
+	
+	
 
 	/*
 	 * PRIVATE

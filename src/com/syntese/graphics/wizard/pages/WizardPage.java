@@ -2,8 +2,16 @@ package com.syntese.graphics.wizard.pages;
 
 import java.util.HashMap;
 
-public interface WizardPage{
-	public boolean areFieldsValid();
-	public HashMap<String, String> getProperties(); 
+import javax.swing.JPanel;
+
+public class WizardPage extends JPanel{
+	public boolean areFieldsValid()
+	{
+		return true;
+	}
+	public HashMap<String, String> getProperties()
+	{
+		return null;
+	}
 }
 	

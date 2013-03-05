@@ -52,6 +52,16 @@
         <value>About</value>
     </expression>
     
+    
+    <expression>
+        <name>Error_dialog_title</name>
+        <value>Error</value>
+    </expression>
+    <expression>
+      <name>Wizard_error_start</name>
+      <value>The following errors have been detected:</value>
+    </expression>
+    
     <expression>
       <name>Wizard_CamType_title</name>
       <value>Selecting the desired type of the cam gear</value>
@@ -67,6 +77,14 @@
     <expression>
       <name>Wizard_CamType_name</name>
       <value>Please enter name of project</value>
+    </expression>
+    <expression>
+      <name>Wizard_CamType_error_noTitle</name>
+      <value>The textbox for the project's title must be completed with at least 3 letters</value>
+    </expression>
+    <expression>
+      <name>Wizard_CamType_error_noCamTypeSelected</name>
+      <value>At least one cam type must be selected</value>
     </expression>
     
     
@@ -102,6 +120,11 @@
         <name>Wizard_Downstream_Cams_Cat3</name>
         <value>Crank</value>
     </expression>
+    <expression>
+        <name>Wizard_Downstream_error_noSelection</name>
+        <value>At least one downstream mechanism must be selected</value>
+    </expression>
+    
     
 
 	<expression>
@@ -143,6 +166,10 @@
     <expression>
         <name>Wizard_CamProfile_Slide_Cat4</name>
         <value>Bead cam</value>
+    </expression>
+    <expression>
+        <name>Wizard_CamProfile_error_noSelection</name>
+        <value>At least one cam profile must be selected</value>
     </expression>
 	
 	

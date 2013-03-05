@@ -32,7 +32,7 @@ public class WizardMediator implements WizardDialogActionListener{
 	private ArrayList<WizardPage> _pages;  
 	
 	/*the current page*/
-	private JPanel _currentPage;
+	private WizardPage _currentPage;
 	/*teh configured type of cams*/
 	private int _camType;
 	private int _camProfile;
@@ -110,11 +110,16 @@ public class WizardMediator implements WizardDialogActionListener{
 	private void goToNextPage() {
 		switch (_currentState) {
 		case 0:
-			_camType = ((CamTypePage)_currentPage).getSelectedType();
-			_currentState++;
-			_currentPage = new DownstreamPage(_camType);
-			_theDialog.addMainPanel(_currentPage);
-			_theDialog.repaint();
+			
+			/*if the fields of the current page are valid then go to the next one*/
+			if ( _currentPage.areFieldsValid() )
+			{
+				_camType = ((CamTypePage)_currentPage).getSelectedType();
+				_currentState++;
+				_currentPage = new DownstreamPage(_camType);
+				_theDialog.addMainPanel(_currentPage);
+				_theDialog.repaint();
+			}
 
 			//_camProfile = ((CamProfilePage)_currentPage).getSelection();
 //			_currentState = 3;
@@ -123,19 +128,29 @@ public class WizardMediator implements WizardDialogActionListener{
 //			_theDialog.repaint();
 			break;
 		case 1:
-			_camDownstream = ((DownstreamPage)_currentPage).getSelectedCategory();
-			_currentState++;
-			_currentPage = new CamProfilePage(_camType);
-			_theDialog.addMainPanel(_currentPage);
-			_theDialog.repaint();
+			
+			/*if the fields of the current page are valid then go to the next one*/
+			if ( _currentPage.areFieldsValid() )
+			{
+				_camDownstream = ((DownstreamPage)_currentPage).getSelectedCategory();
+				_currentState++;
+				_currentPage = new CamProfilePage(_camType);
+				_theDialog.addMainPanel(_currentPage);
+				_theDialog.repaint();
+			}
 			break;
 
 		case 2:
-			_camProfile = ((CamProfilePage)_currentPage).getSelection();
-			_currentState++;
-			_currentPage = new LastPageTab(_camType, _camProfile, _camDownstream);
-			_theDialog.addMainPanel(_currentPage);
-			_theDialog.repaint();
+			
+			/*if the fields of the current page are valid then go to the next one*/
+			if ( _currentPage.areFieldsValid() )
+			{
+				_camProfile = ((CamProfilePage)_currentPage).getSelection();
+				_currentState++;
+				_currentPage = new LastPageTab(_camType, _camProfile, _camDownstream);
+				_theDialog.addMainPanel(_currentPage);
+				_theDialog.repaint();
+			}
 			break;
 		default:
 			break;

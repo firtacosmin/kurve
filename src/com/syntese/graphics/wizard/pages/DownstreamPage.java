@@ -8,14 +8,16 @@ import java.awt.GridLayout;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
 
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import com.syntese.language.LanguageFactory;
 import com.syntese.media.ImagePanel;
 
-public class DownstreamPage extends JPanel{
+public class DownstreamPage extends WizardPage{
 
 	private static int TOTAL_INSTANTES = 0;
 	
@@ -33,7 +35,7 @@ public class DownstreamPage extends JPanel{
 	public static final int CAMS_DOUBLE_SLIDE = 6;
 	public static final int CAMS_CRANK = 7;
 	
-	/*texts*/
+	/*texts GUI*/
 	private static final String PANEL_TITLE_NAME = "Wizard_Downstream_Title";
 	private static final String LEVER_CAT1_NAME = "Wizard_Downstream_Lever_Cat1";
 	private static final String LEVER_CAT2_NAME = "Wizard_Downstream_Lever_Cat2";
@@ -43,6 +45,11 @@ public class DownstreamPage extends JPanel{
 	private static final String CAMS_CAT1_NAME = "Wizard_Downstream_Cams_Cat1";
 	private static final String CAMS_CAT2_NAME = "Wizard_Downstream_Cams_Cat2";
 	private static final String CAMS_CAT3_NAME = "Wizard_Downstream_Cams_Cat3";
+	/*texts ERROR*/
+	private static final String ERROR_MSG_START = "Wizard_error_start";
+	private static final String ERROR_MSG_NO_SELECTION = "Wizard_Downstream_error_noSelection";
+	private static final String ERROR_DLG_TITLE = "Error_dialog_title";
+	
 	
 	
 	/*UI Components*/
@@ -123,9 +130,39 @@ public class DownstreamPage extends JPanel{
 		}
 	}
 	
-//	public boolean equals(Object p){
-//		return ((DownstreamPage)p).getInstanceNo() == _instanceNo;
-//	}
+
+	@Override
+	public boolean areFieldsValid() {
+		Boolean returnValue = true;
+		String errorMsg = LanguageFactory.getInstance().getExpresion(ERROR_MSG_START);
+		
+		if ( !_camCat1Chk.getState() &&
+			 !_camCat2Chk.getState() &&
+			 !_camCat3Chk.getState() &&
+			 !_levelCat1Chk.getState() &&
+			 !_levelCat2Chk.getState() &&
+			 !_levelCat3Chk.getState() &&
+			 !_levelCat4Chk.getState())
+		{
+			errorMsg += "\n- "+LanguageFactory.getInstance().getExpresion(ERROR_MSG_NO_SELECTION);
+			returnValue = false;
+		}
+
+		
+		/*if error then display the msg*/
+		if ( !returnValue )
+		{
+			JOptionPane.showMessageDialog(this, errorMsg, LanguageFactory.getInstance().getExpresion(ERROR_DLG_TITLE), JOptionPane.ERROR_MESSAGE);
+		}
+		return returnValue;
+	}
+
+
+	@Override
+	public HashMap<String, String> getProperties() {
+		return null;
+	}
+	
 
 	/*
 	 * PRIVATE

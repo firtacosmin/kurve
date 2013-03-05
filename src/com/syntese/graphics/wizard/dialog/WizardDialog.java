@@ -31,7 +31,7 @@ public class WizardDialog extends JDialog {
 	private static final String PREVIOUS_BTN_TEXT_NAME = "WizardDlgPreviousBtnText";
 	private static final String CANCEL_BTN_TEXT_NAME = "WizardDlgCancelBtnText";
 	/*dialog properties*/
-	private static final int DLG_WIDTH = 800;
+	private static final int DLG_WIDTH = 600;
 	private static final int DLG_HEIGHT = 600;
 	private static final int SOUTHERNBOX_WIDTH = DLG_WIDTH;
 	private static final int SOUTHERNBOX_HEIGHT = 20;

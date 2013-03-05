@@ -16,6 +16,7 @@ import java.util.HashMap;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import com.syntese.language.LanguageFactory;
@@ -35,11 +36,16 @@ public class CamTypePage extends WizardPage {
 	public static final int ROLLER_LEVER = 1;
 	public static final int ROLLER_SLIDE = 2;
 	
-	/*Texts*/
+	/*Texts for GUI*/
 	private static final String PANEL_TITLE_NAME = "Wizard_CamType_title";
 	private static final String NAME_TEXTFIELD_LABLE_TEXT_NAME = "Wizard_CamType_name";
 	private static final String ROLLER_LEVER_CATEGORY_NAME = "Wizard_CamType_rollerLever";
 	private static final String ROLLER_CAMS_CATEGORY_NAME = "Wizard_CamType_rollerCams";
+	/*Texts for ERROR*/
+	private static final String ERROR_MSG_START = "Wizard_error_start";
+	private static final String ERROR_MSG_TITLE = "Wizard_CamType_error_noTitle";
+	private static final String ERROR_MSG_TYPE_SELECTION = "Wizard_CamType_error_noCamTypeSelected";
+	private static final String ERROR_DLG_TITLE = "Error_dialog_title";
 	
 	
 	/*UI Components*/
@@ -80,8 +86,28 @@ public class CamTypePage extends WizardPage {
 	@Override
 	public boolean areFieldsValid() {
 		Boolean returnValue = true;
+		String errorMsg = LanguageFactory.getInstance().getExpresion(ERROR_MSG_START);
 		
-		/*Check the */
+		/*Check the title field*/
+		if ( _nameTextField.getText().isEmpty() || 
+			 _nameTextField.getText().length() < 3 )
+		{
+			errorMsg += "\n- " + LanguageFactory.getInstance().getExpresion(ERROR_MSG_TITLE);
+			returnValue = false;
+		}
+		
+		/*check if any radio is selected*/
+		if ( !_camsRadio.getState() && !_levelRadio.getState() )
+		{
+			errorMsg += "\n- " + LanguageFactory.getInstance().getExpresion(ERROR_MSG_TYPE_SELECTION);
+			returnValue = false;
+		}
+		
+		/*if error then display the msg*/
+		if ( !returnValue )
+		{
+			JOptionPane.showMessageDialog(this, errorMsg, LanguageFactory.getInstance().getExpresion(ERROR_DLG_TITLE), JOptionPane.ERROR_MESSAGE);
+		}
 		
 		return returnValue;
 	}
@@ -140,43 +166,7 @@ public class CamTypePage extends WizardPage {
 		northernBox.add(new Label(LanguageFactory.getInstance().getExpresion(NAME_TEXTFIELD_LABLE_TEXT_NAME)));
 		northernBox.add(_nameTextField);
 		
-//		Box centralLeftBox = Box.createVerticalBox();
-//		centralLeftBox.add(_levelRadio);
-//		centralLeftBox.add(Box.createVerticalStrut(15));
-//		centralLeftBox.setBorder(BorderFactory.createLineBorder(Color.black));
-//		try {
-//			MediaPanel p = new MediaPanel(new URL("file:Media\\oscil. pt. program1.avi"));
-//			p.setBackground(Color.blue);
-//			centralLeftBox.add(p);
-//		} catch (MalformedURLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		centralLeftBox.add(Box.createVerticalGlue());
-//		
-//		Box centralRightBox = Box.createVerticalBox();
-//		centralRightBox.add(_camsRadio);
-//		centralRightBox.add(Box.createVerticalStrut(15));
-//		centralRightBox.setBorder(BorderFactory.createLineBorder(Color.black));
-//		try {
-//			MediaPanel p = new MediaPanel(new URL("file:Media\\tran pt prog bun 2.avi"));
-//			p.setBackground(Color.blue);
-//			centralRightBox.add(p);
-//		} catch (MalformedURLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		centralRightBox.add(Box.createVerticalGlue());
-//		
-		
-		
-//		
-//		Box centralBox = Box.createHorizontalBox();
-//		centralBox.setBorder(BorderFactory.createLineBorder(Color.black));
-//		centralBox.add(centralLeftBox);
-//		//centralBox.add(Box.createHorizontalGlue());
-//		centralBox.add(centralRightBox);
-		
+
 		
 		
 		Box radioBtnBox = Box.createHorizontalBox();
@@ -184,20 +174,11 @@ public class CamTypePage extends WizardPage {
 		radioBtnBox.add(Box.createHorizontalGlue());
 		radioBtnBox.add(_camsRadio);
 		
-//		Box movieBox = Box.createHorizontalBox();
 		JPanel movieBox = new JPanel();
-//		movieBox.setBorder(BorderFactory.createLineBorder(Color.black));
 		try {
-//			MediaPanel p = new MediaPanel(new URL("file:Media\\oscil. pt. program1.avi"));
-//			p.stop();
-//			movieBox.add(p);
-////			movieBox.add(Box.createHorizontalGlue());
-//			MediaPanel p2 = new MediaPanel(new URL("file:Media\\tran pt prog bun 2.avi"));
-//			p2.stop();
-//			movieBox.add(p2);
 			GridLayout l = new GridLayout(1,2);
 			l.setVgap(10);
-			l.setHgap(5);
+			l.setHgap(20);
 			movieBox.setLayout(l);
 			ImagePanel img1 = new ImagePanel(new URL("file:Media\\111.bmp"));
 			movieBox.add(img1);
@@ -220,7 +201,6 @@ public class CamTypePage extends WizardPage {
 			e.printStackTrace();
 		}
 		movieBox.setBackground(new Color(109, 109, 109));
-//		movieBox.setBackground(Color.BLUE);
 		
 		
 		Box centralBox = Box.createVerticalBox();

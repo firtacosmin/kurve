@@ -10,12 +10,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import com.syntese.language.LanguageFactory;
 import com.syntese.media.ImagePanel;
 
-public class CamProfilePage extends JPanel{
+public class CamProfilePage extends WizardPage{
 
 	/****************
 	 * PROPERTIES
@@ -37,7 +38,7 @@ public class CamProfilePage extends JPanel{
 	public static final int SLIDER_GROOVE_CAM = 7;
 	public static final int SLIDER_BEAD_CAM= 8;
 	
-	/*texts*/
+	/*texts for GUI*/
 	private static final String SLIDE_PANEL_TITLE_NAME = "Wizard_CamProfile_Slide_Title";
 	private static final String LEVER_PANEL_TITLE_NAME = "Wizard_CamProfile_Lever_Title";
 	private static final String LEVER_CAT1_NAME = "Wizard_CamProfile_Lever_Cat1";
@@ -49,6 +50,10 @@ public class CamProfilePage extends JPanel{
 	private static final String SLIDE_CAT2_NAME = "Wizard_CamProfile_Slide_Cat2";
 	private static final String SLIDE_CAT3_NAME = "Wizard_CamProfile_Slide_Cat3";
 	private static final String SLIDE_CAT4_NAME = "Wizard_CamProfile_Slide_Cat4";
+	/*Texts for ERROR*/
+	private static final String ERROR_MSG_START = "Wizard_error_start";
+	private static final String ERROR_DLG_TITLE = "Error_dialog_title";
+	private static final String ERROR_MSG_NO_SELECTION = "Wizard_CamProfile_error_noSelection";
 	/*UI Components*/
 	private Checkbox _levelCat1Chk;
 	private Checkbox _levelCat2Chk;
@@ -115,6 +120,32 @@ public class CamProfilePage extends JPanel{
 		}else {
 			return NO_SELECTION;
 		}
+	}
+	@Override
+	public boolean areFieldsValid() {
+		Boolean returnValue = true;
+		String errorMsg = LanguageFactory.getInstance().getExpresion(ERROR_MSG_START);
+		
+		if ( !_slideCat1Chk.getState() &&
+			 !_slideCat2Chk.getState() &&
+			 !_slideCat3Chk.getState() &&
+			 !_slideCat4Chk.getState() &&
+			 !_levelCat1Chk.getState() &&
+			 !_levelCat2Chk.getState() &&
+			 !_levelCat3Chk.getState() &&
+			 !_levelCat4Chk.getState())
+		{
+			errorMsg += "\n- "+LanguageFactory.getInstance().getExpresion(ERROR_MSG_NO_SELECTION);
+			returnValue = false;
+		}
+
+		
+		/*if error then display the msg*/
+		if ( !returnValue )
+		{
+			JOptionPane.showMessageDialog(this, errorMsg, LanguageFactory.getInstance().getExpresion(ERROR_DLG_TITLE), JOptionPane.ERROR_MESSAGE);
+		}
+		return returnValue;
 	}
 	
 	/*

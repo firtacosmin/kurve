@@ -10,7 +10,7 @@ import com.syntese.graphics.wizard.pages.lastPage.GeometryDataTab;
 import com.syntese.graphics.wizard.pages.lastPage.SignDefinitionTab;
 import com.syntese.language.LanguageFactory;
 
-public class LastPageTab extends JPanel{
+public class LastPageTab extends WizardPage{
 
 	
 	

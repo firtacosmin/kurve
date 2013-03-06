@@ -219,6 +219,28 @@
     </expression>
     
     
+    <expression>
+        <name>Wizard_Motion_SegmentLabel</name>
+        <value>Section</value>
+    </expression>
+    <expression>
+        <name>Wizard_Motion_NoOfSegmentLabel</name>
+        <value>Maximum number of motion-sections</value>
+    </expression>
+    <expression>
+        <name>Wizard_Motion_PHISum</name>
+        <value>Total degree</value>
+    </expression>
+    <expression>
+        <name>Wizard_Motion_PSISum</name>
+        <value>Total mm/degree</value>
+    </expression>
+    <expression>
+        <name>Wizard_Motion_TabTitle</name>
+        <value>running motion</value>
+    </expression>
+    
+    
     
 	
     

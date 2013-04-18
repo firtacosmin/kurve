@@ -52,6 +52,12 @@ public class LastPageTab extends WizardPage{
 		setMaximumSize(getPreferredSize());
 	}
 	
+	@Override
+	public boolean areFieldsValid()
+	{
+		return true;
+	}
+	
 	/**
 	 * Name: getSegments
 	 * Args: @return

@@ -114,7 +114,17 @@ public class GeometryDataTab extends JPanel {
 		initializeGUIComponents();
 		addGUIComponents();
 	}
-	
+
+	/**
+	 * Name: areFieldsValid
+	 * Args: @return
+	 * Return: Boolean
+	 * Desc: Checks if the fields are validly completed.
+	 */
+	public Boolean areFieldsValid()
+	{
+		return true;
+	}
 	
 	public HashMap<String, Float> getGeometricSelections()
 	{

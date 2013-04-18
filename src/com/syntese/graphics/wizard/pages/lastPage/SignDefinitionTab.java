@@ -53,6 +53,16 @@ public class SignDefinitionTab extends JPanel {
 		addGUIComponents();
 	}
 
+	/**
+	 * Name: areFieldsValid
+	 * Args: @return
+	 * Return: Boolean
+	 * Desc: Checks if the fields are validly completed.
+	 */
+	public Boolean areFieldsValid()
+	{
+		return true;
+	}
 	
 	public Boolean getCamSign()
 	{

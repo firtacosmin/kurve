@@ -1,8 +1,265 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language type="english">
-    <expresion>
+<language type="doich">
+
+    <expression>
         <name>MainFremeTitle</name>
         <value>Syntese</value>
-    </expresion>
+    </expression>
+    
+    
+    <expression>
+        <name>FileMenu</name>
+        <value>File</value>
+    </expression>
+    <expression>
+        <name>NewMenu</name>
+        <value>New</value>
+    </expression>
+    <expression>
+        <name>OpenMenu</name>
+        <value>Oeffnen</value>
+    </expression>
+    <expression>
+        <name>CloseMenu</name>
+        <value>Abbrechen</value>
+    </expression>
+    <expression>
+        <name>CloseAllMenu</name>
+        <value>Close All</value>
+    </expression>
+    <expression>
+        <name>SaveMenu</name>
+        <value>Save</value>
+    </expression>
+    <expression>
+        <name>SaveAsMenu</name>
+        <value>Save As</value>
+    </expression>
+    <expression>
+        <name>SaveAllMenu</name>
+        <value>Save All</value>
+    </expression>
+    <expression>
+        <name>HelpMenu</name>
+        <value>Hilfe</value>
+    </expression>
+    <expression>
+        <name>LanguageMenu</name>
+        <value>Language</value>
+    </expression>
+    <expression>
+        <name>AboutMenu</name>
+        <value>About</value>
+    </expression>
+    
+    
+    <expression>
+        <name>Error_dialog_title</name>
+        <value>Error</value>
+    </expression>
+    <expression>
+      <name>Wizard_error_start</name>
+      <value>The following errors have been detected:</value>
+    </expression>
+    
+    <expression>
+      <name>Wizard_CamType_title</name>
+      <value>Auswahl der gewunschte Art des Kurvengetriebes</value>
+    </expression>
+    <expression>
+      <name>Wizard_CamType_rollerLever</name>
+      <value>Kurvengetriebes mit Rollenhebel</value>
+    </expression>
+    <expression>
+      <name>Wizard_CamType_rollerCams</name>
+      <value>Kurvengetriebes mit Rollenschieber</value>
+    </expression>
+    <expression>
+      <name>Wizard_CamType_name</name>
+      <value>Please enter name of project</value>
+    </expression>
+    <expression>
+      <name>Wizard_CamType_error_noTitle</name>
+      <value>The textbox for the project's title must be completed with at least 3 letters</value>
+    </expression>
+    <expression>
+      <name>Wizard_CamType_error_noCamTypeSelected</name>
+      <value>At least one cam type must be selected</value>
+    </expression>
+    
+    
+    <expression>
+        <name>Wizard_Downstream_Title</name>
+        <value>Nachgeschaltete Koppelgetriebe</value>
+    </expression>
+    <expression>
+        <name>Wizard_Downstream_Lever_Cat1</name>
+        <value>Keine</value>
+    </expression>
+    <expression>
+        <name>Wizard_Downstream_Lever_Cat2</name>
+        <value>Schubkurbel</value>
+    </expression>
+    <expression>
+        <name>Wizard_Downstream_Lever_Cat3</name>
+        <value>Viergelenk</value>
+    </expression>
+    <expression>
+        <name>Wizard_Downstream_Lever_Cat4</name>
+        <value>Schubscheife</value>
+    </expression>
+    <expression>
+        <name>Wizard_Downstream_Cams_Cat1</name>
+        <value>Keine</value>
+    </expression>
+    <expression>
+        <name>Wizard_Downstream_Cams_Cat2</name>
+        <value>Doppelschieber</value>
+    </expression>
+    <expression>
+        <name>Wizard_Downstream_Cams_Cat3</name>
+        <value>Schubkurbel</value>
+    </expression>
+    <expression>
+        <name>Wizard_Downstream_error_noSelection</name>
+        <value>At least one downstream mechanism must be selected</value>
+    </expression>
+    
+    
+
+	<expression>
+        <name>Wizard_CamProfile_Slide_Title</name>
+        <value>Art der Kurvenscheibe fur Kurvengetriebe mit Rollenschieber</value>
+    </expression>
+    <expression>
+        <name>Wizard_CamProfile_Lever_Title</name>
+        <value>Art der Kurvenscheibe fur Kurvengetriebe mit Rollenhebel</value>
+    </expression>
+    <expression>
+        <name>Wizard_CamProfile_Lever_Cat1</name>
+        <value>AuBere Kurvenscheibe</value>
+    </expression>
+    <expression>
+        <name>Wizard_CamProfile_Lever_Cat2</name>
+        <value>Doppelkurvenscheibe</value>
+    </expression>
+    <expression>
+        <name>Wizard_CamProfile_Lever_Cat3</name>
+        <value>Nutkurvenscheibe</value>
+    </expression>
+    <expression>
+        <name>Wizard_CamProfile_Lever_Cat4</name>
+        <value>Wulstkurvenscheibe</value>
+    </expression>
+        <expression>
+        <name>Wizard_CamProfile_Slide_Cat1</name>
+        <value>AuBere Kurvenscheibe</value>
+    </expression>
+    <expression>
+        <name>Wizard_CamProfile_Slide_Cat2</name>
+        <value>Doppelkurvenscheibe</value>
+    </expression>
+    <expression>
+        <name>Wizard_CamProfile_Slide_Cat3</name>
+        <value>Nutkurvenscheibe</value>
+    </expression>
+    <expression>
+        <name>Wizard_CamProfile_Slide_Cat4</name>
+        <value>Wulstkurvenscheibe</value>
+    </expression>
+    <expression>
+        <name>Wizard_CamProfile_error_noSelection</name>
+        <value>At least one cam profile must be selected</value>
+    </expression>
+	
+	
+	  <expression>
+        <name>Wizard_GeomData_TabTitle</name>
+        <value>Geometry data</value>
+    </expression>
+    <expression>
+        <name>Wizard_GeomData_LengthTitle</name>
+        <value>Length details</value>
+    </expression>
+    <expression>
+        <name>Wizard_GeomData_AngleTitle</name>
+        <value>Angle details</value>
+    </expression>
+    <expression>
+        <name>Wizard_GeomData_WaveRad_Label</name>
+        <value>Wave radius</value>
+    </expression>
+    <expression>
+        <name>Wizard_GeomData_SeibenRad_Label</name>
+        <value>Seiben Radius</value>
+    </expression>
+    <expression>
+        <name>Wizard_GeomData_DrawingBtn</name>
+        <value>Drawing</value>
+    </expression>
+    <expression>
+        <name>Wizard_SignDef_tabTitle</name>
+        <value>Sign definition</value>
+    </expression>
+    <expression>
+        <name>Wizard_SignDef_rotationCamSign</name>
+        <value>The direction of rotation of the cam mathematically positive or negative?</value>
+    </expression>
+    <expression>
+        <name>Wizard_SignDef_rockingLeverSign</name>
+        <value>The movement of the rocking lever at the beginning of the movement mathematically positive or negative?</value>
+    </expression>
+    <expression>
+        <name>Wizard_SignDef_PositivOption</name>
+        <value>+1 : mathematically positive</value>
+    </expression>
+    <expression>
+        <name>Wizard_SignDef_NegativOption</name>
+        <value>-1 : mathematically negative</value>
+    </expression>
+    
+    
+    <expression>
+        <name>Wizard_Motion_SegmentLabel</name>
+        <value>Section</value>
+    </expression>
+    <expression>
+        <name>Wizard_Motion_NoOfSegmentLabel</name>
+        <value>Maximum number of motion-sections</value>
+    </expression>
+    <expression>
+        <name>Wizard_Motion_PHISum</name>
+        <value>Total degree</value>
+    </expression>
+    <expression>
+        <name>Wizard_Motion_PSISum</name>
+        <value>Total mm/degree</value>
+    </expression>
+    <expression>
+        <name>Wizard_Motion_TabTitle</name>
+        <value>running motion</value>
+    </expression>
+    
+    
+    
+	
+    
+    <expression>
+        <name>WizardDlgTitle</name>
+        <value>New curve Wizard</value>
+    </expression>
+    <expression>
+        <name>WizardDlgNextBtnText</name>
+        <value>Next</value>
+    </expression>
+    <expression>
+        <name>WizardDlgPreviousBtnText</name>
+        <value>Back</value>
+    </expression>
+    <expression>
+        <name>WizardDlgCancelBtnText</name>
+        <value>Cancel</value>
+    </expression>
+    
     
 </language>

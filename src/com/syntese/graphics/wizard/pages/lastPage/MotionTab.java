@@ -5,6 +5,12 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
@@ -12,6 +18,8 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
 
 import com.syntese.graphics.GBC;
 import com.syntese.graphics.NumericTextField;
@@ -48,7 +56,7 @@ public class MotionTab extends JPanel {
 	
 	/*GUI*/
 	private ArrayList<JComboBox<String>> _segmentNameList;
-	private ArrayList<NumericTextField> _phiList;
+	private ArrayList<JTextField> _phiList;
 	private ArrayList<JTextField> _psiList;
 	private JComboBox<Integer> _selectedNoOfSegments;
 	private JTextField _totalPHI;
@@ -70,6 +78,17 @@ public class MotionTab extends JPanel {
 		super();
 		InitializeComponents();
 		addComponentsToGUI();
+	}
+	
+	/**
+	 * Name: areFieldsValid
+	 * Args: @return
+	 * Return: Boolean
+	 * Desc: Checks if the fields are validly completed.
+	 */
+	public Boolean areFieldsValid()
+	{
+		return true;
 	}
 	
 	/*
@@ -142,7 +161,7 @@ public class MotionTab extends JPanel {
 		segmentsString = SegmentFactory.getSegmentTitleList().toArray(segmentsString);
 		
 		_segmentNameList = new ArrayList<JComboBox<String>>();
-		_phiList = new ArrayList<NumericTextField>(_no_segments);
+		_phiList = new ArrayList<JTextField>(_no_segments);
 		_psiList = new ArrayList<JTextField>(_no_segments);
 		/*the combo box that contains the number of segments*/
 		_selectedNoOfSegments = new JComboBox<Integer>();
@@ -159,10 +178,28 @@ public class MotionTab extends JPanel {
 			/*initially all the fields are disabled*/
 			combo.setEnabled(false);
 			NumericTextField phi = new NumericTextField();
+			phi.setText("0");
 			phi.setEnabled(false);
+			phi.addCaretListener(new CaretListener() {
+				
+				@Override
+				public void caretUpdate(CaretEvent arg0) {
+					// TODO Auto-generated method stub
+					calculateSum(_phiList, _totalPHI);
+					
+				}
+			});
 			_phiList.add(phi);
 			JTextField psi = new JTextField();
 			psi.setEnabled(false);
+			psi.setText("0");
+			psi.addCaretListener(new CaretListener() {
+				
+				@Override
+				public void caretUpdate(CaretEvent arg0) {
+					calculateSum(_psiList, _totalPSI);
+				}
+			});
 			_psiList.add(psi);
 			
 			
@@ -304,6 +341,35 @@ public class MotionTab extends JPanel {
 				_phiList.get(i).setEnabled(false);
 				_psiList.get(i).setEnabled(false);
 			}
+		}
+	}
+	
+	/**
+	 * Name: calculateSum
+	 * Args: @param textFields - the list with JTextFields with the values to be added
+	 * Args: @param totalField - the destination JTextField that will contain the result
+	 * Return: void
+	 * Desc: method that calculates in the same way the sum for phi and psi
+	 */
+	private void calculateSum(ArrayList<JTextField> textFields, JTextField totalField)
+	{
+		Integer sum = 0;
+		Boolean err = false;
+		for ( int i=0;i<_enabledFields; i++ )
+		{
+			try{
+				int newVal = Integer.parseInt(textFields.get(i).getText());
+				sum += newVal;
+			}catch ( Exception ex )
+			{
+				err = true;
+			}
+		}
+		if ( !err )
+		{
+			totalField.setText(sum.toString());
+		}else{
+			totalField.setText("Err");
 		}
 	}
 

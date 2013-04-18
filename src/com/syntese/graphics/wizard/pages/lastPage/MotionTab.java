@@ -230,8 +230,8 @@ public class MotionTab extends JPanel {
 			psiPan.add(_psiList.get(i));
 		}
 		
-		add(segmentPan, new GBC(0,0,2,1).setWeight(100, 100).setFill(GBC.BOTH).setAnchor(GBC.NORTH).setInsets(10, 15, 10, 15));
 		add(psiPan, new GBC(4,0,2,1).setWeight(100, 100).setFill(GBC.VERTICAL).setAnchor(GBC.NORTH).setInsets(10, 15, 10, 15));
+		add(segmentPan, new GBC(0,0,2,1).setWeight(100, 100).setFill(GBC.BOTH).setAnchor(GBC.NORTH).setInsets(10, 15, 10, 15));
 		add(phiPan, new GBC(2,0,2,1).setWeight(100, 100).setFill(GBC.VERTICAL).setAnchor(GBC.NORTH).setInsets(10, 15, 10, 15));
 
 		

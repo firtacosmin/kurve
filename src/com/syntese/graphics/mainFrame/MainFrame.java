@@ -1,5 +1,7 @@
 package com.syntese.graphics.mainFrame;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -9,12 +11,14 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.util.ArrayList;
 
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 import com.syntese.language.LanguageFactory;
+import com.syntese.workspace.graphics.WorkSpaceMainPanel;
 
 public class MainFrame extends JFrame {
 	/**
@@ -47,6 +51,7 @@ private JMenuItem _saveAllMenuItem;
 private JMenu _helpMenu;
 private JMenuItem _aboutMenuItem;
 private JMenu _languageMenuItem;
+private WorkSpaceMainPanel _theMainPanel;
 
 
 private static final String HELP_MENU_EXPRESSION = "HelpMenu";
@@ -57,9 +62,10 @@ private static final String ABOUT_MENU_EXPRESSION = "AboutMenu";
 private MainFrameActionListener _theEventHandler;
 /*PUBLIC*/
 
-public MainFrame(){
+public MainFrame(WorkSpaceMainPanel theMainPanel){
 	super();
 	
+	_theMainPanel = theMainPanel;
 	setAtributes();
 	addComponents();
 	
@@ -246,31 +252,32 @@ private void addComponents() {
 //		// TODO Auto-generated catch block
 //		e.printStackTrace();
 //	}
-}
-
-
-/**
- * Name: setAtributes
- * Args: 
- * Return: void
- * Desc: sets the attributes ( width, height, close operation ETC ) of the frame
- */ 
-private void setAtributes() {
+	add(_theMainPanel, BorderLayout.CENTER);
+	}
 	
-	Toolkit kit = Toolkit.getDefaultToolkit();
-	Dimension screenSize = kit.getScreenSize();
-
 	
-	setDefaultCloseOperation(EXIT_ON_CLOSE);
+	/**
+	 * Name: setAtributes
+	 * Args: 
+	 * Return: void
+	 * Desc: sets the attributes ( width, height, close operation ETC ) of the frame
+	 */ 
+	private void setAtributes() {
+		
+		Toolkit kit = Toolkit.getDefaultToolkit();
+		Dimension screenSize = kit.getScreenSize();
 	
-	setSize(WIDTH, HEIGHT);
-	setTitle(LanguageFactory.getInstance().getExpresion(TITLE_EXPRESSION));
-	setLocation((screenSize.width - WIDTH)/2, (screenSize.height - HEIGHT)/2);
-	Image img = kit.getImage("Media/copy_icon.gif");
-	setIconImage(img);
-
+		
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		setSize(WIDTH, HEIGHT);
+		setTitle(LanguageFactory.getInstance().getExpresion(TITLE_EXPRESSION));
+		setLocation((screenSize.width - WIDTH)/2, (screenSize.height - HEIGHT)/2);
+		Image img = kit.getImage("Media/copy_icon.gif");
+		setIconImage(img);
 	
-}
+		
+	}
 
 /**
  * Name: addLanguagesToMenu

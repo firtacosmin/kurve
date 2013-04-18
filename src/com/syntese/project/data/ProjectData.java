@@ -70,7 +70,7 @@ public class ProjectData {
 	private Integer _cam_total_phi;
 	private Integer _cam_total_psi;
 	private ArrayList<String> _cam_segments;
-	
+	private String _proj_name;
 
 	/*
 	 * PUBLIC METHODS
@@ -90,10 +90,14 @@ public class ProjectData {
 		_cam_no_segments = 0;
 		_cam_total_phi = 0;
 		_cam_total_psi = 0;
+		_proj_name = "";
 		_cam_segments = new ArrayList<String>(20);
 	}
 
 	
+
+
+
 	/**
 	 * Name: saveProjectFile
 	 * Args: @param path
@@ -160,7 +164,7 @@ public class ProjectData {
 			/*add route element to the doc*/
 			newDoc.appendChild(rootElement);
 			Transformer t = TransformerFactory.newInstance().newTransformer();
-			t.transform(new DOMSource(newDoc), new StreamResult(new FileOutputStream(new File(path))));
+			t.transform(new DOMSource(newDoc), new StreamResult(new FileOutputStream(new File(path+"\\"+_proj_name+".xml"))));
 			
 			ret = true;
 		}
@@ -175,9 +179,32 @@ public class ProjectData {
 	}
 	
 	
+	public boolean open(String file)
+	{
+		Boolean ret = false;
+		try
+		{
+			_proj_name = new File(file).getName();
+			ret = true;
+		}catch (  Exception ex)
+		{
+			//TODO: Error
+		}
+		return ret;
+	}
+	
+	
 	/*
 	 * GETTERS AND  SETTERS FOR THE CAM DATA VARIABLES
 	 * */
+	public String get_proj_name() {
+		return _proj_name;
+	}
+
+
+	public void set_proj_name(String _proj_name) {
+		this._proj_name = _proj_name;
+	}
 	
 	public int get_cam_type() {
 		return _cam_type;

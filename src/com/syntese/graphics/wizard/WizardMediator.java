@@ -1,7 +1,9 @@
 package com.syntese.graphics.wizard;
 
+import java.io.File;
 import java.util.ArrayList;
 
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 
 import com.syntese.graphics.wizard.dialog.WizardDialog;
@@ -25,6 +27,8 @@ public class WizardMediator implements WizardDialogActionListener{
 	private static final int CAM_TYPE = 0;
 	private static final int DOWNSTREAM_COMPONENTS = 1;
 	private static final int CAM_PROFILE = 2;
+
+	private JFrame _mainFrame;
 	
 	private WizardDialog _theDialog;
 	/*the wizard pages*/
@@ -36,7 +40,7 @@ public class WizardMediator implements WizardDialogActionListener{
 	private int _camType;
 	private int _camProfile;
 	private int _camDownstream;
-	
+	private String _projName;
 	private int _currentState;
 	
 	private ProjectData _theNewProject;
@@ -55,7 +59,7 @@ public class WizardMediator implements WizardDialogActionListener{
 		_theDialog.addActionLisner(this);
 		_currentState = CAM_TYPE;
 		_pages = new ArrayList<WizardPage>();
-		
+		_mainFrame = mainFrame;
 		
 	}
 	
@@ -116,6 +120,7 @@ public class WizardMediator implements WizardDialogActionListener{
 			if ( _currentPage.areFieldsValid() )
 			{
 				_camType = ((CamTypePage)_currentPage).getSelectedType();
+				_projName = ((CamTypePage)_currentPage).getImputName();
 				_currentState++;
 				_currentPage = new DownstreamPage(_camType);
 				_theDialog.addMainPanel(_currentPage);
@@ -156,6 +161,20 @@ public class WizardMediator implements WizardDialogActionListener{
 		case 3:
 			/*create the project*/
 			createProject();
+			JFileChooser filedlg = new JFileChooser();
+			filedlg.setCurrentDirectory(new File("."));
+			filedlg.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+			int res = filedlg.showSaveDialog(_mainFrame);
+			Boolean saved = false;
+			if ( res == JFileChooser.APPROVE_OPTION )
+			{
+				saved = _theNewProject.saveProjectFile(filedlg.getSelectedFile().getPath());
+			}
+			if ( saved == true )
+			{
+				_theDialog.setVisible(false);
+			}
+			
 			break;
 		default:
 			break;
@@ -233,8 +252,10 @@ public class WizardMediator implements WizardDialogActionListener{
 		_theNewProject.set_cam_positive_sign(lastP.getCamSign());
 		/*set lever sign*/
 		_theNewProject.set_lever_positive_sign(lastP.getLevelSign());
+		/*set the proj name*/
+		_theNewProject.set_proj_name(_projName);
 		
-		_theNewProject.saveProjectFile("c://ceva.xml");
+		//_theNewProject.saveProjectFile("c://ceva.xml");
 	}
 
 }

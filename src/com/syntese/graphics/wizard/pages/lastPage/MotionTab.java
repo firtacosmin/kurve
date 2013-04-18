@@ -1,16 +1,20 @@
 package com.syntese.graphics.wizard.pages.lastPage;
 
+import java.awt.Color;
 import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.BorderFactory;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import com.syntese.graphics.GBC;
+import com.syntese.graphics.NumericTextField;
 import com.syntese.language.LanguageFactory;
 import com.syntese.segment.SegmentFactory;
 import com.syntese.settings.SettingsFactory;
@@ -39,11 +43,12 @@ public class MotionTab extends JPanel {
 	
 	/*class properties*/
 	private Integer _no_segments;
+	private Integer _enabledFields;
 	
 	
 	/*GUI*/
 	private ArrayList<JComboBox<String>> _segmentNameList;
-	private ArrayList<JTextField> _phiList;
+	private ArrayList<NumericTextField> _phiList;
 	private ArrayList<JTextField> _psiList;
 	private JComboBox<Integer> _selectedNoOfSegments;
 	private JTextField _totalPHI;
@@ -66,7 +71,57 @@ public class MotionTab extends JPanel {
 		InitializeComponents();
 		addComponentsToGUI();
 	}
+	
+	/*
+	 * getters for the selections
+	 * */
+	
+	public int getNoOfSegments()
+	{
+		return Integer.parseInt(_selectedNoOfSegments.getSelectedItem().toString());
+	}
+	
+	public int getTotalPhi()
+	{
+		return Integer.parseInt(_totalPHI.getText());
+	}
+	
+	public int getTotalPsi()
+	{
+		return Integer.parseInt(_totalPSI.getText());
+	}
+	
+	public ArrayList<String> getSelectedSegments()
+	{
+		ArrayList<String> segments = new ArrayList<String>(_enabledFields);
+		for ( int i=0; i < _enabledFields; i++ )
+		{
+			segments.add(_segmentNameList.get(i).getSelectedItem().toString());
+		}
+		return segments;
+	}
+	
+	public ArrayList<Float> getPHI()
+	{
 
+		ArrayList<Float> phi = new ArrayList<Float>(_enabledFields);
+		for ( int i=0; i < _enabledFields; i++ )
+		{
+			phi.add(Float.parseFloat(_phiList.get(i).getText()));
+		}
+		return phi;
+	}
+	
+	public ArrayList<Float> getPSI()
+	{
+		ArrayList<Float> psi = new ArrayList<Float>(_enabledFields);
+		for ( int i=0; i < _enabledFields; i++ )
+		{
+			psi.add(Float.parseFloat(_psiList.get(i).getText()));
+		}
+		return psi;
+		
+	}
 
 	
 	/*
@@ -81,32 +136,40 @@ public class MotionTab extends JPanel {
 	 */
 	private void InitializeComponents() {
 		getMaxNoOfSegments();
-		
+		_enabledFields = 0;
 //		ArrayList<String> segments = SegmentFactory.getSegmentTitleList();
-		String[] segmentsString = new String[_no_segments];
+		String[] segmentsString = new String[SegmentFactory.getSegmentTitleList().size()];
 		segmentsString = SegmentFactory.getSegmentTitleList().toArray(segmentsString);
 		
 		_segmentNameList = new ArrayList<JComboBox<String>>();
-		_phiList = new ArrayList<JTextField>(_no_segments);
+		_phiList = new ArrayList<NumericTextField>(_no_segments);
 		_psiList = new ArrayList<JTextField>(_no_segments);
 		/*the combo box that contains the number of segments*/
 		_selectedNoOfSegments = new JComboBox<Integer>();
 		
 		/*populate the combo boxes*/
 		/*disable the fields*/
-		for (int i=0; i<_no_segments; i++)
+		int i;
+		for (i=0; i<_no_segments; i++)
 		{
 			JComboBox<String> combo = new JComboBox<String>(segmentsString);
-			combo.setEditable(true);
+//			combo.setEditable(true);
 			_segmentNameList.add(combo);
 			
 			/*initially all the fields are disabled*/
 			combo.setEnabled(false);
-			_phiList.add(new JTextField());
-			_psiList.add(new JTextField());
+			NumericTextField phi = new NumericTextField();
+			phi.setEnabled(false);
+			_phiList.add(phi);
+			JTextField psi = new JTextField();
+			psi.setEnabled(false);
+			_psiList.add(psi);
+			
 			
 			_selectedNoOfSegments.addItem(i);
 		}
+		/*one more item so that all the segments ( 0-_no_segments ) can be selected*/
+		_selectedNoOfSegments.addItem(i);
 		
 		/*the textbox where the sum of angles is calculated*/
 		_totalPHI = new JTextField("0");
@@ -118,7 +181,8 @@ public class MotionTab extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				enableFields(Integer.parseInt((String) _selectedNoOfSegments.getSelectedItem()));
+				String sel = _selectedNoOfSegments.getSelectedItem().toString();
+				enableFields(Integer.parseInt(sel));
 			}
 		});
 		
@@ -133,22 +197,58 @@ public class MotionTab extends JPanel {
 	 */
 	private void addComponentsToGUI() {
 		setLayout(new GridBagLayout());
-		
-		for ( int i=0; i < _no_segments; i++ )
+//		setPreferredSize(new Dimension(600,500));
+//		setMinimumSize(getPreferredSize());
+//		setSize(getPreferredSize());
+
+		GridLayout lay = new GridLayout(_no_segments+1,2);
+		lay.setHgap(5);
+		lay.setVgap(5);
+		int i;
+		JPanel segmentPan = new JPanel(lay);
+		segmentPan.setBackground(new Color(109,109,109));
+		segmentPan.setBorder(BorderFactory.createRaisedBevelBorder());
+		JPanel phiPan = new JPanel(lay);
+		phiPan.setBackground(new Color(109,109,109));
+		phiPan.setBorder(BorderFactory.createRaisedBevelBorder());
+		JPanel psiPan = new JPanel(lay);
+		psiPan.setBackground(new Color(109,109,109));
+		psiPan.setBorder(BorderFactory.createRaisedBevelBorder());
+		/*add all the disabled fields*/
+		for ( i=0; i < _no_segments; i++ )
 		{
 			/*add segment combobox with layout*/
-			add(new JLabel(LanguageFactory.getInstance().getExpresion(SECTION_LABEL) + i), new GBC(0,i));
-			add(_segmentNameList.get(i), new GBC(1,i));
+			segmentPan.add(new JLabel(LanguageFactory.getInstance().getExpresion(SECTION_LABEL) + i));
+			segmentPan.add(_segmentNameList.get(i));
 			
 			/*add phi with label*/
-			add(new JLabel ( "phi"+i+"(grad)" ), new GBC(2,i));
-			add(_phiList.get(i), new GBC(3,i));
+			phiPan.add(new JLabel ( "phi"+i+"(grad)" ));
+			phiPan.add(_phiList.get(i));
 			
 			/*add psi with label*/
-			add(new JLabel ( "s"+i+"mm/psi"+i+"(grad)" ), new GBC(4,i));
-			add(_psiList.get(i), new GBC(5,i));
-			
+			psiPan.add(new JLabel ( "s"+i+"mm/psi"+i+"(grad)" ));
+			psiPan.add(_psiList.get(i));
 		}
+		
+		add(segmentPan, new GBC(0,0,2,1).setWeight(100, 100).setFill(GBC.BOTH).setAnchor(GBC.NORTH).setInsets(10, 15, 10, 15));
+		add(psiPan, new GBC(4,0,2,1).setWeight(100, 100).setFill(GBC.VERTICAL).setAnchor(GBC.NORTH).setInsets(10, 15, 10, 15));
+		add(phiPan, new GBC(2,0,2,1).setWeight(100, 100).setFill(GBC.VERTICAL).setAnchor(GBC.NORTH).setInsets(10, 15, 10, 15));
+
+		
+		/*add the active filed selector*/
+		add(new JLabel(LanguageFactory.getInstance().getExpresion(NUMBER_OF_SEGMENTS_LABEL)), new GBC(0,1));
+		add(_selectedNoOfSegments, new GBC(1,1));
+		
+			
+		/*add the total psi*/
+		add(new JLabel(LanguageFactory.getInstance().getExpresion(PSI_SUM_LABEL)), new GBC(4,1));
+		add(_totalPSI, new GBC(5,1).setFill(GBC.HORIZONTAL));
+		
+		/*add the total PHI*/
+		add(new JLabel(LanguageFactory.getInstance().getExpresion(PHI_SUM_LABEL)), new GBC(2,1));
+		add(_totalPHI, new GBC(3,1).setFill(GBC.HORIZONTAL));
+		
+		
 	}
 	
 	/**
@@ -189,6 +289,7 @@ public class MotionTab extends JPanel {
 	 */
 	private void enableFields(Integer noOfFields)
 	{
+		_enabledFields = noOfFields;
 		for ( int i=0; i<_no_segments; i++ )
 		{
 			if ( i<noOfFields )

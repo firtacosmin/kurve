@@ -134,8 +134,12 @@ public class Settings implements ISettings {
 				t.transform(new DOMSource(newDoc), new StreamResult(new FileOutputStream(new File(SETTINGS_FILE))));
 				
 			}catch ( Exception e ){
-				
+				/*TODO: error to log*/
 			}
+		}
+		else
+		{
+			/*if not modified then there is nothing to save*/
 		}
 	}
 	

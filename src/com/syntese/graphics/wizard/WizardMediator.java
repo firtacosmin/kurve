@@ -1,10 +1,8 @@
 package com.syntese.graphics.wizard;
 
-import java.awt.BorderLayout;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 import com.syntese.graphics.wizard.dialog.WizardDialog;
 import com.syntese.graphics.wizard.dialog.WizardDialogActionListener;
@@ -13,6 +11,7 @@ import com.syntese.graphics.wizard.pages.CamTypePage;
 import com.syntese.graphics.wizard.pages.DownstreamPage;
 import com.syntese.graphics.wizard.pages.LastPageTab;
 import com.syntese.graphics.wizard.pages.WizardPage;
+import com.syntese.project.data.ProjectData;
 
 /**
  * @author Cosmin
@@ -39,6 +38,8 @@ public class WizardMediator implements WizardDialogActionListener{
 	private int _camDownstream;
 	
 	private int _currentState;
+	
+	private ProjectData _theNewProject;
 	/**************
 	 * METHODS
 	 * ************/
@@ -152,6 +153,10 @@ public class WizardMediator implements WizardDialogActionListener{
 				_theDialog.repaint();
 			}
 			break;
+		case 3:
+			/*create the project*/
+			createProject();
+			break;
 		default:
 			break;
 		}		
@@ -192,6 +197,44 @@ public class WizardMediator implements WizardDialogActionListener{
 		default:
 			break;
 		}	
+	}
+	
+	/**
+	 * Name: createProject
+	 * Args: 
+	 * Return: void
+	 * Desc: created the ProjectData object with the selected configurations
+	 */
+	private void createProject() {
+		_theNewProject = new ProjectData();
+		/*add cam type*/
+		_theNewProject.set_cam_type(_camType);
+		/*add cam profile*/
+		_theNewProject.set_cam_profile(_camProfile);
+		/*add cam downstream*/
+		_theNewProject.set_cam_downstream(_camDownstream);
+		
+		LastPageTab lastP = (LastPageTab)_currentPage;
+		/*add can segments*/
+		_theNewProject.set_cam_segments(lastP.getSegments());
+		/*add the geom data*/
+		_theNewProject.set_cam_geomData(lastP.getGoem());
+		/*add segments no*/
+		_theNewProject.set_cam_no_segments(lastP.getSegmentNo());
+		/*add the phi*/
+		_theNewProject.set_cam_phi(lastP.getSelectedPHI());
+		/*add total phi*/
+		_theNewProject.set_cam_total_phi(lastP.getTotalPHI());
+		/*add the psi*/
+		_theNewProject.set_cam_psi(lastP.getSelectedPSI());
+		/*add total phi*/
+		_theNewProject.set_cam_total_psi(lastP.getTotalPSI());
+		/*set cam sign*/
+		_theNewProject.set_cam_positive_sign(lastP.getCamSign());
+		/*set lever sign*/
+		_theNewProject.set_lever_positive_sign(lastP.getLevelSign());
+		
+		_theNewProject.saveProjectFile("c://ceva.xml");
 	}
 
 }

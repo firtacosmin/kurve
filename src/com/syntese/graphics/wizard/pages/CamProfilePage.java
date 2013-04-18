@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 
 import com.syntese.language.LanguageFactory;
 import com.syntese.media.ImagePanel;
+import com.syntese.project.data.ProjectData;
 
 public class CamProfilePage extends WizardPage{
 
@@ -27,16 +28,6 @@ public class CamProfilePage extends WizardPage{
 	 * PROPERTIES
 	 * *************/
 
-	/*CONSTANT PROPARTIES VALUES*/
-	public static final int NO_SELECTION = 0;
-	public static final int LEVER_OUTER_CAM = 1;
-	public static final int LEVER_DOUBLE_CAM = 2;
-	public static final int LEVER_GROOVE_CAM = 3;
-	public static final int LEVER_BEAD_CAM = 4;
-	public static final int SLIDER_OUTER_CAM = 5;
-	public static final int SLIDER_DOUBLE_CAM = 6;
-	public static final int SLIDER_GROOVE_CAM = 7;
-	public static final int SLIDER_BEAD_CAM= 8;
 	
 	/*texts for GUI*/
 	private static final String SLIDE_PANEL_TITLE_NAME = "Wizard_CamProfile_Slide_Title";
@@ -102,23 +93,23 @@ public class CamProfilePage extends WizardPage{
 	 */
 	public int getSelection(){
 		if ( _levelCat1Chk.getState() ){
-			return LEVER_OUTER_CAM;
+			return ProjectData.LEVER_OUTER_CAM;
 		}else if ( _levelCat2Chk.getState() ){
-			return LEVER_DOUBLE_CAM;
+			return ProjectData.LEVER_DOUBLE_CAM;
 		}else  if ( _levelCat3Chk.getState() ){
-			return LEVER_GROOVE_CAM;
+			return ProjectData.LEVER_GROOVE_CAM;
 		}else  if ( _levelCat4Chk.getState() ){
-			return LEVER_BEAD_CAM;
+			return ProjectData.LEVER_BEAD_CAM;
 		}else if ( _slideCat1Chk.getState() ){
-			return SLIDER_OUTER_CAM;
+			return ProjectData.SLIDER_OUTER_CAM;
 		}else  if ( _slideCat1Chk.getState() ){
-			return SLIDER_DOUBLE_CAM;
+			return ProjectData.SLIDER_DOUBLE_CAM;
 		}else  if ( _slideCat1Chk.getState() ){
-			return SLIDER_GROOVE_CAM;
+			return ProjectData.SLIDER_GROOVE_CAM;
 		}else  if ( _slideCat1Chk.getState() ){
-			return SLIDER_BEAD_CAM;
+			return ProjectData.SLIDER_BEAD_CAM;
 		}else {
-			return NO_SELECTION;
+			return ProjectData.NO_SELECTION;
 		}
 	}
 	@Override
@@ -197,9 +188,9 @@ public class CamProfilePage extends WizardPage{
 		/*creating the images*/
 		URL imgUrl = null;
 		try {
-			if ( _selectedCamType == CamTypePage.ROLLER_SLIDE ){
+			if ( _selectedCamType == ProjectData.ROLLER_SLIDE ){
 				imgUrl = new URL("file:Media\\camProfile_rollerSlide.JPG");
-			}else if( _selectedCamType == CamTypePage.ROLLER_LEVER ){
+			}else if( _selectedCamType == ProjectData.ROLLER_LEVER ){
 				imgUrl = new URL("file:Media\\camProfile_rollerLever.JPG");
 			}
 		} catch (MalformedURLException e) {
@@ -225,11 +216,11 @@ public class CamProfilePage extends WizardPage{
 
 		setLayout(new BorderLayout());
 		
-		if ( _selectedCamType == CamTypePage.ROLLER_SLIDE ){
+		if ( _selectedCamType == ProjectData.ROLLER_SLIDE ){
 			addCamsUI();		
 			setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(),
 					  LanguageFactory.getInstance().getExpresion(SLIDE_PANEL_TITLE_NAME)));
-		}else if( _selectedCamType == CamTypePage.ROLLER_LEVER ){
+		}else if( _selectedCamType == ProjectData.ROLLER_LEVER ){
 			addLeverUI();		
 			setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(),
 					  LanguageFactory.getInstance().getExpresion(LEVER_PANEL_TITLE_NAME)));

@@ -8,6 +8,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.HashMap;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -16,10 +17,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import com.syntese.graphics.GBC;
-import com.syntese.graphics.wizard.pages.CamProfilePage;
-import com.syntese.graphics.wizard.pages.CamTypePage;
-import com.syntese.graphics.wizard.pages.DownstreamPage;
 import com.syntese.language.LanguageFactory;
+import com.syntese.project.data.ProjectData;
 
 public class GeometryDataTab extends JPanel {
 
@@ -114,6 +113,38 @@ public class GeometryDataTab extends JPanel {
 		
 		initializeGUIComponents();
 		addGUIComponents();
+	}
+	
+	
+	public HashMap<String, Float> getGeometricSelections()
+	{
+		HashMap<String, Float> retMap = new HashMap<>(20);
+		addTextFieldDataToHash(_X_A0, _X_A0_lb, retMap);
+		addTextFieldDataToHash(_Y_A0,_Y_A0_lb,retMap);
+		addTextFieldDataToHash(_X_d,_X_d_lb,retMap);
+		addTextFieldDataToHash(_Y_d,_Y_d_lb,retMap);
+		addTextFieldDataToHash(_X_s,_X_s_lb,retMap);
+		addTextFieldDataToHash(_Y_s,_Y_s_lb,retMap);
+		addTextFieldDataToHash(_ro_min,_ro_min_lb,retMap);
+		addTextFieldDataToHash(_L3,_L3_lb,retMap);
+		addTextFieldDataToHash(_L31,_L31_lb,retMap);
+		addTextFieldDataToHash(_L3p,_L3p_lb,retMap);
+		addTextFieldDataToHash(_L4,_L4_lb,retMap);
+		addTextFieldDataToHash(_L5,_L5_lb,retMap);
+		addTextFieldDataToHash(_L1,_L1_lb,retMap);
+		addTextFieldDataToHash(_rR,_rR_lb,retMap);
+		addTextFieldDataToHash(_rG,_rG_lb,retMap);
+		addTextFieldDataToHash(_ep,_ep_lb,retMap);
+		addTextFieldDataToHash(_y,_y_lb,retMap);
+		addTextFieldDataToHash(_delta,_delta_lb,retMap);
+		addTextFieldDataToHash(_gama,_gama_lb,retMap);
+		addTextFieldDataToHash(_miu_an_min,_miu_an_min_lb,retMap);
+		addTextFieldDataToHash(_miu_ab_min,_miu_ab_min_lb,retMap);
+		addTextFieldDataToHash(_n,_n_lb,retMap);
+		addTextFieldDataToHash(_siebenRad,new JLabel("SIEBEN"),retMap);
+		addTextFieldDataToHash(_waveRad,new JLabel("WAVE"),retMap);
+		
+		return retMap;
 	}
 
 	/*
@@ -252,44 +283,44 @@ public class GeometryDataTab extends JPanel {
 	{
 		_X_A0.setEnabled(true);
 		_Y_A0.setEnabled(true);
-		if ( _downStream == DownstreamPage.CAMS_NO_DOWNSTREAM || 
-		     _downStream == DownstreamPage.LEVER_NO_DOWNSTREAM ||  
-		     _downStream == DownstreamPage.LEVER_PUSHER_TUGS)
+		if ( _downStream == ProjectData.CAMS_NO_DOWNSTREAM || 
+		     _downStream == ProjectData.LEVER_NO_DOWNSTREAM ||  
+		     _downStream == ProjectData.LEVER_PUSHER_TUGS)
 		{
 			_X_d.setEnabled(false);
 			_Y_d.setEnabled(false);
 		}
-		if ( _camType == CamTypePage.ROLLER_SLIDE || 
-			 _downStream != DownstreamPage.LEVER_FOUR_JOIN)
+		if ( _camType == ProjectData.ROLLER_SLIDE || 
+			 _downStream != ProjectData.LEVER_FOUR_JOIN)
 		{
 			_X_s.setEnabled(false);
 			_Y_s.setEnabled(false);
 		}
 		_ro_min.setEnabled(true);
 		_L3.setEnabled(true);
-		if ( _camProfile != CamProfilePage.LEVER_DOUBLE_CAM &&
-			 _camProfile != CamProfilePage.LEVER_BEAD_CAM &&
-			 _camProfile != CamProfilePage.SLIDER_DOUBLE_CAM &&
-			 _camProfile != CamProfilePage.SLIDER_BEAD_CAM)
+		if ( _camProfile != ProjectData.LEVER_DOUBLE_CAM &&
+			 _camProfile != ProjectData.LEVER_BEAD_CAM &&
+			 _camProfile != ProjectData.SLIDER_DOUBLE_CAM &&
+			 _camProfile != ProjectData.SLIDER_BEAD_CAM)
 		{
 			_L31.setEnabled(false);
 		}
-		if ( _camType == CamTypePage.ROLLER_SLIDE ||
-			 _camType == CamTypePage.ROLLER_LEVER && _downStream == DownstreamPage.LEVER_NO_DOWNSTREAM)
+		if ( _camType == ProjectData.ROLLER_SLIDE ||
+			 _camType == ProjectData.ROLLER_LEVER && _downStream == ProjectData.LEVER_NO_DOWNSTREAM)
 		{
 			_L3p.setEnabled(false);
 		}
-		if ( _downStream == DownstreamPage.CAMS_NO_DOWNSTREAM || 
-			 _downStream == DownstreamPage.LEVER_NO_DOWNSTREAM || 
-			 _downStream == DownstreamPage.LEVER_PUSHER_TUGS)
+		if ( _downStream == ProjectData.CAMS_NO_DOWNSTREAM || 
+			 _downStream == ProjectData.LEVER_NO_DOWNSTREAM || 
+			 _downStream == ProjectData.LEVER_PUSHER_TUGS)
 		{
 			_L4.setEnabled(false);
 		}
 		/*On L5 easier to use opposite logic.*/
 		_L5.setEnabled(false);
-		if ( _camType == CamTypePage.ROLLER_SLIDE && _downStream == DownstreamPage.CAMS_CRANK 
+		if ( _camType == ProjectData.ROLLER_SLIDE && _downStream == ProjectData.CAMS_CRANK 
 				||
-			 _camType == CamTypePage.ROLLER_LEVER && _downStream == DownstreamPage.LEVER_FOUR_JOIN)
+			 _camType == ProjectData.ROLLER_LEVER && _downStream == ProjectData.LEVER_FOUR_JOIN)
 		{
 			_L5.setEnabled(true);
 		}
@@ -298,23 +329,23 @@ public class GeometryDataTab extends JPanel {
 		_rG.setEnabled(true);
 		/*On ep easier to use opposite logic.*/
 		_ep.setEnabled(false);
-		if ( _camProfile == CamProfilePage.SLIDER_DOUBLE_CAM )
+		if ( _camProfile == ProjectData.SLIDER_DOUBLE_CAM )
 		{
 			_ep.setEnabled(true);
 		}
 		/*On y easier to use opposite logic.*/
 		_y.setEnabled(false);
-		if ( _camType == CamTypePage.ROLLER_SLIDE || _downStream == DownstreamPage.LEVER_PUSHER_TUGS)
+		if ( _camType == ProjectData.ROLLER_SLIDE || _downStream == ProjectData.LEVER_PUSHER_TUGS)
 		{
 			_y.setEnabled(true);
 		}
-		if ( _downStream == DownstreamPage.LEVER_NO_DOWNSTREAM ||
-			 _downStream == DownstreamPage.CAMS_CRANK)
+		if ( _downStream == ProjectData.LEVER_NO_DOWNSTREAM ||
+			 _downStream == ProjectData.CAMS_CRANK)
 		{
 			_delta.setEnabled(false);
 		}
-		if (  _camProfile != CamProfilePage.LEVER_DOUBLE_CAM &&
-			  _camProfile != CamProfilePage.LEVER_BEAD_CAM  )	
+		if (  _camProfile != ProjectData.LEVER_DOUBLE_CAM &&
+			  _camProfile != ProjectData.LEVER_BEAD_CAM  )	
 		{
 			_gama.setEnabled(false);
 		}
@@ -446,5 +477,12 @@ public class GeometryDataTab extends JPanel {
 
 	}
 	
-	
+	private void addTextFieldDataToHash(JTextField field, JLabel lb, HashMap<String, Float> map)
+	{
+		if ( field.isEnabled() )
+		{
+			Float val = Float.parseFloat(field.getText());
+			map.put(lb.getText(), val);
+		}
+	}
 }

@@ -53,6 +53,15 @@ public class SignDefinitionTab extends JPanel {
 		addGUIComponents();
 	}
 
+	
+	public Boolean getCamSign()
+	{
+		return _camPositiv_rd.isEnabled()?true:false;
+	}
+	public Boolean getLeverSign()
+	{
+		return _leverPositiv_rd.isEnabled()?true:false;
+	}
 
 
 	/*

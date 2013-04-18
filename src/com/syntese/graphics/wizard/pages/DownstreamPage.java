@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 
 import com.syntese.language.LanguageFactory;
 import com.syntese.media.ImagePanel;
+import com.syntese.project.data.ProjectData;
 
 public class DownstreamPage extends WizardPage{
 
@@ -26,14 +27,7 @@ public class DownstreamPage extends WizardPage{
 	 * *************/
 	
 	/*CONSTANT PROPARTIES VALUES*/
-	public static final int NO_SELECTIONS = 0;
-	public static final int LEVER_NO_DOWNSTREAM = 1;
-	public static final int LEVER_CRANK = 2;
-	public static final int LEVER_FOUR_JOIN = 3;
-	public static final int LEVER_PUSHER_TUGS = 4;
-	public static final int CAMS_NO_DOWNSTREAM = 5;
-	public static final int CAMS_DOUBLE_SLIDE = 6;
-	public static final int CAMS_CRANK = 7;
+
 	
 	/*texts GUI*/
 	private static final String PANEL_TITLE_NAME = "Wizard_Downstream_Title";
@@ -112,21 +106,21 @@ public class DownstreamPage extends WizardPage{
 	 */
 	public int getSelectedCategory(){
 		if ( _camCat1Chk.getState() ){
-			return CAMS_NO_DOWNSTREAM;
+			return ProjectData.CAMS_NO_DOWNSTREAM;
 		}else if ( _camCat2Chk.getState() ){
-			return CAMS_DOUBLE_SLIDE;
+			return ProjectData.CAMS_DOUBLE_SLIDE;
 		}else if ( _camCat3Chk.getState() ){
-			return CAMS_CRANK;
+			return ProjectData.CAMS_CRANK;
 		}else if ( _levelCat1Chk.getState() ){
-			return LEVER_NO_DOWNSTREAM;
+			return ProjectData.LEVER_NO_DOWNSTREAM;
 		}else if ( _levelCat2Chk.getState() ){
-			return LEVER_CRANK;
+			return ProjectData.LEVER_CRANK;
 		}else if ( _levelCat3Chk.getState() ){
-			return LEVER_FOUR_JOIN;
+			return ProjectData.LEVER_FOUR_JOIN;
 		}else if ( _levelCat4Chk.getState() ){
-			return LEVER_PUSHER_TUGS;
+			return ProjectData.LEVER_PUSHER_TUGS;
 		}else {
-			return NO_SELECTIONS;
+			return ProjectData.NO_SELECTIONS;
 		}
 	}
 	
@@ -210,9 +204,9 @@ public class DownstreamPage extends WizardPage{
 		/*creating the images*/
 		URL imgUrl = null;
 		try {
-			if ( _selectedCamType == CamTypePage.ROLLER_SLIDE ){
+			if ( _selectedCamType == ProjectData.ROLLER_SLIDE ){
 				imgUrl = new URL("file:Media\\CamsUpstreamImg.JPG");
-			}else if( _selectedCamType == CamTypePage.ROLLER_LEVER ){
+			}else if( _selectedCamType == ProjectData.ROLLER_LEVER ){
 				imgUrl = new URL("file:Media\\LeverUpstreamImg.JPG");
 			}
 		} catch (MalformedURLException e) {
@@ -239,9 +233,9 @@ public class DownstreamPage extends WizardPage{
 				  LanguageFactory.getInstance().getExpresion(PANEL_TITLE_NAME)));
 		setLayout(new BorderLayout());
 		
-		if ( _selectedCamType == CamTypePage.ROLLER_SLIDE ){
+		if ( _selectedCamType == ProjectData.ROLLER_SLIDE ){
 			addCamsUI();
-		}else if( _selectedCamType == CamTypePage.ROLLER_LEVER ){
+		}else if( _selectedCamType == ProjectData.ROLLER_LEVER ){
 			addLeverUI();
 		}
 		

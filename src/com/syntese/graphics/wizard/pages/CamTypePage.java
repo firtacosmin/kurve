@@ -21,6 +21,7 @@ import javax.swing.JPanel;
 
 import com.syntese.language.LanguageFactory;
 import com.syntese.media.ImagePanel;
+import com.syntese.project.data.ProjectData;
 
 
 /**
@@ -33,8 +34,7 @@ public class CamTypePage extends WizardPage {
 	 * PROPERTIES
 	 * *************/
 	
-	public static final int ROLLER_LEVER = 1;
-	public static final int ROLLER_SLIDE = 2;
+
 	
 	/*Texts for GUI*/
 	private static final String PANEL_TITLE_NAME = "Wizard_CamType_title";
@@ -76,7 +76,7 @@ public class CamTypePage extends WizardPage {
 	}
 	
 	public int getSelectedType(){
-		return _camsRadio.getState()?ROLLER_SLIDE:ROLLER_LEVER;
+		return _camsRadio.getState()?ProjectData.ROLLER_SLIDE:ProjectData.ROLLER_LEVER;
 	}
 	
 	public String getImputName(){

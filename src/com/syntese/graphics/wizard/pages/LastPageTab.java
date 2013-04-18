@@ -2,8 +2,9 @@ package com.syntese.graphics.wizard.pages;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
 import com.syntese.graphics.wizard.pages.lastPage.GeometryDataTab;
@@ -39,9 +40,9 @@ public class LastPageTab extends WizardPage{
 		_geomTab = new GeometryDataTab(camType, camProfile, downStream);
 		_signTab = new SignDefinitionTab();
 		_theMotionTab = new MotionTab();
+		_theTabbedPane.addTab(LanguageFactory.getInstance().getExpresion(MOTION_TAB_TITLE), _theMotionTab);
 		_theTabbedPane.addTab(LanguageFactory.getInstance().getExpresion(GEOMETRY_TAB_TITLE), _geomTab);
 		_theTabbedPane.addTab(LanguageFactory.getInstance().getExpresion(SIGN_DEFINITION_TAB_TITLE), _signTab);
-		_theTabbedPane.addTab(LanguageFactory.getInstance().getExpresion(MOTION_TAB_TITLE), _theMotionTab);
 		
 		add(_theTabbedPane, BorderLayout.CENTER);
 		Dimension d = _geomTab.getSize();
@@ -51,4 +52,51 @@ public class LastPageTab extends WizardPage{
 		setMaximumSize(getPreferredSize());
 	}
 	
+	/**
+	 * Name: getSegments
+	 * Args: @return
+	 * Return: ArrayList<String>
+	 * Desc: returns a list with the selected segments
+	 */
+	public ArrayList<String> getSegments()
+	{
+		return _theMotionTab.getSelectedSegments();
+	}
+	
+	public int getSegmentNo()
+	{
+		return _theMotionTab.getNoOfSegments();
+	}
+	
+	public ArrayList<Float> getSelectedPHI()
+	{
+		return _theMotionTab.getPHI();
+	}
+
+	public ArrayList<Float> getSelectedPSI()
+	{
+		return _theMotionTab.getPSI();
+	}
+	
+	public HashMap<String, Float> getGoem()
+	{
+		return _geomTab.getGeometricSelections();
+	}
+	public Boolean getCamSign()
+	{
+		return _signTab.getCamSign();
+	}
+	
+	public Boolean getLevelSign()
+	{
+		return _signTab.getLeverSign();
+	}
+	public Integer getTotalPHI()
+	{
+		return _theMotionTab.getTotalPhi();
+	}
+	public Integer getTotalPSI()
+	{
+		return _theMotionTab.getTotalPsi();
+	}
 }

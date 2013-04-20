@@ -32,6 +32,7 @@ public class MainFrameMediator implements MainFrameActionListener,WizardListener
 	
 	@Override
 	public void newMenuClick() {
+		_theWizard.setWizardListener(this);
 		_theWizard.start();
 	}
 

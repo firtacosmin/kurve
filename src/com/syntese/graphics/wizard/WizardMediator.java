@@ -43,6 +43,8 @@ public class WizardMediator implements WizardDialogActionListener{
 	private String _projName;
 	private int _currentState;
 	
+	private WizardListener _theListener;
+	
 	private ProjectData _theNewProject;
 	/**************
 	 * METHODS
@@ -60,7 +62,12 @@ public class WizardMediator implements WizardDialogActionListener{
 		_currentState = CAM_TYPE;
 		_pages = new ArrayList<WizardPage>();
 		_mainFrame = mainFrame;
+		_theListener = null;
 		
+	}
+	
+	public void setWizardListener(WizardListener lst){
+		_theListener = lst;
 	}
 	
 	
@@ -173,6 +180,9 @@ public class WizardMediator implements WizardDialogActionListener{
 			if ( saved == true )
 			{
 				_theDialog.setVisible(false);
+				if ( _theListener != null ){
+					_theListener.wizardEnded(_theNewProject);
+				}
 			}
 			
 			break;

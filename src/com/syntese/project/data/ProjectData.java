@@ -2,8 +2,9 @@ package com.syntese.project.data;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.util.HashMap;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -14,6 +15,8 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.w3c.dom.Text;
 
 public class ProjectData {
@@ -32,6 +35,7 @@ public class ProjectData {
 	private static final String CAM_TOTAL_PSI_TAG_NAME = "TOTAL_PSI";
 	private static final String CAM_SEGMENTS_TAG_NAME = "SEGMENTS";
 	
+	private static final String XML_TEXT_NODE_NAME = "#text";
 
 	/*CONSTANT PROPARTIES VALUES*/
 	/*CAM PROFILE TYPES*/
@@ -182,18 +186,191 @@ public class ProjectData {
 	public boolean open(String file)
 	{
 		Boolean ret = false;
+		
+		DocumentBuilder builder;
+		try {
+			
+			builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+			Document porjDoc = builder.parse(new File(file));
+			Element root = porjDoc.getDocumentElement();
+			NodeList set = root.getChildNodes();
+			for( int i=0; i<set.getLength(); i++ ){
+				String nodeName = set.item(i).getNodeName();
+				if ( !nodeName.equals(XML_TEXT_NODE_NAME) )
+				{
+					/*if the node is not a text node*/
+					Node currentNode = set.item(i);
+					if ( nodeName.equals(CAM_PHI_TAG_NAME) ){
+						loadFloatArray(currentNode, _cam_phi);
+					}else if ( nodeName.equals(CAM_PSI_TAG_NAME) ){
+						loadFloatArray(currentNode, _cam_psi);
+					}else if ( nodeName.equals(CAM_TYPE_TAG_NAME) ){
+//						loadValue(_cam_type, currentNode);
+						_cam_type = Integer.parseInt(getStringValue(currentNode));
+	//					loadCamType(currentNode);
+					}else if ( nodeName.equals(CAM_PROFILE_TAG_NAME) ){
+//						loadValue(_cam_profile, currentNode);
+						_cam_profile = Integer.parseInt(getStringValue(currentNode));
+	//					loadProfileType(currentNode);
+					}else if ( nodeName.equals(CAM_DOWNSTREAM_TAG_NAME) ){
+//						loadValue(_cam_downstream, currentNode);
+						_cam_downstream = Integer.parseInt(getStringValue(currentNode));
+	//					loadDownstream(currentNode);
+					}else if ( nodeName.equals(CAM_SEGMENTS_TAG_NAME) ){
+						loadSegments(currentNode);
+					}else if ( nodeName.equals(CAM_NO_SEGMENTS_TAG_NAME) ){
+//						loadValue(_cam_no_segments, currentNode);
+						_cam_no_segments = Integer.parseInt(getStringValue(currentNode));
+	//					loadNoSegments(currentNode);
+					}else if ( nodeName.equals(CAM_TOTAL_PHI_TAG_NAME) ){
+//						loadValue(_cam_total_phi, currentNode);
+						_cam_total_phi = Integer.parseInt(getStringValue(currentNode));
+	//					loadTotalPHI(currentNode);
+					}else if ( nodeName.equals(CAM_TOTAL_PSI_TAG_NAME) ){
+//						loadValue(_cam_total_psi, currentNode);
+						_cam_total_psi = Integer.parseInt(getStringValue(currentNode));
+	//					loadTotalPSI(currentNode);
+					}else if ( nodeName.equals(CAM_GEOM_DATA_TAG_NAME) ){
+						loadGeomData(currentNode);
+					}else if ( nodeName.equals(CAM_CAM_SIGN_TAG_NAME) ){
+//						loadValue(_cam_positive_sign, currentNode);
+						_cam_positive_sign = getStringValue(currentNode).equals("+")?true:false;
+	//					loadCamSign(currentNode);
+					}else if ( nodeName.equals(CAM_LEVER_SIGN_TAG_NAME) ){ 
+//						loadValue(_lever_positive_sign, currentNode);
+						_lever_positive_sign = getStringValue(currentNode).equals("+")?true:false;
+	//					loadLeverSign(currentNode);
+					}
+				}
+			}
+		}
+		catch ( Exception ex )
+		{
+			ex.printStackTrace();
+			//TODO: error
+		}
+		
 		try
 		{
-			_proj_name = new File(file).getName();
+			_proj_name = new File(file).getName().replace(".xml", "");
 			ret = true;
 		}catch (  Exception ex)
 		{
 			//TODO: Error
+			ex.printStackTrace();
 		}
 		return ret;
 	}
 	
 	
+	private void loadGeomData(Node currentNode) {
+		NodeList children = currentNode.getChildNodes();
+		for( int i=0; i<children.getLength(); i++ ){
+			if ( !children.item(i).getNodeName().equals(XML_TEXT_NODE_NAME) ){
+				/*if the node is not a text node*/
+				try{
+					Node current = children.item(i);
+					String key = current.getNodeName();
+					Float value = Float.parseFloat(getStringValue(current));
+					_cam_geomData.put(key, value);
+				}catch ( Exception ex ){
+					//TODO: Error
+					ex.printStackTrace();
+				}
+			}
+			
+		}
+	}
+
+
+
+
+
+	private void loadSegments(Node currentNode) {
+		NodeList children = currentNode.getChildNodes();
+		for( int i=0; i<children.getLength(); i++ ){
+			if ( !children.item(i).getNodeName().equals(XML_TEXT_NODE_NAME) ){
+				/*if the node is not a text node*/
+				_cam_segments.add(this.getStringValue(children.item(i)));
+			}
+		}
+	}
+
+	
+	
+	private void loadFloatArray(Node currentNode, ArrayList<Float> array)
+	{
+		NodeList children = currentNode.getChildNodes();
+		for( int i=0; i<children.getLength(); i++ ){
+			if ( !children.item(i).getNodeName().equals(XML_TEXT_NODE_NAME) ){
+				Text val = (Text)(children.item(i).getFirstChild());
+				try{
+					array.add( Float.parseFloat(val.getData()));
+				}catch ( Exception ex )
+				{
+					ex.printStackTrace();
+					//TODO: Error
+					array.set(i, (float)0);
+				}
+			}
+		}
+	}
+
+
+
+
+
+	/**
+	 * Name: loadValue
+	 * Args: @param destination
+	 * Args: @param currentNode
+	 * Return: void
+	 * Desc: returns the value of xml node in Integer format
+	 */
+	private void loadValue(Integer destination, Node currentNode) {
+		try{
+			destination = Integer.parseInt(getStringValue(currentNode));
+		}catch ( Exception ex )
+		{
+			ex.printStackTrace();
+			//TODO: error
+			destination = 0;
+		}
+	}
+
+
+	/**
+	 * Name: loadValue
+	 * Args: @param destination
+	 * Args: @param currentNode
+	 * Return: void
+	 * Desc: returns the value of xml node in Boolean format( true if equals = )
+	 */
+	private void loadValue(Boolean destination, Node currentNode) {
+		destination = getStringValue(currentNode).equals("+")?true:false;
+	}
+	
+	/**
+	 * Name: getStringValue
+	 * Args: @param node
+	 * Args: @return
+	 * Return: String
+	 * Desc: returns the value of xml node in string format
+	 */
+	private String getStringValue(Node node)
+	{
+		String value = "";
+		NodeList children = node.getChildNodes();
+		for( int i=0; i<children.getLength(); i++ ){
+			value = (children.item(i).getNodeValue());
+//			value = val.getData();
+		}
+		
+		return value;
+	}
+
+
+
 	/*
 	 * GETTERS AND  SETTERS FOR THE CAM DATA VARIABLES
 	 * */
@@ -261,13 +438,31 @@ public class ProjectData {
 	}
 
 
+	/**
+	 * Name: add_cam_geomData
+	 * Args: @param _cam_geom_name
+	 * Args: @param _cam_geomData
+	 * Return: void
+	 * Desc: puts the passed data into the local variable. It replaces the " " and  "()" characters with "_"
+	 */
 	public void add_cam_geomData(String _cam_geom_name, Float _cam_geomData) {
-		this._cam_geomData.put(_cam_geom_name, _cam_geomData);
+		this._cam_geomData.put(_cam_geom_name.replace(" ", "_").replace(")", "_").replace("(", "_"), _cam_geomData);
 	}
 
 
+	/**
+	 * Name: set_cam_geomData
+	 * Args: @param _cam_geomData
+	 * Return: void
+	 * Desc: puts the passed data into the local variable. It replaces the " " and  "()" characters with "_"
+	 */
 	public void set_cam_geomData(HashMap<String, Float> _cam_geomData) {
-		this._cam_geomData = _cam_geomData;
+		this._cam_geomData.clear();
+		Object[] keys = _cam_geomData.keySet().toArray();
+		for ( int i=0; i<keys.length; i++ )
+		{
+			this._cam_geomData.put(keys[i].toString().replace(" ", "_").replace(")", "_").replace("(", "_"), _cam_geomData.get(keys[i]));
+		}
 	}
 
 

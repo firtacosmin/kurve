@@ -1,7 +1,6 @@
 package com.syntese.graphics.mainFrame;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -11,12 +10,14 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.util.ArrayList;
 
-import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
+import com.sun.media.ui.MessageBox;
 import com.syntese.language.LanguageFactory;
 import com.syntese.workspace.graphics.WorkSpaceMainPanel;
 
@@ -38,6 +39,10 @@ private static final String SAVE_MENU_EXPRESSION = "SaveMenu";
 private static final String SAVE_AS_MENU_EXPRESSION = "SaveAsMenu";
 private static final String SAVE_ALL_MENU_EXPRESSION = "SaveAllMenu";
 
+
+private static final String SAVE_MESSAGEBOX_TITLE = "SaveComplete_MsjBox_title";
+private static final String SAVE_MESSAGEBOX_CONTENT = "SaveComplete_MsjBox_content";
+
 /*controls*/
 private JMenu _fileMenu;
 private JMenuItem _newMenuItem;
@@ -51,7 +56,7 @@ private JMenuItem _saveAllMenuItem;
 private JMenu _helpMenu;
 private JMenuItem _aboutMenuItem;
 private JMenu _languageMenuItem;
-private WorkSpaceMainPanel _theMainPanel;
+private JPanel _theMainPanel;
 
 
 private static final String HELP_MENU_EXPRESSION = "HelpMenu";
@@ -62,7 +67,7 @@ private static final String ABOUT_MENU_EXPRESSION = "AboutMenu";
 private MainFrameActionListener _theEventHandler;
 /*PUBLIC*/
 
-public MainFrame(WorkSpaceMainPanel theMainPanel){
+public MainFrame(JPanel theMainPanel){
 	super();
 	
 	_theMainPanel = theMainPanel;
@@ -177,6 +182,7 @@ private void addComponents() {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			_theEventHandler.saveMenuClick(2);
+			anounceSuccesfulSave();
 		}
 	});
 	_saveAllMenuItem.addActionListener(new ActionListener() {
@@ -184,6 +190,7 @@ private void addComponents() {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			_theEventHandler.saveMenuClick(1);
+			anounceSuccesfulSave();
 		}
 	});
 	_saveAsMenuItem.addActionListener(new ActionListener() {
@@ -299,6 +306,15 @@ private void addComponents() {
 				}
 			});
 		}
+		
+	}
+	
+	private void anounceSuccesfulSave()
+	{
+		JOptionPane.showMessageDialog(this,
+									LanguageFactory.getInstance().getExpresion(SAVE_MESSAGEBOX_TITLE), 
+				       				LanguageFactory.getInstance().getExpresion(SAVE_MESSAGEBOX_CONTENT), 
+				       				JOptionPane.PLAIN_MESSAGE);
 		
 	}
 }

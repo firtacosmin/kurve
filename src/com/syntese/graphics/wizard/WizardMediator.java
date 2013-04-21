@@ -168,22 +168,22 @@ public class WizardMediator implements WizardDialogActionListener{
 		case 3:
 			/*create the project*/
 			createProject();
-			JFileChooser filedlg = new JFileChooser();
-			filedlg.setCurrentDirectory(new File("."));
-			filedlg.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-			int res = filedlg.showSaveDialog(_mainFrame);
-			Boolean saved = false;
-			if ( res == JFileChooser.APPROVE_OPTION )
-			{
-				saved = _theNewProject.saveProjectFile(filedlg.getSelectedFile().getPath());
-			}
-			if ( saved == true )
-			{
+//			JFileChooser filedlg = new JFileChooser();
+//			filedlg.setCurrentDirectory(new File("."));
+//			filedlg.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+//			int res = filedlg.showSaveDialog(_mainFrame);
+//			Boolean saved = false;
+//			if ( res == JFileChooser.APPROVE_OPTION )
+//			{
+//				saved = _theNewProject.saveProjectFile(filedlg.getSelectedFile().getPath());
+//			}
+//			if ( saved == true )
+//			{
 				_theDialog.setVisible(false);
 				if ( _theListener != null ){
 					_theListener.wizardEnded(_theNewProject);
 				}
-			}
+//			}
 			
 			break;
 		default:

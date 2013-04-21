@@ -18,9 +18,8 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Text;
 import org.xml.sax.SAXException;
 
-import com.syntese.graphics.mainFrame.MainFrame;
-import com.syntese.graphics.mainFrame.MainFrameMediator;
 import com.syntese.language.Language;
+import com.syntese.workspace.Workspace;
 
 public class MAin {
 
@@ -84,7 +83,8 @@ public class MAin {
 		
 //		MainFrame f = new MainFrame();
 //		f.show();
-		MainFrameMediator m = new MainFrameMediator();
+//		MainFrameMediator m = new MainFrameMediator();
+		Workspace theWorkspace = new Workspace();
 		
 	}
 

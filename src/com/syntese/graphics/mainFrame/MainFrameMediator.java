@@ -3,6 +3,7 @@ package com.syntese.graphics.mainFrame;
 import java.io.File;
 
 import javax.swing.JFileChooser;
+import javax.swing.JPanel;
 
 import com.syntese.graphics.wizard.WizardListener;
 import com.syntese.graphics.wizard.WizardMediator;
@@ -21,12 +22,15 @@ public class MainFrameMediator implements MainFrameActionListener,WizardListener
 	 * public
 	 * */
 	
-	public MainFrameMediator(){
-		_theWorkspace = new Workspace();
-		_theFrame = new MainFrame(_theWorkspace.get_thePanel());
+	public MainFrameMediator(Workspace workspace, JPanel mainPan){
+		_theWorkspace = workspace;
+		_theFrame = new MainFrame(mainPan);
 		_theWizard = new WizardMediator(_theFrame);
 		
 		_theFrame.addActionListener(this);
+	}
+	
+	public void displayFrame(){
 		_theFrame.setVisible(true);
 	}
 	
@@ -60,8 +64,11 @@ public class MainFrameMediator implements MainFrameActionListener,WizardListener
 
 	@Override
 	public void saveMenuClick(int saveType) {
-		// TODO Auto-generated method stub
-		
+		if ( saveType == 2 ){
+		_theWorkspace.saveSelectedProject();
+		}else if ( saveType == 1 ){
+			_theWorkspace.saveAllProjects();
+		}
 	}
 
 	@Override
@@ -81,6 +88,7 @@ public class MainFrameMediator implements MainFrameActionListener,WizardListener
 	public void frameClosing(){
 		/*save the settings*/
 		SettingsFactory.getInstance().save();
+		_theWorkspace.saveWorkspace();
 	}
 	
 	@Override

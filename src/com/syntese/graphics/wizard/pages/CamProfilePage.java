@@ -19,6 +19,11 @@ import com.syntese.project.data.ProjectData;
 
 public class CamProfilePage extends WizardPage{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2915319474279708911L;
+
 	/****************
 	 * PROPERTIES
 	 * *************/

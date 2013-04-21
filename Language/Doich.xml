@@ -9,7 +9,7 @@
     
     <expression>
         <name>FileMenu</name>
-        <value>File</value>
+        <value>Datei</value>
     </expression>
     <expression>
         <name>NewMenu</name>
@@ -25,19 +25,19 @@
     </expression>
     <expression>
         <name>CloseAllMenu</name>
-        <value>Close All</value>
+        <value>Alle schließen</value>
     </expression>
     <expression>
         <name>SaveMenu</name>
-        <value>Save</value>
+        <value>Sparen</value>
     </expression>
     <expression>
         <name>SaveAsMenu</name>
-        <value>Save As</value>
+        <value>Speichern unter</value>
     </expression>
     <expression>
         <name>SaveAllMenu</name>
-        <value>Save All</value>
+        <value>Alles speichern</value>
     </expression>
     <expression>
         <name>HelpMenu</name>
@@ -45,21 +45,21 @@
     </expression>
     <expression>
         <name>LanguageMenu</name>
-        <value>Language</value>
+        <value>Sprache</value>
     </expression>
     <expression>
         <name>AboutMenu</name>
-        <value>About</value>
+        <value>Über</value>
     </expression>
     
     
     <expression>
         <name>Error_dialog_title</name>
-        <value>Error</value>
+        <value>Fehler</value>
     </expression>
     <expression>
       <name>Wizard_error_start</name>
-      <value>The following errors have been detected:</value>
+      <value>Folgende Fehler wurden erkannt:</value>
     </expression>
     
     <expression>
@@ -80,11 +80,11 @@
     </expression>
     <expression>
       <name>Wizard_CamType_error_noTitle</name>
-      <value>The textbox for the project's title must be completed with at least 3 letters</value>
+      <value>Das Textfeld für den Projekterfolg Titel muss mit mindestens 3 Buchstaben abgeschlossen sein</value>
     </expression>
     <expression>
       <name>Wizard_CamType_error_noCamTypeSelected</name>
-      <value>At least one cam type must be selected</value>
+      <value>Mindestens einen Nocken-Typ ausgewählt werden</value>
     </expression>
     
     
@@ -122,7 +122,7 @@
     </expression>
     <expression>
         <name>Wizard_Downstream_error_noSelection</name>
-        <value>At least one downstream mechanism must be selected</value>
+        <value>Mindestens ein stromabwärts Mechanismus ausgewählt werden</value>
     </expression>
     
     
@@ -169,75 +169,75 @@
     </expression>
     <expression>
         <name>Wizard_CamProfile_error_noSelection</name>
-        <value>At least one cam profile must be selected</value>
+        <value>Mindestens ein Nockenprofil ausgewählt werden</value>
     </expression>
 	
 	
 	  <expression>
         <name>Wizard_GeomData_TabTitle</name>
-        <value>Geometry data</value>
+        <value>Geometriedaten</value>
     </expression>
     <expression>
         <name>Wizard_GeomData_LengthTitle</name>
-        <value>Length details</value>
+        <value>Längenangaben</value>
     </expression>
     <expression>
         <name>Wizard_GeomData_AngleTitle</name>
-        <value>Angle details</value>
+        <value>Winkelsangaben</value>
     </expression>
     <expression>
         <name>Wizard_GeomData_WaveRad_Label</name>
-        <value>Wave radius</value>
+        <value>Wellenradius</value>
     </expression>
     <expression>
         <name>Wizard_GeomData_SeibenRad_Label</name>
-        <value>Seiben Radius</value>
+        <value>Seibenradius</value>
     </expression>
     <expression>
         <name>Wizard_GeomData_DrawingBtn</name>
-        <value>Drawing</value>
+        <value>Zeichnung</value>
     </expression>
     <expression>
         <name>Wizard_SignDef_tabTitle</name>
-        <value>Sign definition</value>
+        <value>Vorzeichendefinitionen</value>
     </expression>
     <expression>
         <name>Wizard_SignDef_rotationCamSign</name>
-        <value>The direction of rotation of the cam mathematically positive or negative?</value>
+        <value>Ist die Drehrichtung der Kurvenscheibe mathenatisch positiv oder negativ ?</value>
     </expression>
     <expression>
         <name>Wizard_SignDef_rockingLeverSign</name>
-        <value>The movement of the rocking lever at the beginning of the movement mathematically positive or negative?</value>
+        <value>Ist die Bewegung der Schwinghebels zu Beginn der Bewegung mathenatisch positiv oder negativ ?</value>
     </expression>
     <expression>
         <name>Wizard_SignDef_PositivOption</name>
-        <value>+1 : mathematically positive</value>
+        <value>+1 : mathenatisch positiv</value>
     </expression>
     <expression>
         <name>Wizard_SignDef_NegativOption</name>
-        <value>-1 : mathematically negative</value>
+        <value>-1 : mathenatisch negativ</value>
     </expression>
     
     
     <expression>
         <name>Wizard_Motion_SegmentLabel</name>
-        <value>Section</value>
+        <value>Abschnitt</value>
     </expression>
     <expression>
         <name>Wizard_Motion_NoOfSegmentLabel</name>
-        <value>Maximum number of motion-sections</value>
+        <value>Anzahl der Bewegungsabschnitte</value>
     </expression>
     <expression>
         <name>Wizard_Motion_PHISum</name>
-        <value>Total degree</value>
+        <value>Summe grad</value>
     </expression>
     <expression>
         <name>Wizard_Motion_PSISum</name>
-        <value>Total mm/degree</value>
+        <value>summe mm/grade</value>
     </expression>
     <expression>
         <name>Wizard_Motion_TabTitle</name>
-        <value>running motion</value>
+        <value>Bewebunbsverlauf</value>
     </expression>
     
     
@@ -246,20 +246,144 @@
     
     <expression>
         <name>WizardDlgTitle</name>
-        <value>New curve Wizard</value>
+        <value>New Kurve Wizard</value>
     </expression>
     <expression>
         <name>WizardDlgNextBtnText</name>
-        <value>Next</value>
+        <value>Weiter</value>
     </expression>
     <expression>
         <name>WizardDlgPreviousBtnText</name>
-        <value>Back</value>
+        <value>Zurück</value>
     </expression>
     <expression>
         <name>WizardDlgCancelBtnText</name>
-        <value>Cancel</value>
+        <value>Abbrechen</value>
     </expression>
     
+
+	<expression>
+		<name>InputParams_chk_inputParams</name>
+		<value>Eingabeparameter</value>
+	</expression>
+    <expression>
+		<name>InputParams_btn_clear</name>
+		<value>Löschen</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_x_a0__mm_</name>
+		<value>Koordinate des Drehgelekes der Kurvenscheibe          xa:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_y_a0__mm_</name>
+		<value>Koordinate des Drehgelekes der Kurvenscheibe          ya:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_x_d__mm_</name>
+		<value>Koordinate des Punktes D          xd:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_y_d__mm_</name>
+		<value>Koordinate des Punktes D          yd:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_x_s__mm_</name>
+		<value>Koordinate des Punktes S          xs:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_y_s__mm_</name>
+		<value>Koordinate des Punktes S          ys:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_ro_min__mm_</name>
+		<value>Minimale Krümmungsradius          ro:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_l3__mm_</name>
+		<value>Länge          l3:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_l31__mm_</name>
+		<value>Länge          l31:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_l3p__mm_</name>
+		<value>Länge          l3p:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_l4__mm_</name>
+		<value>Länge          l4:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_l5__mm_</name>
+		<value>Länge          l5:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_l1__mm_</name>
+		<value>Länge          l1:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_rr__mm_</name>
+		<value>Rollenradius          r:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_rg__mm_</name>
+		<value>Grundkreisradius          rb:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_ep__mm_</name>
+		<value>Exzentrizität          ep:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_delta__grad_</name>
+		<value>Winkel          delta:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_gama__grad_</name>
+		<value>Winkel          gama:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_miu_an_min__grad_</name>
+		<value>Übertragungwinkel Anstieg          niu_u:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_miu_ab_min__grad_</name>
+		<value>Übertragungwinkel Anstieg          nui_c:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_n__grad_</name>
+		<value>Winkel          n:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_y__mm_</name>
+		<value>Länge          y1:=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_wave</name>
+		<value>Wellenradius          :=</value>
+	</expression>
+	<expression>
+		<name>InputParams_disp_sieben</name>
+		<value>Seibenradius          :=</value>
+	</expression>
+	
+	<expression>
+		<name>SaveComplete_MsjBox_title</name>
+		<value>Daten speichern</value>
+	</expression>
+	<expression>
+		<name>SaveComplete_MsjBox_content</name>
+		<value>Erfolgreich gespeicherten Daten</value>
+	</expression>
+	
+	<expression>
+		<name>ChoseWorkspace_pathIncorect_title</name>
+		<value>Fehler: Pfad incorect</value>
+	</expression>
+	<expression>
+		<name>ChoseWorkspace_pathIncorect_content</name>
+		<value>Pfad eingeführt ist nicht korrekt. Bitte wählen Sie ein oder andere Ausfahrt.</value>
+	</expression>
+	
     
 </language>

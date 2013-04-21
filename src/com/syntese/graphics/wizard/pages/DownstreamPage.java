@@ -20,6 +20,11 @@ import com.syntese.project.data.ProjectData;
 
 public class DownstreamPage extends WizardPage{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6817402251516347159L;
+
 	private static int TOTAL_INSTANTES = 0;
 	
 	/****************

@@ -1,7 +1,5 @@
 package com.syntese.graphics.wizard.pages;
 
-import java.util.ArrayList;
-
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -9,6 +7,11 @@ import javax.swing.JTextField;
 import com.syntese.settings.SettingsFactory;
 
 public class TrajectoriesPage extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8462036502855241681L;
+
 	/****************
 	 * PROPERTIES
 	 * *************/

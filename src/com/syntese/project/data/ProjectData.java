@@ -97,6 +97,23 @@ public class ProjectData {
 		_proj_name = "";
 		_cam_segments = new ArrayList<String>(20);
 	}
+	
+	public ProjectData(ProjectData prj){
+		this();
+		set_cam_type(prj.get_cam_type());
+		set_cam_profile(prj.get_cam_profile());
+		set_cam_downstream(prj.get_cam_downstream());
+		set_cam_positive_sign(prj.get_cam_positive_sign());
+		set_lever_positive_sign(prj.get_lever_positive_sign());
+		set_cam_geomData(prj.get_cam_geomData());
+		set_cam_phi(prj.get_cam_phi());
+		set_cam_psi(prj.get_cam_psi());
+		set_cam_no_segments(prj.get_cam_no_segments());
+		set_cam_total_phi(prj.get_cam_total_phi());
+		set_cam_total_psi(prj.get_cam_total_psi());
+		set_cam_segments(prj.get_cam_segments());
+		set_proj_name(prj.get_proj_name());
+	}
 
 	
 

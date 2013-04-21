@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -344,6 +343,7 @@ public class ProjectData {
 	 * Return: void
 	 * Desc: returns the value of xml node in Integer format
 	 */
+	@SuppressWarnings("unused")
 	private void loadValue(Integer destination, Node currentNode) {
 		try{
 			destination = Integer.parseInt(getStringValue(currentNode));
@@ -363,6 +363,7 @@ public class ProjectData {
 	 * Return: void
 	 * Desc: returns the value of xml node in Boolean format( true if equals = )
 	 */
+	@SuppressWarnings("unused")
 	private void loadValue(Boolean destination, Node currentNode) {
 		destination = getStringValue(currentNode).equals("+")?true:false;
 	}

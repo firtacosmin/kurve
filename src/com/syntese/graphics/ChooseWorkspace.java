@@ -27,7 +27,8 @@ public class ChooseWorkspace {
   private static final String chooseWorkspaceLabelTextValue = "Please choose your workspace";
 	
   private JFrame frame;
-  private JComboBox workspaceComboBox;
+  @SuppressWarnings("rawtypes")
+private JComboBox workspaceComboBox;
   private JLabel chooseWorkspaceLabel;
   private JButton btnBrowse;
   private JButton btnOk;
@@ -64,7 +65,8 @@ public class ChooseWorkspace {
     addActionListeners();
   }
   
-  private void makeFramesAndCustomize(){
+  @SuppressWarnings({ "rawtypes", "unchecked" })
+private void makeFramesAndCustomize(){
 	  	frame = new JFrame();
 	    frame.setBounds(100, 100, 750, 250);
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -109,7 +111,8 @@ public class ChooseWorkspace {
 	  
 	    workspaceComboBox.addActionListener(new ActionListener() {
 	    	
-	        public void actionPerformed(ActionEvent e) {
+	        @SuppressWarnings({ "rawtypes", "unused" })
+			public void actionPerformed(ActionEvent e) {
 	            JComboBox cb = (JComboBox)e.getSource();
 	            String workspacePath = (String)cb.getSelectedItem();
 //	            updateLabel(workspacePath);
@@ -118,7 +121,8 @@ public class ChooseWorkspace {
 	    
 	    btnBrowse.addActionListener(new ActionListener() {
 	    	
-	    	public void actionPerformed(ActionEvent e) {
+	    	@SuppressWarnings("unchecked")
+			public void actionPerformed(ActionEvent e) {
 		    	JFileChooser fileChooser = new JFileChooser();
 		        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
 		         //fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);

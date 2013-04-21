@@ -1,10 +1,8 @@
 package com.syntese.media;
 
 import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
@@ -15,6 +13,10 @@ import javax.swing.JPanel;
 
 public class ImagePanel extends JPanel{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2799250794878834452L;
 	private Image _theImage;
 	private int _width;
 	private int _height;

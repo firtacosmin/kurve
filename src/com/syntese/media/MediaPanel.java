@@ -16,8 +16,6 @@ import javax.media.Player;
 import javax.media.PrefetchCompleteEvent;
 import javax.media.RealizeCompleteEvent;
 import javax.media.Time;
-import javax.swing.event.InternalFrameAdapter;
-import javax.swing.event.InternalFrameEvent;
 
 
 //public class MediaPanel extends JPanel implements ControllerListener
@@ -101,6 +99,10 @@ import javax.swing.event.InternalFrameEvent;
 //   	} // end class MediaPanel
 
 public class MediaPanel extends Panel implements ControllerListener {
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4244319992513239376L;
 Player mplayer;
 Component visual = null;
 Component control = null;

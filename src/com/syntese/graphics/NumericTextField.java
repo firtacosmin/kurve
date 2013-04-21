@@ -17,6 +17,7 @@ public class NumericTextField extends JTextField {
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@SuppressWarnings("unused")
 	private String prevVal;
 	
 	public NumericTextField()

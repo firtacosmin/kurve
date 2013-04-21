@@ -2,12 +2,12 @@ package com.syntese.project.data;
 
 import javax.swing.JPanel;
 
-import com.syntese.language.LanguageFactory;
 import com.syntese.project.graphics.InputParamsPanel;
 
 public class ProjectMediator {
 	
 	private ProjectData _projDt;
+	@SuppressWarnings("unused")
 	private static final String TEXT_VALUES_PREFIX = "InputParams_disp_";
 	
 	/*GRAPHICS*/

@@ -1,9 +1,7 @@
 package com.syntese.graphics.wizard;
 
-import java.io.File;
 import java.util.ArrayList;
 
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 
 import com.syntese.graphics.wizard.dialog.WizardDialog;
@@ -25,13 +23,17 @@ public class WizardMediator implements WizardDialogActionListener{
 	 * PROPERTIES
 	 * ************/
 	private static final int CAM_TYPE = 0;
+	@SuppressWarnings("unused")
 	private static final int DOWNSTREAM_COMPONENTS = 1;
+	@SuppressWarnings("unused")
 	private static final int CAM_PROFILE = 2;
 
+	@SuppressWarnings("unused")
 	private JFrame _mainFrame;
 	
 	private WizardDialog _theDialog;
 	/*the wizard pages*/
+	@SuppressWarnings("unused")
 	private ArrayList<WizardPage> _pages;  
 	
 	/*the current page*/

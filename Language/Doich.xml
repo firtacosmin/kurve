@@ -384,6 +384,10 @@
 		<name>ChoseWorkspace_pathIncorect_content</name>
 		<value>Pfad eingeführt ist nicht korrekt. Bitte wählen Sie ein oder andere Ausfahrt.</value>
 	</expression>
+	<expression>
+		<name>ChoseWorkspace_text</name>
+		<value>Bitte wählen Sie einen Ordner für den Arbeitsbereich</value>
+	</expression>
 	
     
 </language>

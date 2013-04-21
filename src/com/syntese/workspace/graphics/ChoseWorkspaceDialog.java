@@ -2,6 +2,7 @@ package com.syntese.workspace.graphics;
 
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -14,6 +15,7 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import com.syntese.graphics.GBC;
@@ -28,6 +30,7 @@ public class ChoseWorkspaceDialog extends JDialog{
 	
 	private static final String PATH_ERROR_DLG_TITLE = "ChoseWorkspace_pathIncorect_title";
 	private static final String PATH_ERROR_DLG_CONTENT = "ChoseWorkspace_pathIncorect_content";
+	private static final String TITLE_LABEL = "ChoseWorkspace_text";
 	
 	private JComboBox<String> _combo_workspace;
 	private ArrayList<String> _paths;
@@ -66,6 +69,9 @@ public class ChoseWorkspaceDialog extends JDialog{
 	
 	private void initUI()
 	{
+		Toolkit kit = Toolkit.getDefaultToolkit();
+		Dimension screenSize = kit.getScreenSize();
+		setLocation((screenSize.width - WIDTH)/2, (screenSize.height - HEIGHT)/2);
 		_combo_workspace = new JComboBox<String>();
 		_combo_workspace.setPreferredSize(new Dimension(300,25));
 		addWindowListener(new WindowAdapter() {
@@ -102,10 +108,11 @@ public class ChoseWorkspaceDialog extends JDialog{
 				selectPath();
 			}
 		});
-		
-		add(_combo_workspace, new GBC(0,0).setAnchor(GBC.CENTER).setWeight(100, 0) );
-		add(selectBtn, new GBC(1,1).setAnchor(GBC.CENTER).setWeight(0, 0));
-		add(browseBtn, new GBC(1,0).setAnchor(GBC.CENTER).setWeight(0, 0));
+		JLabel title = new JLabel(LanguageFactory.getInstance().getExpresion(TITLE_LABEL));
+		add(title, new GBC(0,0).setAnchor(GBC.NORTH).setWeight(100, 0) );
+		add(_combo_workspace, new GBC(0,1).setAnchor(GBC.CENTER).setWeight(100, 0) );
+		add(selectBtn, new GBC(1,2).setAnchor(GBC.CENTER).setWeight(0, 0));
+		add(browseBtn, new GBC(1,1).setAnchor(GBC.CENTER).setWeight(0, 0));
 	}
 
 

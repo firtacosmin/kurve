@@ -17,9 +17,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import com.sun.media.ui.MessageBox;
 import com.syntese.language.LanguageFactory;
-import com.syntese.workspace.graphics.WorkSpaceMainPanel;
 
 public class MainFrame extends JFrame {
 	/**

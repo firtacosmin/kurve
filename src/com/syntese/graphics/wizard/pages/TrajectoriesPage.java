@@ -19,20 +19,26 @@ public class TrajectoriesPage extends JPanel {
 	private static final String MAX_MOTION_SEGMENTS_SETTING_NAME = "MaxMotionSegmets";
 	
 	/*TEXTS*/
-	private static final String SECTIONS_TAG_NAME = "";
-	private static final String PHI_TAG_NAME = "";
-	private static final String MM_PSI_TAG_NAME = "";
-	private static final String NO_MOTION_SEG_TAG_NAME = "";
-	private static final String SUM_PHI_TAG_NAME = "";
-	private static final String SUM_MM_PSI_TAG_NAME = "";
+//	private static final String SECTIONS_TAG_NAME = "";
+//	private static final String PHI_TAG_NAME = "";
+//	private static final String MM_PSI_TAG_NAME = "";
+//	private static final String NO_MOTION_SEG_TAG_NAME = "";
+//	private static final String SUM_PHI_TAG_NAME = "";
+//	private static final String SUM_MM_PSI_TAG_NAME = "";
 	
 	
 	/*GUI components*/
+	@SuppressWarnings({ "rawtypes", "unused" })
 	private JComboBox[] _setions;
+	@SuppressWarnings("unused")
 	private JTextField[] _phi;
+	@SuppressWarnings("unused")
 	private JTextField[] _mmPsi;
+	@SuppressWarnings({ "rawtypes", "unused" })
 	private JComboBox _noMotionSegments;
+	@SuppressWarnings("unused")
 	private JTextField _sumPhi;
+	@SuppressWarnings("unused")
 	private JTextField _sumMmPsi;
 	
 	private int _maxMotionSegments; 
@@ -70,6 +76,7 @@ public class TrajectoriesPage extends JPanel {
 	/*
 	 * PRIVATE
 	 * */
+	@SuppressWarnings("rawtypes")
 	private void inializeGuiComponents() {
 		
 		/*initializing the arrays*/

@@ -14,4 +14,10 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<variableList>
+		<variable>
+			<name>log4j</name>
+			<value>file:/D:/Documents%20and%20Settings/cfirta/git/kurve/lib/log4j.jar</value>
+		</variable>
+	</variableList>
 </projectDescription>

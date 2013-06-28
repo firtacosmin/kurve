@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
-import com.sun.media.ui.MessageBox;
 import com.syntese.graphics.mainFrame.MainFrameMediator;
 import com.syntese.project.data.ProjectData;
 import com.syntese.project.data.ProjectException;

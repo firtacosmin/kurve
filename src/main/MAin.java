@@ -1,5 +1,8 @@
 package main;
 
+import com.syntese.log.Log;
+
+
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.File;
@@ -27,6 +30,16 @@ public class MAin {
 	 * @param args
 	 */
 	public static void main(String[] args) { 
+		 /* Get actual class name to be printed on */
+		
+		  //Logger log = Logger.getLogger("syntese");
+		// BasicConfigurator replaced with PropertyConfigurator.
+	     //PropertyConfigurator.configure("etc/log4j.properties");
+Log.syntese.debug("Hello this is an debug message d");
+Log.syntese.info("Hello this is an info message  i");
+Log.syntese.error("Hello this is an info message   e");
+		
+		
 		try {
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 			Document lang = builder.parse(new File("Language/English.xml"));
@@ -35,13 +48,13 @@ public class MAin {
 			for (int i=0;i<expresions.getLength(); i++){
 				Node exp = expresions.item(i);
 				if ( exp.getNodeName() != "#text" ){
-					System.out.println(exp.getNodeName());
+//					System.out.println(exp.getNodeName());
 					Text name = (Text) exp.getChildNodes().item(1).getFirstChild();
 					Text value = (Text) exp.getChildNodes().item(3).getFirstChild();
 					
-					System.out.println("Name: "+name.getData());
-					System.out.println("Value: "+value.getData());
-					System.out.println();
+//					System.out.println("Name: "+name.getData());
+//					System.out.println("Value: "+value.getData());
+//					System.out.println();
 				}
 				
 			}
@@ -78,7 +91,7 @@ public class MAin {
 		
 		//ILanguage lang = LanguageFactory.getInstance();
 		Language lang = new Language();
-		lang.getExpresion("title");
+//		lang.getExpresion("title");
 		
 		
 //		MainFrame f = new MainFrame();

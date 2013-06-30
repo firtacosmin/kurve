@@ -55,7 +55,9 @@ public class LastPageTab extends WizardPage{
 	@Override
 	public boolean areFieldsValid()
 	{
-		return true;
+		return _theMotionTab.areFieldsValid() && 
+			   _signTab.areFieldsValid() && 
+			   _geomTab.areFieldsValid();
 	}
 	
 	/**

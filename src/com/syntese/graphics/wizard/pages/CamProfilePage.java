@@ -159,6 +159,7 @@ public class CamProfilePage extends WizardPage{
 		/*creating the ckeckboxes*/
 		
 		_levelCat1Chk = new Checkbox();
+		_levelCat1Chk.setState(true);
 		_levelCat1Chk.setCheckboxGroup(_chkGroup);
 		_levelCat1Chk.setLabel(LanguageFactory.getInstance().getExpresion(LEVER_CAT1_NAME));
 
@@ -175,6 +176,7 @@ public class CamProfilePage extends WizardPage{
 		_levelCat4Chk.setLabel(LanguageFactory.getInstance().getExpresion(LEVER_CAT4_NAME));
 		
 		_slideCat1Chk = new Checkbox();
+		_slideCat1Chk.setState(true);
 		_slideCat1Chk.setCheckboxGroup(_chkGroup);
 		_slideCat1Chk.setLabel(LanguageFactory.getInstance().getExpresion(SLIDE_CAT1_NAME));
 

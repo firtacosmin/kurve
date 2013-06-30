@@ -179,6 +179,7 @@ public class DownstreamPage extends WizardPage{
 		/*creating the ckeckboxes*/
 		
 		_levelCat1Chk = new Checkbox();
+		_levelCat1Chk.setState(true);
 		_levelCat1Chk.setCheckboxGroup(_chkGroup);
 		_levelCat1Chk.setLabel(LanguageFactory.getInstance().getExpresion(LEVER_CAT1_NAME));
 
@@ -195,6 +196,7 @@ public class DownstreamPage extends WizardPage{
 		_levelCat4Chk.setLabel(LanguageFactory.getInstance().getExpresion(LEVER_CAT4_NAME));
 		
 		_camCat1Chk = new Checkbox();
+		_camCat1Chk.setState(true);
 		_camCat1Chk.setCheckboxGroup(_chkGroup);
 		_camCat1Chk.setLabel(LanguageFactory.getInstance().getExpresion(CAMS_CAT1_NAME));
 

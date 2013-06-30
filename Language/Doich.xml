@@ -140,7 +140,7 @@
     
     
 
-	<expression>
+	  <expression>
         <name>Wizard_CamProfile_Slide_Title</name>
         <value>Art der Kurvenscheibe fur Kurvengetriebe mit Rollenschieber</value>
     </expression>
@@ -252,6 +252,19 @@
         <name>Wizard_Motion_TabTitle</name>
         <value>Bewebunbsverlauf</value>
     </expression>
+    <expression>
+        <name>Wizard_Motion_PHISum_error</name>
+        <value>Muss Sume die Grades 360 sein</value>
+    </expression>
+    <expression>
+        <name>Wizard_Motion_PSISum_error</name>
+        <value>Muss die Verlagerung summe 0 sein</value>
+    </expression>
+    <expression>
+        <name>Wizard_Motion_NoSegments_error</name>
+        <value>Muß ein minimal abschnitt Aktive sein</value>
+    </expression>
+    
     
     
     

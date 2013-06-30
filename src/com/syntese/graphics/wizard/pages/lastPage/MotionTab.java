@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.event.CaretEvent;
@@ -37,6 +38,10 @@ public class MotionTab extends JPanel {
 	private static final String NUMBER_OF_SEGMENTS_LABEL = "Wizard_Motion_NoOfSegmentLabel";
 	private static final String PHI_SUM_LABEL = "Wizard_Motion_PHISum";
 	private static final String PSI_SUM_LABEL = "Wizard_Motion_PSISum";
+	private static final String PHI_SUM_ERROR_MSJ = "Wizard_Motion_PHISum_error";
+	private static final String PSI_SUM_ERROR_MSJ = "Wizard_Motion_PSISum_error";
+	private static final String ERROR_DLG_TITLE = "Error_dialog_title";
+	private static final String NO_SEGMENTS_ERROR_MSJ = "Wizard_Motion_NoSegments_error";
 	
 	
 	/*workspace properties title*/
@@ -82,7 +87,33 @@ public class MotionTab extends JPanel {
 	 */
 	public Boolean areFieldsValid()
 	{
-		return true;
+		/*Check for the selected number of segments*/
+		if (getNoOfSegments() == 0)
+		{
+			JOptionPane.showMessageDialog(this, 
+					LanguageFactory.getInstance().getExpresion(ERROR_DLG_TITLE) + ":\n" +LanguageFactory.getInstance().getExpresion(NO_SEGMENTS_ERROR_MSJ), 
+                    LanguageFactory.getInstance().getExpresion(ERROR_DLG_TITLE), 
+                    JOptionPane.ERROR_MESSAGE);
+			return false;
+		}
+		/*check for the total PHI and PSI values*/
+		if ( getTotalPhi() == 360 && getTotalPsi() == 0 )
+		{
+			return true;
+		}else{
+			String msj = LanguageFactory.getInstance().getExpresion(ERROR_DLG_TITLE) + ":\n";
+			if ( getTotalPhi() != 360 ){
+				msj += LanguageFactory.getInstance().getExpresion(PHI_SUM_ERROR_MSJ)+"\n";
+			}
+			if ( getTotalPsi() != 0 ){
+				msj += LanguageFactory.getInstance().getExpresion(PSI_SUM_ERROR_MSJ)+"\n";
+			}
+			JOptionPane.showMessageDialog(this, 
+					                      msj, 
+					                      LanguageFactory.getInstance().getExpresion(ERROR_DLG_TITLE), 
+					                      JOptionPane.ERROR_MESSAGE);
+			return false;
+		}
 	}
 	
 	/*

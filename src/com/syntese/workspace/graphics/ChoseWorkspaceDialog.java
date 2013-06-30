@@ -20,6 +20,7 @@ import javax.swing.JOptionPane;
 
 import com.syntese.graphics.GBC;
 import com.syntese.language.LanguageFactory;
+import com.syntese.log.Log;
 
 public class ChoseWorkspaceDialog extends JDialog{
 
@@ -47,6 +48,7 @@ public class ChoseWorkspaceDialog extends JDialog{
 		initUI();
 		addUI();
 	}
+	
 	
 	public void setPaths(ArrayList<String> paths){
 		_paths = paths;
@@ -143,10 +145,36 @@ public class ChoseWorkspaceDialog extends JDialog{
 			
 		}
 		if ( !pathOK ){
-			JOptionPane.showMessageDialog(this,
-										LanguageFactory.getInstance().getExpresion(PATH_ERROR_DLG_TITLE), 
-					       				LanguageFactory.getInstance().getExpresion(PATH_ERROR_DLG_CONTENT), 
-					       				JOptionPane.ERROR_MESSAGE);
+
+			/*If the selected workspace is not a valid folder*/
+			/*Ask if folder should be created*/
+			if( JOptionPane.showConfirmDialog(null,
+					   LanguageFactory.getInstance().getExpresion("WorkspaceDlg_FolderNotCreatedMsj"), 
+					   LanguageFactory.getInstance().getExpresion("WorkspaceDlg_FolderNotCreatedTlt"),
+					   JOptionPane.OK_CANCEL_OPTION,
+					   JOptionPane.WARNING_MESSAGE) == JOptionPane.OK_OPTION)
+			{
+				/*create the folder.*/
+				File tmpWorkFile = new File(selection);
+				if (tmpWorkFile.mkdirs())
+				{
+					Log.syntese.info("Created the workspace folder: "+selection);
+					dispose();
+				}else{
+					/*could not create folder*/
+					Log.syntese.info("Could not create the workspace folder: "+selection);
+					JOptionPane.showMessageDialog(null, LanguageFactory.getInstance().getExpresion("WorkspaceDlg_FolderError"));
+					/*select an other one*/
+				}
+			}else
+			{
+				/*re ask for workspace folder.*/
+			}
+			
+//			JOptionPane.showMessageDialog(this,
+//										LanguageFactory.getInstance().getExpresion(PATH_ERROR_DLG_TITLE), 
+//					       				LanguageFactory.getInstance().getExpresion(PATH_ERROR_DLG_CONTENT), 
+//					       				JOptionPane.ERROR_MESSAGE);
 		}else{
 			dispose();
 		}

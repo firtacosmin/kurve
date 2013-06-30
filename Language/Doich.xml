@@ -6,6 +6,19 @@
         <value>Syntese</value>
     </expression>
     
+     <expression>
+        <name>WorkspaceDlg_FolderNotCreatedMsj</name>
+        <value>ENG - The selected workspace folder does not exist. \n Do you want it to be created?</value>
+    </expression>        
+    <expression>
+        <name>WorkspaceDlg_FolderNotCreatedTlt</name>
+        <value>ENG - Workspace folder</value>
+    </expression>
+    <expression>
+        <name>WorkspaceDlg_FolderError</name>
+        <value>ENG - The workspace could not be created. \n Please select an other workspace folder.</value>
+    </expression>
+    
     
     <expression>
         <name>FileMenu</name>

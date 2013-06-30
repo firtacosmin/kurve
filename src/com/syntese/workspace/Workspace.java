@@ -4,10 +4,13 @@ import java.io.File;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import com.syntese.graphics.mainFrame.MainFrameMediator;
+import com.syntese.language.Language;
+import com.syntese.language.LanguageFactory;
+import com.syntese.log.Log;
 import com.syntese.project.data.ProjectData;
-import com.syntese.project.data.ProjectException;
 import com.syntese.project.data.ProjectMediator;
 import com.syntese.settings.SettingsFactory;
 import com.syntese.workspace.graphics.ChoseWorkspaceDialog;
@@ -31,6 +34,13 @@ public class Workspace implements WorkspaceGraphicsListener {
 	private String _workspacePath;
 	
 	/*PUBLIC METHODS*/
+	/**
+	 * @Name: Workspace constructor
+	 * @Args: none 
+	 * @desc: constructs the workspace class. 
+	 *        Opens dialog for workspace folder.
+	 *        opens MainFrame with selected workspace 
+	 */
 	public Workspace()
 	{
 		_projects = new ArrayList<ProjectMediator>();
@@ -41,20 +51,7 @@ public class Workspace implements WorkspaceGraphicsListener {
 		_mainFrame = new MainFrameMediator(this, _thePanel);
 		
 		/*ask for workspace path*/
-		ChoseWorkspaceDialog dlg = new ChoseWorkspaceDialog(null);
-		String pastPath = SettingsFactory.getInstance().getCurrentSetting(WORKSPACE_PATH_SETING_NAME);
-		if ( pastPath != null ){
-			dlg.addPath(pastPath);
-		}
-		dlg.setVisible(true); 
-		_workspacePath = dlg.getSelection();
-		if ( checkWorkspacePath() ){ 
-			SettingsFactory.getInstance().setCurrentSetting(WORKSPACE_PATH_SETING_NAME, _workspacePath);
-			SettingsFactory.getInstance().save();
-			_workspaceFile = new WorkspaceFile(_workspacePath);
-			loadWorkspaceProjects();
-			_mainFrame.displayFrame();
-		}
+		askForWorkspace();
 		
 	}
 
@@ -143,9 +140,66 @@ public class Workspace implements WorkspaceGraphicsListener {
 		_workspaceFile.saveWorkspaceFile();
 	}
 
+	/**
+	 * @Name: getWotkspacePath
+	 * @Args: null
+	 * @Return: String
+	 * @Desc: returns the path to the workspace folder.
+	 */
+	public String getWotkspacePath() {
+		return _workspacePath;
+	}
 	/*PRIVATE METHODS*/
 	
+	/**
+	 * @Name: askForWorkspace
+	 * @Args: 
+	 * @Return: void
+	 * @Desc: method that displays a dialog asking for the workspace folder.
+	 */
+	private void askForWorkspace(){
+		ChoseWorkspaceDialog dlg = new ChoseWorkspaceDialog(null);
+		String pastPath = SettingsFactory.getInstance().getCurrentSetting(WORKSPACE_PATH_SETING_NAME);
+		if ( pastPath != null ){
+			dlg.addPath(pastPath);
+		}
+		dlg.setVisible(true); 
+		_workspacePath = dlg.getSelection(); 
+		Log.syntese.debug("Application Started. Selected Workspace="+_workspacePath);
+		if ( checkWorkspacePath() ){
+			startMainFrame();
+		}else{
+			/*exit*/
+			Log.syntese.debug("No workspace selected. Will exit the application");
+			System.exit(0);
+		}
+	}
 	
+	/**
+	 * @Name: startMainFrame
+	 * @Args: 
+	 * @Return: void
+	 * @Desc: method that starts the mainFrame. 
+	 * @Worning: Should not be started with unexisting workspace folder 
+	 *  
+	 */
+	private void startMainFrame(){
+
+		Log.syntese.debug("Starting application with workspace:" + _workspacePath);
+		SettingsFactory.getInstance().setCurrentSetting(WORKSPACE_PATH_SETING_NAME, _workspacePath);
+		SettingsFactory.getInstance().save();
+		_workspaceFile = new WorkspaceFile(_workspacePath);
+		Log.syntese.debug("Starting application with workspace file:" + _workspacePath);
+		loadWorkspaceProjects();
+		_mainFrame.displayFrame();
+	}
+	
+	/**
+	 * Name: checkWorkspacePath
+	 * Args: null
+	 * Return: Boolean
+	 * @Desc: check if the selected workspace is an existing folder. 
+	 */
 	private Boolean checkWorkspacePath()
 	{
 		try{
@@ -180,5 +234,6 @@ public class Workspace implements WorkspaceGraphicsListener {
 			}
 		}
 	}
+
 
 }

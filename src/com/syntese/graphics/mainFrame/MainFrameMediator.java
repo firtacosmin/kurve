@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import com.syntese.graphics.wizard.WizardListener;
 import com.syntese.graphics.wizard.WizardMediator;
 import com.syntese.language.LanguageFactory;
+import com.syntese.log.Log;
 import com.syntese.project.data.ProjectData;
 import com.syntese.settings.SettingsFactory;
 import com.syntese.workspace.Workspace;
@@ -94,7 +95,13 @@ public class MainFrameMediator implements MainFrameActionListener,WizardListener
 	@Override
 	public void wizardEnded(ProjectData theNewProject)
 	{
+		Log.syntese.debug("Created a new project: "+theNewProject.get_proj_name());
+		/*save the newlly created project*/
+		theNewProject.saveProjectFile(_theWorkspace.getWotkspacePath());
+		Log.syntese.debug("Created a new project file: "+_theWorkspace.getWotkspacePath()+"/"+theNewProject.get_proj_name()+".xml");
+		/*open it into the workspace*/
 		_theWorkspace.openProject(theNewProject);
+		/*repaint the workspace*/
 		_theFrame.repaint();
 	}
 

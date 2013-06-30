@@ -18,6 +18,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Text;
 
+import com.syntese.log.Log;
+
 public class ProjectData {
 
 	private static final String ROOT_TAG_NAME = "PROJECT";
@@ -184,13 +186,15 @@ public class ProjectData {
 			/*add route element to the doc*/
 			newDoc.appendChild(rootElement);
 			Transformer t = TransformerFactory.newInstance().newTransformer();
-			t.transform(new DOMSource(newDoc), new StreamResult(new FileOutputStream(new File(path+"\\"+_proj_name+".xml"))));
+			t.transform(new DOMSource(newDoc), new StreamResult(new FileOutputStream(path+"\\"+_proj_name+".xml")));
 			
 			ret = true;
 		}
 		catch (Exception ex)
 		{
-			/*TODO: Error to log*/
+			Log.syntese.debug(ex.getStackTrace());
+			Log.syntese.error(ex.getMessage());
+			
 			System.out.println(ex.getStackTrace());
 			ex.printStackTrace();
 		}

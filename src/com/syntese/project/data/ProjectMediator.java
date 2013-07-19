@@ -1,8 +1,10 @@
 package com.syntese.project.data;
 
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 
 import com.syntese.project.graphics.InputParamsPanel;
+import com.syntese.project.graphics.ProjectTabs;
 
 public class ProjectMediator {
 	
@@ -12,7 +14,7 @@ public class ProjectMediator {
 	
 	/*GRAPHICS*/
 	private InputParamsPanel _inputParamsPan;
-	
+	private ProjectTabs _theProjectTabs;
 
 	/*PUBLIC*/
 	
@@ -26,8 +28,10 @@ public class ProjectMediator {
 		{
 			throw new ProjectException();
 		}
-		_inputParamsPan = new InputParamsPanel();
-		_inputParamsPan.setGeomParams(_projDt.get_cam_geomData());
+//		_inputParamsPan = new InputParamsPanel();
+//		_inputParamsPan.setGeomParams(_projDt.get_cam_geomData());
+		_theProjectTabs = new ProjectTabs();
+		_theProjectTabs.setGeomParams(_projDt.get_cam_geomData());
 	}
 	
 	/**
@@ -36,8 +40,10 @@ public class ProjectMediator {
 	 */
 	public ProjectMediator(ProjectData projData){
 		_projDt = new ProjectData(projData);
-		_inputParamsPan = new InputParamsPanel();
-		_inputParamsPan.setGeomParams(_projDt.get_cam_geomData());
+//		_inputParamsPan = new InputParamsPanel();
+//		_inputParamsPan.setGeomParams(_projDt.get_cam_geomData());
+		_theProjectTabs = new ProjectTabs();
+		_theProjectTabs.setGeomParams(_projDt.get_cam_geomData());
 	}
 	
 	/**
@@ -53,7 +59,8 @@ public class ProjectMediator {
 
 	public JPanel getInputParamsPan()
 	{
-		return _inputParamsPan;
+		//return _inputParamsPan;
+		return _theProjectTabs;
 	}
 	
 	public String getProjectName()

@@ -199,8 +199,14 @@ public class Settings implements ISettings {
 		for( int i=0; i<children.getLength(); i++ ){
 			if ( children.item(i).getNodeName() != "#text" ){
 				Node child = children.item(i);
+				try{
 				Text value = (Text) children.item(i).getFirstChild();
 				hash.put(child.getNodeName(), value.getData());
+				}catch(Exception ex){
+					//TODO: error
+					ex.printStackTrace();
+					hash.put(child.getNodeName(), "");
+				}
 			}
 		}
 	}

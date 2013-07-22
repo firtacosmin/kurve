@@ -8,6 +8,11 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
 import com.syntese.language.LanguageFactory;
+import com.syntese.project.graphics.animation.AnimationPanel;
+import com.syntese.project.graphics.curveProfile.CurveProfilePanel;
+import com.syntese.project.graphics.graph.GraphicRoMiuPanel;
+import com.syntese.project.graphics.graph.GraphicSPanel;
+import com.syntese.project.graphics.numericdata.NumericDataPanel;
 
 /**
  * @author cfirta
@@ -27,7 +32,7 @@ public class ProjectTabs extends JPanel {
 	public static String GRAPHIC_ROMIU_TAB_TITLE_TEXT = "Animation_ProjectPanel_title";
 	
 	/*PRIVATE PROPERTIES*/
-	private InputParamsPanel _imputParamsPan;
+	private NumericDataPanel _imputParamsPan;
 	private GraphicRoMiuPanel _graphicRoMiuPan;
 	private GraphicSPanel _graphicSPan;
 	private CurveProfilePanel _curveProfilePan;
@@ -89,7 +94,7 @@ public class ProjectTabs extends JPanel {
 	 */
 	private void InitComponents() {
 		_theTabbedPane = new JTabbedPane();
-		_imputParamsPan = new InputParamsPanel();
+		_imputParamsPan = new NumericDataPanel();
 		_graphicRoMiuPan = new GraphicRoMiuPanel();
 		_graphicSPan = new GraphicSPanel();
 		_animationPan = new AnimationPanel();

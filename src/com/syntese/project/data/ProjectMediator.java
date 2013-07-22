@@ -3,8 +3,8 @@ package com.syntese.project.data;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
-import com.syntese.project.graphics.InputParamsPanel;
 import com.syntese.project.graphics.ProjectTabs;
+import com.syntese.project.graphics.numericdata.NumericDataPanel;
 
 public class ProjectMediator {
 	
@@ -13,7 +13,7 @@ public class ProjectMediator {
 	private static final String TEXT_VALUES_PREFIX = "InputParams_disp_";
 	
 	/*GRAPHICS*/
-	private InputParamsPanel _inputParamsPan;
+	private NumericDataPanel _inputParamsPan;
 	private ProjectTabs _theProjectTabs;
 
 	/*PUBLIC*/

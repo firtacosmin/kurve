@@ -1,4 +1,4 @@
-package com.syntese.project.graphics;
+package com.syntese.project.graphics.curveProfile;
 
 import javax.swing.JPanel;
 

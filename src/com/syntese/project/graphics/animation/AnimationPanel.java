@@ -1,14 +1,13 @@
-package com.syntese.project.graphics;
+package com.syntese.project.graphics.animation;
 
 import javax.swing.JPanel;
 
 /**
  * @author cfirta
- * @description panel that displays the graphical illustration of the curve.
+ * @description panel for displaying an animation with the resulted kurve.
  */
-public class GraphicSPanel extends JPanel {
-
-	public GraphicSPanel(){
+public class AnimationPanel extends JPanel {
+	public AnimationPanel(){
 		super();
 		InitComponents();
 		AddComponents();
@@ -27,5 +26,4 @@ public class GraphicSPanel extends JPanel {
 		// TODO Auto-generated method stub
 		
 	}
-	
 }

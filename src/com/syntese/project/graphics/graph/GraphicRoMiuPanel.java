@@ -1,13 +1,13 @@
-package com.syntese.project.graphics;
+package com.syntese.project.graphics.graph;
 
 import javax.swing.JPanel;
 
 /**
  * @author cfirta
- * @description panel for displaying an animation with the resulted kurve.
+ * @description panel for displaying the ro-miu graphic of the curve for the main frame.
  */
-public class AnimationPanel extends JPanel {
-	public AnimationPanel(){
+public class GraphicRoMiuPanel extends JPanel {
+	public GraphicRoMiuPanel(){
 		super();
 		InitComponents();
 		AddComponents();

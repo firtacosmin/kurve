@@ -266,8 +266,8 @@ public class ProjectData {
 		}
 		catch ( Exception ex )
 		{
-			ex.printStackTrace();
-			//TODO: error
+			Log.syntese.info("Error on opening and parsing the project file: "+file);
+			Log.syntese.debug(ex.getStackTrace());
 		}
 		
 		try
@@ -276,8 +276,8 @@ public class ProjectData {
 			ret = true;
 		}catch (  Exception ex)
 		{
-			//TODO: Error
-			ex.printStackTrace();
+			Log.syntese.info("Error on opening the project file: "+file);
+			Log.syntese.debug(ex.getStackTrace());
 		}
 		return ret;
 	}

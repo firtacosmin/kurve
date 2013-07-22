@@ -1,4 +1,4 @@
-package com.syntese.project.graphics;
+package com.syntese.project.graphics.numericdata;
 
 import java.awt.Color;
 import java.awt.GridBagLayout;
@@ -23,7 +23,7 @@ import com.syntese.language.LanguageFactory;
  * @description panel with the imputed parameters and the 
  * 				preliminary calculations that are displayed on the main frame
  */
-public class InputParamsPanel extends JPanel{
+public class NumericDataPanel extends JPanel{
 	/**
 	 * 
 	 */
@@ -45,7 +45,7 @@ public class InputParamsPanel extends JPanel{
 	 * PUBLIC
 	 * */
 	
-	public InputParamsPanel()
+	public NumericDataPanel()
 	{
 		super();
 		_geomParams = new HashMap<String, Float>();

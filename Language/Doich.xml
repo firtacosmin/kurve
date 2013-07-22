@@ -393,6 +393,29 @@
 		<value>Seibenradius          :=</value>
 	</expression>
 	
+
+	<expression>
+		<name>NumericData_ProjectPanel_title</name>
+		<value>Numeriche Daten</value>
+	</expression>
+	<expression>
+		<name>Graphic_S_ProjectPanel_title</name>
+		<value>Grafik s, s' ,s''</value>
+	</expression>
+	<expression>
+		<name>CurveProfile_ProjectPanel_title</name>
+		<value>Kurvenprofile</value>
+	</expression>
+	<expression>
+		<name>Graphic_romiu_ProjectPanel_title</name>
+		<value>Grafick ro,u</value>
+	</expression>
+	<expression>
+		<name>Animation_ProjectPanel_title</name>
+		<value>Animation</value>
+	</expression>
+
+	
 	<expression>
 		<name>SaveComplete_MsjBox_title</name>
 		<value>Daten speichern</value>

@@ -7,15 +7,33 @@ import java.util.HashMap;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
+import com.syntese.language.LanguageFactory;
+
 /**
  * @author cfirta
  * @description this panel contains all the tabed data about a project.
  */
 public class ProjectTabs extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/*Texts*/
+	public static String INPUTPARAMS_TAB_TITLE_TEXT = "NumericData_ProjectPanel_title";
+	public static String GRAPHIC_S_TAB_TITLE_TEXT = "Graphic_S_ProjectPanel_title";
+	public static String CURVEPROFILE_TAB_TITLE_TEXT = "CurveProfile_ProjectPanel_title";
+	public static String ANIMATION_TAB_TITLE_TEXT = "Graphic_romiu_ProjectPanel_title";
+	public static String GRAPHIC_ROMIU_TAB_TITLE_TEXT = "Animation_ProjectPanel_title";
+	
 	/*PRIVATE PROPERTIES*/
 	private InputParamsPanel _imputParamsPan;
+	private GraphicRoMiuPanel _graphicRoMiuPan;
+	private GraphicSPanel _graphicSPan;
+	private CurveProfilePanel _curveProfilePan;
+	private AnimationPanel _animationPan;
 	private JTabbedPane _theTabbedPane;
+	
 	
 	/*PUBLIC PROPERTIES*/
 	
@@ -53,8 +71,12 @@ public class ProjectTabs extends JPanel {
 	 * @Desc:  adds the components tabs
 	 */
 	private void AddComponents() {
-		//TODO get title of tab from language
-		_theTabbedPane.add("Imput Params",_imputParamsPan);
+		
+		_theTabbedPane.add(LanguageFactory.getInstance().getExpresion(INPUTPARAMS_TAB_TITLE_TEXT),_imputParamsPan);
+		_theTabbedPane.add(LanguageFactory.getInstance().getExpresion(GRAPHIC_S_TAB_TITLE_TEXT),_graphicSPan);
+		_theTabbedPane.add(LanguageFactory.getInstance().getExpresion(CURVEPROFILE_TAB_TITLE_TEXT),_curveProfilePan);
+		_theTabbedPane.add(LanguageFactory.getInstance().getExpresion(GRAPHIC_ROMIU_TAB_TITLE_TEXT),_graphicRoMiuPan);
+		_theTabbedPane.add(LanguageFactory.getInstance().getExpresion(ANIMATION_TAB_TITLE_TEXT),_animationPan);
 		setLayout(new BorderLayout());
 		add(_theTabbedPane, BorderLayout.CENTER);
 	}
@@ -68,6 +90,11 @@ public class ProjectTabs extends JPanel {
 	private void InitComponents() {
 		_theTabbedPane = new JTabbedPane();
 		_imputParamsPan = new InputParamsPanel();
+		_graphicRoMiuPan = new GraphicRoMiuPanel();
+		_graphicSPan = new GraphicSPanel();
+		_animationPan = new AnimationPanel();
+		_curveProfilePan = new CurveProfilePanel();
+		
 	}
 	
 }

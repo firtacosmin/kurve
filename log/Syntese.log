@@ -1,89 +1,24 @@
-2013-06-30 15:48:17,181 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
-2013-06-30 15:48:17,186 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
-2013-06-30 15:48:25,733 INFO  (com.syntese.workspace.Workspace.askForWorkspace:159) [syntese] Application Started. Selected Workspace=E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 15:48:25,734 INFO  (com.syntese.workspace.Workspace.startMainFrame:179) [syntese] Starting application with workspace:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 15:48:25,791 INFO  (com.syntese.workspace.Workspace.startMainFrame:183) [syntese] Starting application with workspace file:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 15:50:23,754 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
-2013-06-30 15:50:23,758 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
-2013-06-30 15:50:30,081 INFO  (com.syntese.workspace.Workspace.askForWorkspace:159) [syntese] Application Started. Selected Workspace=null
-2013-06-30 15:50:30,082 INFO  (com.syntese.workspace.Workspace.askForWorkspace:164) [syntese] No workspace selected. Will exit the application
-2013-06-30 15:58:47,842 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
-2013-06-30 15:58:47,847 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
-2013-06-30 15:58:47,848 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
-2013-06-30 15:59:10,311 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 15:59:10,312 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 15:59:10,361 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:11:29,716 DEBUG (com.syntese.graphics.mainFrame.MainFrameMediator.wizardEnded:98) [syntese] Created a new project: new
-2013-06-30 16:11:29,731 DEBUG (com.syntese.graphics.mainFrame.MainFrameMediator.wizardEnded:101) [syntese] Created a new project file: E:\working folder\proiect_mec\2. Software\Current\kurve\workspace/new.xml
-2013-06-30 16:13:47,005 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
-2013-06-30 16:13:47,010 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
-2013-06-30 16:13:47,011 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
-2013-06-30 16:13:50,007 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:13:50,007 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:13:50,048 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:15:41,803 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
-2013-06-30 16:15:41,808 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
-2013-06-30 16:15:41,809 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
-2013-06-30 16:15:53,735 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:15:53,736 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:15:53,786 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:16:18,267 DEBUG (com.syntese.graphics.mainFrame.MainFrameMediator.wizardEnded:98) [syntese] Created a new project: new
-2013-06-30 16:16:18,272 DEBUG (com.syntese.project.data.ProjectData.saveProjectFile:197) [syntese] [Ljava.lang.StackTraceElement;@78b825
-2013-06-30 16:16:18,272 ERROR (com.syntese.project.data.ProjectData.saveProjectFile:198) [syntese] The system cannot find the path specified
-2013-06-30 16:16:18,279 DEBUG (com.syntese.graphics.mainFrame.MainFrameMediator.wizardEnded:101) [syntese] Created a new project file: E:\working folder\proiect_mec\2. Software\Current\kurve\workspace/new.xml
-2013-06-30 16:22:50,465 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
-2013-06-30 16:22:50,470 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
-2013-06-30 16:22:50,470 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
-2013-06-30 16:22:57,345 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:22:57,345 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:22:57,395 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:23:21,577 DEBUG (com.syntese.graphics.mainFrame.MainFrameMediator.wizardEnded:98) [syntese] Created a new project: QWE
-2013-06-30 16:23:21,583 DEBUG (com.syntese.project.data.ProjectData.saveProjectFile:195) [syntese] [Ljava.lang.StackTraceElement;@dc49c3
-2013-06-30 16:23:21,584 ERROR (com.syntese.project.data.ProjectData.saveProjectFile:196) [syntese] E:\working folder\proiect_mec\2. Software\Current\kurve\workspace\QWE.xml\QWE.xml (The system cannot find the path specified)
-2013-06-30 16:23:21,587 DEBUG (com.syntese.graphics.mainFrame.MainFrameMediator.wizardEnded:101) [syntese] Created a new project file: E:\working folder\proiect_mec\2. Software\Current\kurve\workspace/QWE.xml
-2013-06-30 16:24:50,906 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
-2013-06-30 16:24:50,911 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
-2013-06-30 16:24:50,912 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
-2013-06-30 16:24:58,010 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:24:58,011 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:24:58,100 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:25:22,764 DEBUG (com.syntese.graphics.mainFrame.MainFrameMediator.wizardEnded:98) [syntese] Created a new project: GFD
-2013-06-30 16:25:22,773 DEBUG (com.syntese.graphics.mainFrame.MainFrameMediator.wizardEnded:101) [syntese] Created a new project file: E:\working folder\proiect_mec\2. Software\Current\kurve\workspace/GFD.xml
-2013-06-30 16:27:41,232 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
-2013-06-30 16:27:41,237 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
-2013-06-30 16:27:41,241 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
-2013-06-30 16:27:44,067 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:27:44,067 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:27:44,112 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:47:07,868 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
-2013-06-30 16:47:07,883 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
-2013-06-30 16:47:07,884 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
-2013-06-30 16:47:10,027 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:47:10,028 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:47:10,126 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:47:51,532 DEBUG (com.syntese.graphics.mainFrame.MainFrameMediator.wizardEnded:98) [syntese] Created a new project: test1
-2013-06-30 16:47:51,539 DEBUG (com.syntese.graphics.mainFrame.MainFrameMediator.wizardEnded:101) [syntese] Created a new project file: E:\working folder\proiect_mec\2. Software\Current\kurve\workspace/test1.xml
-2013-06-30 16:50:51,535 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
-2013-06-30 16:50:51,540 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
-2013-06-30 16:50:51,541 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
-2013-06-30 16:50:53,587 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:50:53,588 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:50:53,642 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:53:15,397 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
-2013-06-30 16:53:15,402 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
-2013-06-30 16:53:15,403 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
-2013-06-30 16:53:17,218 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:53:17,219 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:53:17,275 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:55:51,858 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
-2013-06-30 16:55:51,869 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
-2013-06-30 16:55:51,870 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
-2013-06-30 16:56:01,923 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:56:01,924 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 16:56:01,973 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 17:01:53,674 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
-2013-06-30 17:01:53,678 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
-2013-06-30 17:01:53,679 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
-2013-06-30 17:01:55,872 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 17:01:55,872 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
-2013-06-30 17:01:55,928 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
+2013-07-19 11:41:46,885 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-19 11:41:46,885 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-19 11:41:46,885 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-19 11:41:59,541 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-19 11:41:59,541 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-19 11:41:59,557 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-19 18:36:40,271 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-19 18:36:40,271 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-19 18:36:40,271 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-19 18:36:41,990 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-19 18:36:41,990 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-19 18:36:42,005 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 13:35:20,046 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-22 13:35:20,124 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-22 13:35:20,124 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-22 13:35:26,827 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 13:35:26,827 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 13:35:26,921 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 13:36:04,032 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-22 13:36:04,032 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-22 13:36:04,032 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-22 13:36:05,516 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 13:36:05,516 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 13:36:05,548 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve

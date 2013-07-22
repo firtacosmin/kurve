@@ -18,6 +18,11 @@ import javax.swing.event.ChangeListener;
 import com.syntese.graphics.GBC;
 import com.syntese.language.LanguageFactory;
 
+/**
+ * @author cfirta
+ * @description panel with the imputed parameters and the 
+ * 				preliminary calculations that are displayed on the main frame
+ */
 public class InputParamsPanel extends JPanel{
 	/**
 	 * 

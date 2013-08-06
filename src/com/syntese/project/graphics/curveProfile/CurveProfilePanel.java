@@ -7,6 +7,11 @@ import javax.swing.JPanel;
  * @description panel with the profile of the curve displayed on the main frame.
  */
 public class CurveProfilePanel extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public CurveProfilePanel(){
 		super();
 		InitComponents();

@@ -7,6 +7,11 @@ import javax.swing.JPanel;
  * @description panel for displaying an animation with the resulted kurve.
  */
 public class AnimationPanel extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public AnimationPanel(){
 		super();
 		InitComponents();

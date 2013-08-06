@@ -15,8 +15,11 @@ import javax.swing.tree.TreePath;
 
 public class ProjectsTreePanel extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	/*UI CONSTANTS*/
-	private static int WIDTH = 70;
 	private DefaultMutableTreeNode rootNode;
 	private JTree theTree;
 	private DefaultTreeModel _treeModel;

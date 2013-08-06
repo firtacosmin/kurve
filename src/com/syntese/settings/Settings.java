@@ -152,6 +152,7 @@ public class Settings implements ISettings {
 	 * Return: void
 	 * Desc: updates the current settings with the new settings
 	 */
+	@SuppressWarnings("unused")
 	private void updateCurrentSettings(Node item) {
 		for(String key : _currentSettings.keySet()) {
 			 ((Element)item).getElementsByTagName(key).item(0).setNodeValue(_currentSettings.get(key));

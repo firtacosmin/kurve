@@ -1,7 +1,6 @@
 package com.syntese.project.graphics;
 
 import java.awt.BorderLayout;
-import java.awt.LayoutManager;
 import java.util.HashMap;
 
 import javax.swing.JPanel;

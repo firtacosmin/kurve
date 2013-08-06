@@ -12,8 +12,6 @@ import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 
 import com.syntese.graphics.GBC;
 import com.syntese.language.LanguageFactory;

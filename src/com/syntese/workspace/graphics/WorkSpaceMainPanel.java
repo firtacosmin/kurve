@@ -11,6 +11,10 @@ import com.syntese.workspace.Workspace;
 
 public class WorkSpaceMainPanel extends JPanel implements ProjectTreeActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private ProjectsTreePanel _treePan;
 	private ProjectMainPanel _mainPan;
 	

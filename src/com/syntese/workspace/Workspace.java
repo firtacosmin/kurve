@@ -225,10 +225,13 @@ public class Workspace implements WorkspaceGraphicsListener {
 			for ( String projName : _workspaceFile.getProjects() ){
 				try {
 					ProjectData newProjDt = new ProjectData();
-					newProjDt.open(_workspacePath+"\\"+projName+".xml");
-					_projects.add(new ProjectMediator(newProjDt));
-					_thePanel.addProjToTree(newProjDt);
+					if (newProjDt.open(_workspacePath+"\\"+projName+".xml"))
+					{
+						_projects.add(new ProjectMediator(newProjDt));
+						_thePanel.addProjToTree(newProjDt);
+					}
 				} catch (Exception e) {
+					//TODO error
 					e.printStackTrace();
 				}
 			}

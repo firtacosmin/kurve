@@ -22,3 +22,181 @@
 2013-07-22 13:36:05,516 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
 2013-07-22 13:36:05,516 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
 2013-07-22 13:36:05,548 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:55:10,356 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-22 17:55:10,388 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-22 17:55:10,388 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-22 17:55:12,747 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:55:12,747 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:55:12,919 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:55:12,919 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-07-22 17:55:12,919 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@f1c787
+2013-07-22 17:55:12,950 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\qwe.xml
+2013-07-22 17:55:12,950 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@c4b626
+2013-07-22 17:55:12,966 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\trw.xml
+2013-07-22 17:55:12,966 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@1a9b034
+2013-07-22 17:57:03,590 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-22 17:57:03,590 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-22 17:57:03,590 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-22 17:57:04,809 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:57:04,809 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:57:04,824 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:57:04,824 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-07-22 17:57:04,824 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@e2d0ab
+2013-07-22 17:57:04,840 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\qwe.xml
+2013-07-22 17:57:04,840 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@133b16a
+2013-07-22 17:57:04,856 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\trw.xml
+2013-07-22 17:57:04,856 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@1102fab
+2013-07-22 17:57:23,168 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-22 17:57:23,168 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-22 17:57:23,168 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-22 17:57:24,465 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:57:24,465 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:57:24,481 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:57:24,496 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-07-22 17:57:24,496 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@e2d0ab
+2013-07-22 17:57:24,512 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\qwe.xml
+2013-07-22 17:57:24,512 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@133b16a
+2013-07-22 17:57:24,512 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\trw.xml
+2013-07-22 17:57:24,512 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@1102fab
+2013-07-22 17:58:43,496 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-22 17:58:43,496 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-22 17:58:43,496 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-22 17:58:44,871 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:58:44,871 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:58:44,902 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:58:44,902 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-07-22 17:58:44,902 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@151d6cb
+2013-07-22 17:58:44,918 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\qwe.xml
+2013-07-22 17:58:44,918 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@17fc1e7
+2013-07-22 17:58:44,918 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\trw.xml
+2013-07-22 17:58:44,918 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@17531fd
+2013-07-22 17:59:02,699 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-22 17:59:02,714 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-22 17:59:02,714 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-22 17:59:04,464 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:59:04,464 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:59:04,496 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:59:04,496 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-07-22 17:59:04,496 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@102e749
+2013-07-22 17:59:26,074 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\qwe.xml
+2013-07-22 17:59:26,074 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@199405a
+2013-07-22 17:59:26,870 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\trw.xml
+2013-07-22 17:59:26,870 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@108172
+2013-07-22 17:59:40,339 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-22 17:59:40,339 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-22 17:59:40,339 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-22 17:59:41,870 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:59:41,870 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:59:41,886 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 17:59:41,902 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-07-22 17:59:41,902 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@a866d6
+2013-07-22 18:00:56,026 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-22 18:00:56,026 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-22 18:00:56,026 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-22 18:00:57,229 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 18:00:57,229 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 18:00:57,245 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 18:00:57,260 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-07-22 18:00:57,260 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@1651b52
+2013-07-22 18:02:37,980 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-22 18:02:37,980 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-22 18:02:37,980 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-22 18:02:39,464 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 18:02:39,464 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 18:02:39,480 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 18:02:39,495 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-07-22 18:02:39,495 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@1f78388
+2013-07-22 18:12:51,023 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-22 18:12:51,023 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-22 18:12:51,023 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-22 18:13:27,211 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=null
+2013-07-22 18:13:27,211 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:173) [syntese] No workspace selected. Will exit the application
+2013-07-22 18:27:01,848 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-22 18:27:01,848 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-22 18:27:01,848 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-22 18:27:03,348 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 18:27:03,348 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 18:27:03,363 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 18:27:03,379 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-07-22 18:27:03,379 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@e2d0ab
+2013-07-22 18:27:03,410 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\qwe.xml
+2013-07-22 18:27:03,410 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@133b16a
+2013-07-22 18:27:03,426 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\trw.xml
+2013-07-22 18:27:03,426 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@1102fab
+2013-07-22 18:28:41,206 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-22 18:28:41,206 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-22 18:28:41,206 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-22 18:28:42,316 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 18:28:42,316 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 18:28:42,347 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-22 18:28:42,347 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-07-22 18:28:42,347 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@f1c787
+2013-07-22 18:28:42,347 INFO  (com.syntese.project.data.ProjectData.open:281) [syntese] Could not opened project file:D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-07-22 18:28:42,347 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\qwe.xml
+2013-07-22 18:28:42,347 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@bf4472
+2013-07-22 18:28:42,347 INFO  (com.syntese.project.data.ProjectData.open:281) [syntese] Could not opened project file:D:\cfirta\personal\java workspaces\JAVA\kurve\qwe.xml
+2013-07-22 18:28:42,347 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\trw.xml
+2013-07-22 18:28:42,347 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@19f6a57
+2013-07-22 18:28:42,347 INFO  (com.syntese.project.data.ProjectData.open:281) [syntese] Could not opened project file:D:\cfirta\personal\java workspaces\JAVA\kurve\trw.xml
+2013-07-23 11:17:05,757 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-23 11:17:05,788 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-23 11:17:05,788 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-23 11:17:10,288 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-23 11:17:10,288 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-23 11:17:10,460 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-23 11:17:10,460 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-07-23 11:17:10,460 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@69dff6
+2013-07-23 11:17:10,460 INFO  (com.syntese.project.data.ProjectData.open:281) [syntese] Could not opened project file:D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-07-23 11:17:10,460 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\qwe.xml
+2013-07-23 11:17:10,460 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@19f6a57
+2013-07-23 11:17:10,460 INFO  (com.syntese.project.data.ProjectData.open:281) [syntese] Could not opened project file:D:\cfirta\personal\java workspaces\JAVA\kurve\qwe.xml
+2013-07-23 11:17:10,460 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\trw.xml
+2013-07-23 11:17:10,460 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@99210f
+2013-07-23 11:17:10,460 INFO  (com.syntese.project.data.ProjectData.open:281) [syntese] Could not opened project file:D:\cfirta\personal\java workspaces\JAVA\kurve\trw.xml
+2013-07-23 11:17:52,537 DEBUG (com.syntese.graphics.mainFrame.MainFrameMediator.wizardEnded:98) [syntese] Created a new project: work1
+2013-07-23 11:17:52,537 DEBUG (com.syntese.graphics.mainFrame.MainFrameMediator.wizardEnded:101) [syntese] Created a new project file: D:\cfirta\personal\java workspaces\JAVA\kurve/work1.xml
+2013-07-23 11:18:44,771 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-23 11:18:44,771 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-23 11:18:44,771 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-23 11:18:45,896 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-23 11:18:45,896 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-23 11:18:45,912 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-23 11:18:45,912 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-07-23 11:18:45,912 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@1d29ee4
+2013-07-23 11:18:45,912 INFO  (com.syntese.project.data.ProjectData.open:281) [syntese] Could not opened project file:D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-07-23 11:18:45,912 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\qwe.xml
+2013-07-23 11:18:45,912 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@1203875
+2013-07-23 11:18:45,912 INFO  (com.syntese.project.data.ProjectData.open:281) [syntese] Could not opened project file:D:\cfirta\personal\java workspaces\JAVA\kurve\qwe.xml
+2013-07-23 11:18:45,912 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\trw.xml
+2013-07-23 11:18:45,912 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@1aedbde
+2013-07-23 11:18:45,912 INFO  (com.syntese.project.data.ProjectData.open:281) [syntese] Could not opened project file:D:\cfirta\personal\java workspaces\JAVA\kurve\trw.xml
+2013-07-23 11:19:12,630 DEBUG (com.syntese.graphics.mainFrame.MainFrameMediator.wizardEnded:98) [syntese] Created a new project: qwe
+2013-07-23 11:19:12,630 DEBUG (com.syntese.graphics.mainFrame.MainFrameMediator.wizardEnded:101) [syntese] Created a new project file: D:\cfirta\personal\java workspaces\JAVA\kurve/qwe.xml
+2013-07-23 11:19:31,989 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-23 11:19:31,989 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-23 11:19:31,989 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-23 11:19:33,442 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-23 11:19:33,442 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-23 11:19:33,474 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-07-23 11:19:33,474 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-07-23 11:19:33,474 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@877a44
+2013-07-23 11:19:33,474 INFO  (com.syntese.project.data.ProjectData.open:281) [syntese] Could not opened project file:D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-07-23 11:19:33,474 INFO  (com.syntese.project.data.ProjectData.open:277) [syntese] Opened project file:D:\cfirta\personal\java workspaces\JAVA\kurve\qwe.xml
+2013-07-23 11:19:33,489 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\trw.xml
+2013-07-23 11:19:33,489 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@1fc7299
+2013-07-23 11:19:33,489 INFO  (com.syntese.project.data.ProjectData.open:281) [syntese] Could not opened project file:D:\cfirta\personal\java workspaces\JAVA\kurve\trw.xml
+2013-07-23 11:19:33,489 INFO  (com.syntese.project.data.ProjectData.open:277) [syntese] Opened project file:D:\cfirta\personal\java workspaces\JAVA\kurve\qwe.xml
+2013-08-06 13:05:09,469 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-08-06 13:05:09,469 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-08-06 13:05:09,485 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-08-06 13:05:13,688 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-08-06 13:05:13,688 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-08-06 13:05:13,704 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:D:\cfirta\personal\java workspaces\JAVA\kurve
+2013-08-06 13:05:13,704 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-08-06 13:05:13,704 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@6c2ea3
+2013-08-06 13:05:13,704 INFO  (com.syntese.project.data.ProjectData.open:281) [syntese] Could not opened project file:D:\cfirta\personal\java workspaces\JAVA\kurve\asd.xml
+2013-08-06 13:05:13,719 INFO  (com.syntese.project.data.ProjectData.open:277) [syntese] Opened project file:D:\cfirta\personal\java workspaces\JAVA\kurve\qwe.xml
+2013-08-06 13:05:13,735 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\cfirta\personal\java workspaces\JAVA\kurve\trw.xml
+2013-08-06 13:05:13,735 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@c7d960
+2013-08-06 13:05:13,735 INFO  (com.syntese.project.data.ProjectData.open:281) [syntese] Could not opened project file:D:\cfirta\personal\java workspaces\JAVA\kurve\trw.xml
+2013-08-06 13:05:13,750 INFO  (com.syntese.project.data.ProjectData.open:277) [syntese] Opened project file:D:\cfirta\personal\java workspaces\JAVA\kurve\work1.xml

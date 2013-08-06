@@ -272,8 +272,14 @@ public class ProjectData {
 		
 		try
 		{
-			_proj_name = new File(file).getName().replace(".xml", "");
-			ret = true;
+			File newF = new File(file);
+			if (newF.exists()){
+				Log.syntese.info("Opened project file:"+file);
+				_proj_name = new File(file).getName().replace(".xml", "");
+				ret = true;
+			}else{
+				Log.syntese.info("Could not opened project file:"+file);
+			}
 		}catch (  Exception ex)
 		{
 			Log.syntese.info("Error on opening the project file: "+file);

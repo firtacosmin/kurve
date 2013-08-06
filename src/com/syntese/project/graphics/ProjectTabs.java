@@ -97,8 +97,8 @@ public class ProjectTabs extends JPanel {
 		_imputParamsPan = new NumericDataPanel();
 		_graphicRoMiuPan = new GraphicRoMiuPanel();
 		_graphicSPan = new GraphicSPanel();
-		_animationPan = new AnimationPanel();
 		_curveProfilePan = new CurveProfilePanel();
+		_animationPan = new AnimationPanel();
 		
 	}
 	

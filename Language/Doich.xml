@@ -395,6 +395,36 @@
 	
 
 	<expression>
+		<name>InputParams_chk_middlePoint</name>
+		<value>Mittelpunktkurve der Kurvenscheibe</value>
+	</expression>
+	<expression>
+		<name>InputParams_chk_outerProfile</name>
+		<value>Äußere Kurvenprofil</value>
+	</expression>
+	<expression>
+		<name>InputParams_chk_innerProfile</name>
+		<value>Innere Kurvenprofil</value>
+	</expression>
+	<expression>
+		<name>InputParams_chk_centerAgainstCam</name>
+		<value>Rollenmittelpunktkurve der Gegenkurvenscheibe</value>
+	</expression>
+	<expression>
+		<name>InputParams_chk_profileAgainstCam</name>
+		<value>Kurveprofil der Gegenkurvenscheibe</value>
+	</expression>
+	<expression>
+		<name>InputParams_chk_centerOfFlood</name>
+		<value>Rollenmittelpunktkurve der flutkurvenscheibe</value>
+	</expression>
+	<expression>
+		<name>InputParams_chk_profileOfFlood</name>
+		<value>Kurveprofil der flutkurvenscheibe</value>
+	</expression>
+	
+
+	<expression>
 		<name>NumericData_ProjectPanel_title</name>
 		<value>Numeriche Daten</value>
 	</expression>

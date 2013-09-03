@@ -10,7 +10,8 @@ import com.syntese.language.LanguageFactory;
 import com.syntese.project.graphics.animation.AnimationPanel;
 import com.syntese.project.graphics.curveProfile.CurveProfilePanel;
 import com.syntese.project.graphics.graph.GraphicRoMiuPanel;
-import com.syntese.project.graphics.graph.GraphicSPanel;
+import com.syntese.project.graphics.graph.graphs.GraphicSPanel;
+import com.syntese.project.graphics.graph.graphs.GraphicSPanelMediator;
 import com.syntese.project.graphics.numericdata.NumericDataPanel;
 
 /**
@@ -33,7 +34,8 @@ public class ProjectTabs extends JPanel {
 	/*PRIVATE PROPERTIES*/
 	private NumericDataPanel _imputParamsPan;
 	private GraphicRoMiuPanel _graphicRoMiuPan;
-	private GraphicSPanel _graphicSPan;
+//	private GraphicSPanel _graphicSPan;
+	private JPanel _graphicSPan;
 	private CurveProfilePanel _curveProfilePan;
 	private AnimationPanel _animationPan;
 	private JTabbedPane _theTabbedPane;
@@ -60,6 +62,20 @@ public class ProjectTabs extends JPanel {
 	public void setGeomParams(HashMap<String, Float> params)
 	{
 		_imputParamsPan.setGeomParams(params);
+	}
+	
+	/**
+	 * Name: updateTexts
+	 * Args: 
+	 * Return: void
+	 * Desc: method to re-get all the tests from the language factory
+	 */
+	public void updateTexts(){
+		_theTabbedPane.setTitleAt(0, LanguageFactory.getInstance().getExpresion(INPUTPARAMS_TAB_TITLE_TEXT));
+		_theTabbedPane.setTitleAt(1, LanguageFactory.getInstance().getExpresion(GRAPHIC_S_TAB_TITLE_TEXT));
+		_theTabbedPane.setTitleAt(2, LanguageFactory.getInstance().getExpresion(CURVEPROFILE_TAB_TITLE_TEXT));
+		_theTabbedPane.setTitleAt(3, LanguageFactory.getInstance().getExpresion(GRAPHIC_ROMIU_TAB_TITLE_TEXT));
+		_theTabbedPane.setTitleAt(4, LanguageFactory.getInstance().getExpresion(ANIMATION_TAB_TITLE_TEXT));
 	}
 
 	/*
@@ -95,7 +111,7 @@ public class ProjectTabs extends JPanel {
 		_theTabbedPane = new JTabbedPane();
 		_imputParamsPan = new NumericDataPanel();
 		_graphicRoMiuPan = new GraphicRoMiuPanel();
-		_graphicSPan = new GraphicSPanel();
+		_graphicSPan = (new GraphicSPanelMediator()).getPanel();
 		_curveProfilePan = new CurveProfilePanel();
 		_animationPan = new AnimationPanel();
 		

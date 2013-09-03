@@ -105,6 +105,9 @@ public void updateTexts(){
 	 _helpMenu.setText(LanguageFactory.getInstance().getExpresion(HELP_MENU_EXPRESSION));
 	 _aboutMenuItem.setText(LanguageFactory.getInstance().getExpresion(ABOUT_MENU_EXPRESSION));
 	 _languageMenuItem.setText(LanguageFactory.getInstance().getExpresion(LANGUAGE_MENU_EXPRESSION));
+	 
+	 /*The tabs*/
+	 
 }
 
 

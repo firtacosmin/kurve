@@ -468,5 +468,11 @@
 		<value>Bitte wählen Sie einen Ordner für den Arbeitsbereich</value>
 	</expression>
 	
+	 <expression>
+    <name>Graphic_raster_btn_title</name>
+    <value>Raster</value>
+  </expression>
+
+	
     
 </language>

@@ -9,7 +9,7 @@ import javax.swing.JTabbedPane;
 import com.syntese.language.LanguageFactory;
 import com.syntese.project.graphics.animation.AnimationPanel;
 import com.syntese.project.graphics.curveProfile.CurveProfilePanel;
-import com.syntese.project.graphics.graph.GraphicRoMiuPanel;
+import com.syntese.project.graphics.graph.graphromiu.GraphicRoMiuPanel;
 import com.syntese.project.graphics.graph.graphs.GraphicSPanel;
 import com.syntese.project.graphics.graph.graphs.GraphicSPanelMediator;
 import com.syntese.project.graphics.numericdata.NumericDataPanel;

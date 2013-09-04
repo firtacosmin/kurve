@@ -396,3 +396,18 @@
 2013-09-03 23:43:58,906 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@a9239
 2013-09-03 23:43:58,906 INFO  (com.syntese.project.data.ProjectData.open:281) [syntese] Could not opened project file:D:\Cosmin\Workspace\kurve_git\kurve\trw.xml
 2013-09-03 23:43:58,906 INFO  (com.syntese.project.data.ProjectData.open:277) [syntese] Opened project file:D:\Cosmin\Workspace\kurve_git\kurve\work1.xml
+2013-09-04 23:16:45,109 INFO  (main.MAin.main:12) [syntese] Started application
+2013-09-04 23:16:45,156 INFO  (main.MAin.main:12) [syntese] Started application
+2013-09-04 23:16:48,140 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:163) [syntese] Application Started. Selected Workspace=D:\Cosmin\Workspace\kurve_git\kurve
+2013-09-04 23:16:48,156 DEBUG (com.syntese.workspace.Workspace.startMainFrame:183) [syntese] Starting application with workspace:D:\Cosmin\Workspace\kurve_git\kurve
+2013-09-04 23:16:48,359 DEBUG (com.syntese.workspace.Workspace.startMainFrame:187) [syntese] Starting application with workspace file:D:\Cosmin\Workspace\kurve_git\kurve
+2013-09-04 23:16:48,359 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\Cosmin\Workspace\kurve_git\kurve\asd.xml
+2013-09-04 23:16:48,359 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@1501026
+2013-09-04 23:16:48,359 INFO  (com.syntese.project.data.ProjectData.open:281) [syntese] Could not opened project file:D:\Cosmin\Workspace\kurve_git\kurve\asd.xml
+2013-09-04 23:16:48,375 INFO  (com.syntese.project.data.ProjectData.open:277) [syntese] Opened project file:D:\Cosmin\Workspace\kurve_git\kurve\qwe.xml
+2013-09-04 23:16:48,562 INFO  (com.syntese.project.data.ProjectData.open:269) [syntese] Error on opening and parsing the project file: D:\Cosmin\Workspace\kurve_git\kurve\trw.xml
+2013-09-04 23:16:48,562 DEBUG (com.syntese.project.data.ProjectData.open:270) [syntese] [Ljava.lang.StackTraceElement;@3d0426
+2013-09-04 23:16:48,562 INFO  (com.syntese.project.data.ProjectData.open:281) [syntese] Could not opened project file:D:\Cosmin\Workspace\kurve_git\kurve\trw.xml
+2013-09-04 23:16:48,562 INFO  (com.syntese.project.data.ProjectData.open:277) [syntese] Opened project file:D:\Cosmin\Workspace\kurve_git\kurve\work1.xml
+2013-09-04 23:16:51,500 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:163) [syntese] Application Started. Selected Workspace=null
+2013-09-04 23:16:51,500 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] No workspace selected. Will exit the application

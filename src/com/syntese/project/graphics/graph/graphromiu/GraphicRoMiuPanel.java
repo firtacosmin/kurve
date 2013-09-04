@@ -1,4 +1,4 @@
-package com.syntese.project.graphics.graph;
+package com.syntese.project.graphics.graph.graphromiu;
 
 import javax.swing.JPanel;
 

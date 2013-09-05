@@ -11,6 +11,11 @@ import javax.swing.JPanel;
  */
 public class PlotPanel extends JPanel {
 			
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2025922411859487889L;
+
 	/*
 	 * 
 	 * PUBLIC

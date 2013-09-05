@@ -16,6 +16,10 @@ import com.syntese.language.LanguageFactory;
 
 public class GraphicSSinglePanel extends JPanel {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4390046784583560914L;
 	private static String TEXT_RASTER = "Graphic_raster_btn_title";
 	private static String TEXT_SAVE = "SaveAsMenu";
 	

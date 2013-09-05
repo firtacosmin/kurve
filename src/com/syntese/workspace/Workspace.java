@@ -109,7 +109,7 @@ public class Workspace implements WorkspaceGraphicsListener {
 
 	@Override
 	public void openProject(String ProjectTitle) {
-		System.out.println(ProjectTitle);
+		//System.out.println(ProjectTitle);
 		Boolean found = false;
 		ProjectMediator projToOpen = null;
 		for ( int i=0; i<_projects.size() && !found; i++ ){

@@ -1,5 +1,6 @@
 package com.syntese.project.graphics.graph.graphromiu;
 
+import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import com.syntese.graphics.GBC;
 import com.syntese.language.LanguageFactory;
 
 public class GraphicRoMiuSinglePanel extends JPanel {
@@ -33,8 +35,8 @@ public class GraphicRoMiuSinglePanel extends JPanel {
 	 * */
 
 	/**
-	 * Name: GraphicRoMiuSinglePanel
-	 * Args: 
+	 * @Name: GraphicRoMiuSinglePanel
+	 * @Args: 
 	 */
 	public GraphicRoMiuSinglePanel(JPanel plot){
 		super();
@@ -47,10 +49,10 @@ public class GraphicRoMiuSinglePanel extends JPanel {
 
 
 	/**
-	 * Name: addActionListner
-	 * Args: @param listner
-	 * Return: void
-	 * Desc: method for ading a new action listner
+	 * @Name: addActionListner
+	 * @Args: @param listner
+	 * @Return: void
+	 * @Desc: method for ading a new action listner
 	 */
 	public void addActionListner( GraphicRoMiuSinglePanelActionListner listner) {
 		_actionListners.add(listner);		
@@ -62,10 +64,10 @@ public class GraphicRoMiuSinglePanel extends JPanel {
 	
 	
 	/**
-	 * Name: InitComponents
-	 * Args: 
-	 * Return: void
-	 * Desc: method for initializing the components 
+	 * @Name: InitComponents
+	 * @Args: 
+	 * @Return: void
+	 * @Desc: method for initializing the components 
 	 */
 	private void InitComponents() {
 		_btnSaveAs = new JButton(LanguageFactory.getInstance().getExpresion(TEXT_SAVE));
@@ -88,21 +90,26 @@ public class GraphicRoMiuSinglePanel extends JPanel {
 	}
 
 	/**
-	 * Name: AddComponents
-	 * Args: 
-	 * Return: void
-	 * Desc: method for adding the components to the layout 
+	 * @Name: AddComponents
+	 * @Args: 
+	 * @Return: void
+	 * @Desc: method for adding the components to the layout 
 	 */
 	private void AddComponents() {
-		// TODO Auto-generated method stub
-		
+		setLayout(new GridBagLayout());
+		/*add the button*/
+		add(_btnSaveAs, new GBC(0,0));
+		/*add the plot panel*/
+		add(_plot, new GBC(1,0).setFill(GBC.BOTH).setWeight(100, 100));
+		/*add the checkboxe*/
+		add(_chkRaster, new GBC(2,0));
 	}
 	
 	/**
-	 * Name: anounceRasterStateChange
-	 * Args: @param state
-	 * Return: void
-	 * Desc: method that announces the change of the raster 
+	 * @Name: anounceRasterStateChange
+	 * @Args: @param state
+	 * @Return: void
+	 * @Desc: method that announces the change of the raster 
 	 * 		 chk btn state change to all the action listeners registered.
 	 */
 	private void anounceRasterStateChange(Boolean state){
@@ -112,10 +119,10 @@ public class GraphicRoMiuSinglePanel extends JPanel {
 	}
 	
 	/**
-	 * Name: anounceSaveAsBtnClick
-	 * Args: 
-	 * Return: void
-	 * Desc: method that announces the click event of 
+	 * @Name: anounceSaveAsBtnClick
+	 * @Args: 
+	 * @Return: void
+	 * @Desc: method that announces the click event of 
 	 *       the save as btn to all the action listeners registered.
 	 */
 	private void anounceSaveAsBtnClick(){

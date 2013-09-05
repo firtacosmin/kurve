@@ -10,6 +10,7 @@ import com.syntese.language.LanguageFactory;
 import com.syntese.project.graphics.animation.AnimationPanel;
 import com.syntese.project.graphics.curveProfile.CurveProfilePanel;
 import com.syntese.project.graphics.graph.graphromiu.GraphicRoMiuPanel;
+import com.syntese.project.graphics.graph.graphromiu.GraphicRoMiuPanelMediator;
 import com.syntese.project.graphics.graph.graphs.GraphicSPanel;
 import com.syntese.project.graphics.graph.graphs.GraphicSPanelMediator;
 import com.syntese.project.graphics.numericdata.NumericDataPanel;
@@ -28,17 +29,22 @@ public class ProjectTabs extends JPanel {
 	public static String INPUTPARAMS_TAB_TITLE_TEXT = "NumericData_ProjectPanel_title";
 	public static String GRAPHIC_S_TAB_TITLE_TEXT = "Graphic_S_ProjectPanel_title";
 	public static String CURVEPROFILE_TAB_TITLE_TEXT = "CurveProfile_ProjectPanel_title";
-	public static String ANIMATION_TAB_TITLE_TEXT = "Graphic_romiu_ProjectPanel_title";
-	public static String GRAPHIC_ROMIU_TAB_TITLE_TEXT = "Animation_ProjectPanel_title";
+	public static String ANIMATION_TAB_TITLE_TEXT = "Animation_ProjectPanel_title";
+	public static String GRAPHIC_ROMIU_TAB_TITLE_TEXT = "Graphic_romiu_ProjectPanel_title";
 	
 	/*PRIVATE PROPERTIES*/
 	private NumericDataPanel _imputParamsPan;
-	private GraphicRoMiuPanel _graphicRoMiuPan;
+//	private GraphicRoMiuPanel _graphicRoMiuPan;
+	private JPanel _graphicRoMiuPan;
 //	private GraphicSPanel _graphicSPan;
 	private JPanel _graphicSPan;
 	private CurveProfilePanel _curveProfilePan;
 	private AnimationPanel _animationPan;
 	private JTabbedPane _theTabbedPane;
+	
+	
+	private GraphicRoMiuPanelMediator _romiuPanelMed;
+	private GraphicSPanelMediator _sPanelMed;
 	
 	
 	/*PUBLIC PROPERTIES*/
@@ -108,10 +114,13 @@ public class ProjectTabs extends JPanel {
 	 * @Desc:  initializes all the tabs.
 	 */
 	private void InitComponents() {
+		_romiuPanelMed = new GraphicRoMiuPanelMediator();
+		_sPanelMed = new GraphicSPanelMediator();
+		
 		_theTabbedPane = new JTabbedPane();
 		_imputParamsPan = new NumericDataPanel();
-		_graphicRoMiuPan = new GraphicRoMiuPanel();
-		_graphicSPan = (new GraphicSPanelMediator()).getPanel();
+		_graphicRoMiuPan = _romiuPanelMed.getPanel();
+		_graphicSPan = _sPanelMed.getPanel();
 		_curveProfilePan = new CurveProfilePanel();
 		_animationPan = new AnimationPanel();
 		

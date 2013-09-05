@@ -21,6 +21,7 @@ public class GraphicSSinglePanelMediator implements GraphicSSinglePanelActionLis
 	public GraphicSSinglePanelMediator(){
 		_plot = new PlotMediator();
 		_thePanel = new GraphicSSinglePanel(_plot.getPlotPanel());
+		_thePanel.addActionListner(this);
 	}
 	
 	/**

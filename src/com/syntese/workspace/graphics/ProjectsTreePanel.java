@@ -15,8 +15,11 @@ import javax.swing.tree.TreePath;
 
 public class ProjectsTreePanel extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	/*UI CONSTANTS*/
-	private static int WIDTH = 70;
 	private DefaultMutableTreeNode rootNode;
 	private JTree theTree;
 	private DefaultTreeModel _treeModel;
@@ -89,10 +92,10 @@ public class ProjectsTreePanel extends JPanel {
 						for ( int i=0; i< _listeners.size(); i++ ){
 							_listeners.get(i).projectDoubleClicked(node.toString());
 						}
-				    	System.out.println(node.toString());
+				    	//System.out.println(node.toString());
 				    } else {
 				    	/*if the selected node is not a leaf. Do nothing*/
-				    	System.out.println("Not leaf:"+node.toString());
+				    	//System.out.println("Not leaf:"+node.toString());
 				    }
 					 
 				}

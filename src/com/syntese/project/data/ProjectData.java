@@ -266,18 +266,24 @@ public class ProjectData {
 		}
 		catch ( Exception ex )
 		{
-			ex.printStackTrace();
-			//TODO: error
+			Log.syntese.info("Error on opening and parsing the project file: "+file);
+			Log.syntese.debug(ex.getStackTrace());
 		}
 		
 		try
 		{
-			_proj_name = new File(file).getName().replace(".xml", "");
-			ret = true;
+			File newF = new File(file);
+			if (newF.exists()){
+				Log.syntese.info("Opened project file:"+file);
+				_proj_name = new File(file).getName().replace(".xml", "");
+				ret = true;
+			}else{
+				Log.syntese.info("Could not opened project file:"+file);
+			}
 		}catch (  Exception ex)
 		{
-			//TODO: Error
-			ex.printStackTrace();
+			Log.syntese.info("Error on opening the project file: "+file);
+			Log.syntese.debug(ex.getStackTrace());
 		}
 		return ret;
 	}

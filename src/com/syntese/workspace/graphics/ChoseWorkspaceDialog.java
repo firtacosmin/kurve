@@ -29,7 +29,9 @@ public class ChoseWorkspaceDialog extends JDialog{
 	 */
 	private static final long serialVersionUID = -4586127625713844662L;
 	
+	@SuppressWarnings("unused")
 	private static final String PATH_ERROR_DLG_TITLE = "ChoseWorkspace_pathIncorect_title";
+	@SuppressWarnings("unused")
 	private static final String PATH_ERROR_DLG_CONTENT = "ChoseWorkspace_pathIncorect_content";
 	private static final String TITLE_LABEL = "ChoseWorkspace_text";
 	

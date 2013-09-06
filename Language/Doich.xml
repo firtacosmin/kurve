@@ -393,6 +393,59 @@
 		<value>Seibenradius          :=</value>
 	</expression>
 	
+
+	<expression>
+		<name>InputParams_chk_middlePoint</name>
+		<value>Mittelpunktkurve der Kurvenscheibe</value>
+	</expression>
+	<expression>
+		<name>InputParams_chk_outerProfile</name>
+		<value>Äußere Kurvenprofil</value>
+	</expression>
+	<expression>
+		<name>InputParams_chk_innerProfile</name>
+		<value>Innere Kurvenprofil</value>
+	</expression>
+	<expression>
+		<name>InputParams_chk_centerAgainstCam</name>
+		<value>Rollenmittelpunktkurve der Gegenkurvenscheibe</value>
+	</expression>
+	<expression>
+		<name>InputParams_chk_profileAgainstCam</name>
+		<value>Kurveprofil der Gegenkurvenscheibe</value>
+	</expression>
+	<expression>
+		<name>InputParams_chk_centerOfFlood</name>
+		<value>Rollenmittelpunktkurve der flutkurvenscheibe</value>
+	</expression>
+	<expression>
+		<name>InputParams_chk_profileOfFlood</name>
+		<value>Kurveprofil der flutkurvenscheibe</value>
+	</expression>
+	
+
+	<expression>
+		<name>NumericData_ProjectPanel_title</name>
+		<value>Numeriche Daten</value>
+	</expression>
+	<expression>
+		<name>Graphic_S_ProjectPanel_title</name>
+		<value>Grafik s, s' ,s''</value>
+	</expression>
+	<expression>
+		<name>CurveProfile_ProjectPanel_title</name>
+		<value>Kurvenprofile</value>
+	</expression>
+	<expression>
+		<name>Graphic_romiu_ProjectPanel_title</name>
+		<value>Grafick ro,u</value>
+	</expression>
+	<expression>
+		<name>Animation_ProjectPanel_title</name>
+		<value>Animation</value>
+	</expression>
+
+	
 	<expression>
 		<name>SaveComplete_MsjBox_title</name>
 		<value>Daten speichern</value>
@@ -414,6 +467,29 @@
 		<name>ChoseWorkspace_text</name>
 		<value>Bitte wählen Sie einen Ordner für den Arbeitsbereich</value>
 	</expression>
+	
+	 <expression>
+    <name>Graphic_raster_btn_title</name>
+    <value>Raster</value>
+  </expression>
+  
+  <expression>
+    <name>CHK_Animation_text</name>
+    <value>Animation</value>
+  </expression>
+  
+  <expression>
+    <name>Btn_Chose_bg_color_text</name>
+    <value>Bereichsfarben</value>
+  </expression>
+  <expression>
+    <name>slower_text</name>
+    <value>langsam</value>
+  </expression>
+  <expression>
+    <name>faster_text</name>
+    <value>schnell</value>
+  </expression>
 	
     
 </language>

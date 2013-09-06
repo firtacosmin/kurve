@@ -59,8 +59,9 @@ public class MainFrameMediator implements MainFrameActionListener,WizardListener
 
 	@Override
 	public void closeMenuClick() {
-		// TODO Auto-generated method stub
-		
+		frameClosing();
+		_theFrame.setVisible(false);
+		System.exit(0);
 	}
 
 	@Override

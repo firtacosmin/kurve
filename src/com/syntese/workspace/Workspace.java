@@ -3,12 +3,7 @@ package com.syntese.workspace;
 import java.io.File;
 import java.util.ArrayList;
 
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-
 import com.syntese.graphics.mainFrame.MainFrameMediator;
-import com.syntese.language.Language;
-import com.syntese.language.LanguageFactory;
 import com.syntese.log.Log;
 import com.syntese.project.data.ProjectData;
 import com.syntese.project.data.ProjectMediator;
@@ -22,7 +17,7 @@ public class Workspace implements WorkspaceGraphicsListener {
 	/*PROPERTIES*/
 	private static final String WORKSPACE_PATH_SETING_NAME="workspacePath";
 	
-	private JFrame _theMainFrame;
+	//private JFrame _theMainFrame;
 	private ArrayList<ProjectMediator> _projects;
 	private WorkspaceFile _workspaceFile;
 	
@@ -114,7 +109,7 @@ public class Workspace implements WorkspaceGraphicsListener {
 
 	@Override
 	public void openProject(String ProjectTitle) {
-		System.out.println(ProjectTitle);
+		//System.out.println(ProjectTitle);
 		Boolean found = false;
 		ProjectMediator projToOpen = null;
 		for ( int i=0; i<_projects.size() && !found; i++ ){
@@ -225,10 +220,13 @@ public class Workspace implements WorkspaceGraphicsListener {
 			for ( String projName : _workspaceFile.getProjects() ){
 				try {
 					ProjectData newProjDt = new ProjectData();
-					newProjDt.open(_workspacePath+"\\"+projName+".xml");
-					_projects.add(new ProjectMediator(newProjDt));
-					_thePanel.addProjToTree(newProjDt);
+					if (newProjDt.open(_workspacePath+"\\"+projName+".xml"))
+					{
+						_projects.add(new ProjectMediator(newProjDt));
+						_thePanel.addProjToTree(newProjDt);
+					}
 				} catch (Exception e) {
+					//TODO error
 					e.printStackTrace();
 				}
 			}

@@ -87,3 +87,9 @@
 2013-06-30 17:01:55,872 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
 2013-06-30 17:01:55,872 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
 2013-06-30 17:01:55,928 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
+2013-07-07 14:49:40,625 DEBUG (main.MAin.main:38) [syntese] Hello this is an debug message d
+2013-07-07 14:49:40,703 INFO  (main.MAin.main:39) [syntese] Hello this is an info message  i
+2013-07-07 14:49:40,703 ERROR (main.MAin.main:40) [syntese] Hello this is an info message   e
+2013-07-07 14:49:44,213 DEBUG (com.syntese.workspace.Workspace.askForWorkspace:168) [syntese] Application Started. Selected Workspace=E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
+2013-07-07 14:49:44,213 DEBUG (com.syntese.workspace.Workspace.startMainFrame:188) [syntese] Starting application with workspace:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
+2013-07-07 14:49:44,462 DEBUG (com.syntese.workspace.Workspace.startMainFrame:192) [syntese] Starting application with workspace file:E:\working folder\proiect_mec\2. Software\Current\kurve\workspace
